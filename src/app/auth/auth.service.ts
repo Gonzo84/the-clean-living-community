@@ -11,7 +11,7 @@ import {AuthResponse} from './auth-response';
     providedIn: 'root'
 })
 export class AuthService {
-    AUTH_SERVER_ADDRESS: string = 'http://localhost:3000';
+    AUTH_SERVER_ADDRESS: string = 'https://cleanliving.herokuapp.com';
     authSubject = new BehaviorSubject(false);
 
     constructor(private  httpClient: HttpClient, private  storage: Storage) {
