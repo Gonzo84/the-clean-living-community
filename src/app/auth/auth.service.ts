@@ -11,7 +11,7 @@ import {AuthResponse} from './auth-response';
     providedIn: 'root'
 })
 export class AuthService {
-    AUTH_SERVER_ADDRESS: string = 'https://cleanliving.herokuapp.com';
+    AUTH_SERVER_ADDRESS: string = 'http://localhost:8080/api';
     authSubject = new BehaviorSubject(false);
 
     constructor(private  httpClient: HttpClient, private  storage: Storage) {
@@ -22,7 +22,7 @@ export class AuthService {
     }
 
     login(user: User): Observable<AuthResponse> {
-        return this.httpClient.post(`${this.AUTH_SERVER_ADDRESS}/login`, user).pipe(
+        return this.httpClient.post(`${this.AUTH_SERVER_ADDRESS}/auth/login`, user).pipe(
             tap(async (res: AuthResponse) => {
 
                 if (res.user) {
@@ -41,7 +41,7 @@ export class AuthService {
     }
 
     register(user: User): Observable<AuthResponse> {
-        return this.httpClient.post<AuthResponse>(`${this.AUTH_SERVER_ADDRESS}/register`, user).pipe(
+        return this.httpClient.post<AuthResponse>(`${this.AUTH_SERVER_ADDRESS}/user/register`, user).pipe(
             tap(async (res: AuthResponse) => {
 
                 if (res.user) {
