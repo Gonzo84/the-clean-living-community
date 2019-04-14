@@ -1,0 +1,24 @@
+ion-item {
+  --background: transparent;
+  --color: #fff;
+}
+
+ion-button {
+  --background: #22e2b9;
+}
+
+a {
+  color: #fff;
+}
+
+ion-content.clc-background {
+  --background: url('../../../assets/img/auth/background.jpg') 0 0/100% 100% no-repeat;
+}
+
+.clc-logo-header {
+  height: 3rem;
+  width: 100%;
+  background: url('../../../assets/img/auth/CLC_Long_White_Drkbg.png') 0 0/100% 100% no-repeat;
+  margin-bottom: 25vh;
+}
+

@@ -11,14 +11,15 @@ import {AuthResponse} from './auth-response';
     providedIn: 'root'
 })
 export class AuthService {
-    AUTH_SERVER_ADDRESS: string = 'http://localhost:8080/api';
+    AUTH_SERVER_ADDRESS = 'http://localhost:8080/api';
     authSubject = new BehaviorSubject(false);
 
-    constructor(private  httpClient: HttpClient, private  storage: Storage) {
+    constructor(private  httpClient: HttpClient,
+                private  storage: Storage) {
     }
 
     isLoggedIn() {
-        return this.authSubject.asObservable();
+        return this.authSubject.value;
     }
 
     login(user: User): Observable<AuthResponse> {
