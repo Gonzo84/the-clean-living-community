@@ -1,10 +1,12 @@
+@import "../../../theme/variables";
+
 ion-item {
   --background: transparent;
   --color: #fff;
 }
 
 ion-button {
-  --background: #22e2b9;
+  --background: $clc-primary-color;
 }
 
 a {
@@ -16,9 +18,24 @@ ion-content.clc-background {
 }
 
 .clc-logo-header {
-  height: 3rem;
   width: 100%;
-  background: url('../../../assets/img/auth/CLC_Long_White_Drkbg.png') 0 0/100% 100% no-repeat;
   margin-bottom: 25vh;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.clc-forgot-password {
+  color: $clc-primary-color;
+}
+
+.clc-login-mail {
+  border-bottom: 1px solid $clc-primary-color;
+}
+
+.clc-login-pass {
+  border-bottom: 1px solid $clc-secondary-alt-color;
 }
 
