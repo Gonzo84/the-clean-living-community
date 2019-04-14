@@ -11,6 +11,16 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+// user
+$router->post('/users', 'UserController@store');
+
+$router->post('/reset_password_request', 'UserController@resetPasswordRequest');
+$router->post('/reset_password', 'UserController@resetPassword');
+
+$router->group([
+    'middleware' => 'client.credentials'
+], function() use($router) {
+    $router->get('/users', 'UserController@index');
+    $router->get('/users/{id}', 'UserController@show');
+    $router->patch('/users/{id}', 'UserController@update');
 });

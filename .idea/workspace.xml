@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67ac8f58-d86d-4cb7-985e-3bb3186aa119" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/the-clean-living-community-mobile.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/the-clean-living-community-mobile.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_api/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/demo_api/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_api/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/demo_api/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_api/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/demo_api/app/Providers/AuthServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo_api/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/demo_api/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo_api/bootstrap/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/demo_api/bootstrap/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_api/database/factories/ModelFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/demo_api/database/factories/ModelFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo_api/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/demo_api/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_api/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/demo_api/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_api/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/demo_api/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_api/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/demo_api/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,19 +23,18 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/demo_api/composer.json</pharConfigPath>
+    <executablePath>composer</executablePath>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo_api/app/Http/Controllers/UserController.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo_api/bootstrap/app.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1491">
-              <caret line="89" column="1" lean-forward="true" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
+            <state relative-caret-position="533">
+              <caret line="149" selection-start-line="149" selection-end-line="149" />
+              <folding>
+                <element signature="e#41#69#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -39,20 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo_api/database/migrations/2019_04_13_193757_create_users_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="60" lean-forward="true" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/demo_api/database/seeds/DatabaseSeeder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-              <folding>
-                <element signature="e#7#38#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="441">
+              <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -60,17 +51,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demo_api/app/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+            <state relative-caret-position="378">
+              <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo_api/database/factories/ModelFactory.php">
+        <entry file="file://$PROJECT_DIR$/demo_api/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="168">
+              <caret line="17" column="30" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo_api/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="617">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -84,13 +93,24 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/auth/client/readme.md" />
-        <option value="$PROJECT_DIR$/demo_api/bootstrap/app.php" />
-        <option value="$PROJECT_DIR$/demo_api/.env" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/demo_api/app/User.php" />
         <option value="$PROJECT_DIR$/demo_api/database/factories/ModelFactory.php" />
-        <option value="$PROJECT_DIR$/demo_api/database/migrations/2019_04_13_193757_create_users_table.php" />
         <option value="$PROJECT_DIR$/demo_api/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/demo_api/app/Traits/ApiResponser.php" />
+        <option value="$PROJECT_DIR$/demo_api/app/Exceptions/Handler.php" />
+        <option value="$PROJECT_DIR$/demo_api/app/Providers/AuthServiceProvider.php" />
+        <option value="$PROJECT_DIR$/demo_api/config/auth.php" />
+        <option value="$PROJECT_DIR$/demo_api/config/services.php" />
+        <option value="$PROJECT_DIR$/demo_api/.env.example" />
+        <option value="$PROJECT_DIR$/demo_api/composer.json" />
+        <option value="$PROJECT_DIR$/demo_api/bootstrap/app.php" />
+        <option value="$PROJECT_DIR$/demo_api/app/Mail/ResetPassword.php" />
+        <option value="$PROJECT_DIR$/demo_api/app/Mail/RequestResetPassword.php" />
+        <option value="$PROJECT_DIR$/demo_api/.env" />
+        <option value="$PROJECT_DIR$/demo_api/routes/web.php" />
+        <option value="$PROJECT_DIR$/demo_api/database/migrations/2019_04_13_193757_create_users_table.php" />
+        <option value="$PROJECT_DIR$/demo_api/app/User.php" />
+        <option value="$PROJECT_DIR$/demo_api/app/Http/Controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -180,13 +200,46 @@
       <path value="$PROJECT_DIR$/demo_api/vendor/symfony/http-foundation" />
       <path value="$PROJECT_DIR$/demo_api/vendor/symfony/translation" />
       <path value="$PROJECT_DIR$/demo_api/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/zendframework/zend-diactoros" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/dusterio/lumen-passport" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/league/oauth2-server" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/league/event" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/defuse/php-encryption" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/laravel/passport" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/illuminate/mail" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/laravelista/lumen-vendor-publish" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/jakub-onderka/php-console-color" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/classpreloader/classpreloader" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/flipbox/lumen-generator" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/jakub-onderka/php-console-highlighter" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/nikic/php-parser" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="293" />
-    <option name="y" value="53" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="x" value="67" />
+    <option name="y" value="25" />
+    <option name="width" value="1853" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -218,14 +271,28 @@
               <item name="cleanliving" type="b2602c69:ProjectViewProjectNode" />
               <item name="cleanliving" type="462c0819:PsiDirectoryNode" />
               <item name="demo_api" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cleanliving" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cleanliving" type="462c0819:PsiDirectoryNode" />
+              <item name="demo_api" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cleanliving" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cleanliving" type="462c0819:PsiDirectoryNode" />
+              <item name="demo_api" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cleanliving" type="b2602c69:ProjectViewProjectNode" />
               <item name="cleanliving" type="462c0819:PsiDirectoryNode" />
               <item name="demo_api" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="factories" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cleanliving" type="b2602c69:ProjectViewProjectNode" />
@@ -238,8 +305,46 @@
               <item name="cleanliving" type="b2602c69:ProjectViewProjectNode" />
               <item name="cleanliving" type="462c0819:PsiDirectoryNode" />
               <item name="demo_api" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="seeds" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cleanliving" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cleanliving" type="462c0819:PsiDirectoryNode" />
+              <item name="demo_api" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cleanliving" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cleanliving" type="462c0819:PsiDirectoryNode" />
+              <item name="demo_api" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="mail" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cleanliving" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cleanliving" type="462c0819:PsiDirectoryNode" />
+              <item name="demo_api" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="mail" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cleanliving" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cleanliving" type="462c0819:PsiDirectoryNode" />
+              <item name="demo_api" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="mail" type="462c0819:PsiDirectoryNode" />
+              <item name="markdown" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cleanliving" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cleanliving" type="462c0819:PsiDirectoryNode" />
+              <item name="demo_api" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -253,21 +358,21 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../auth" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/demo_api/resources/views" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/demo_api/resources/views" />
+      <recent name="$PROJECT_DIR$/demo_api" />
       <recent name="$PROJECT_DIR$/auth" />
       <recent name="$PROJECT_DIR$/survey/server" />
       <recent name="$PROJECT_DIR$/survey/client" />
-      <recent name="$PROJECT_DIR$/search/server" />
-      <recent name="$PROJECT_DIR$/search/client" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -297,7 +402,7 @@
       <workItem from="1555181832595" duration="320000" />
       <workItem from="1555182158152" duration="284000" />
       <workItem from="1555182535321" duration="604000" />
-      <workItem from="1555183171621" duration="1889000" />
+      <workItem from="1555183171621" duration="17606000" />
     </task>
     <task id="LOCAL-00001" summary="folder structure">
       <created>1555168593450</created>
@@ -317,13 +422,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5262000" />
+    <option name="totallyTimeSpent" value="20979000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2910902" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2910902" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -337,7 +442,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.13379164" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="TypeScript" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.1507431" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.39915073" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -441,23 +546,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo_api/app/Http/Controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo_api/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo_api/database/migrations/2019_04_13_193628_create_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -472,31 +560,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo_api/bootstrap/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1491">
-          <caret line="89" column="1" lean-forward="true" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo_api/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo_api/database/factories/ModelFactory.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo_api/database/migrations/2019_04_13_193757_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="60" lean-forward="true" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -507,6 +574,186 @@
           <folding>
             <element signature="e#7#38#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/vendor/illuminate/http/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/vendor/illuminate/http/Response.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/vendor/illuminate/http/JsonResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/app/Traits/ApiResponser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="23" selection-start-line="11" selection-end-line="12" />
+          <folding>
+            <element signature="e#30#63#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/http/http3.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="2620" column="15" selection-start-line="2620" selection-start-column="15" selection-end-line="2620" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/app/Exceptions/Handler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="76" column="38" selection-start-line="76" selection-start-column="38" selection-end-line="76" selection-end-column="38" />
+          <folding>
+            <element signature="e#34#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/storage/oauth-public.key">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/storage/oauth-private.key">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/app/Http/Controllers/ExampleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/config/app.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/app/Providers/AuthServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+          <folding>
+            <element signature="e#33#74#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/config/auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/config/services.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="49" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/resources/views/mail/html/themes/ams-bl.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/resources/views/mail/markdown/button.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/resources/views/mail/html/button.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/resources/views/mail/RequestResetPassword.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="20" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/app/Mail/RequestResetPassword.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="39" column="109" selection-start-line="39" selection-start-column="109" selection-end-line="39" selection-end-column="109" />
+          <folding>
+            <element signature="e#28#41#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/bootstrap/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/.env.example">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="22" selection-start-line="20" selection-end-line="20" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="617">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/database/migrations/2019_04_13_193757_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/app/Http/Controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="149" selection-start-line="149" selection-end-line="149" />
+          <folding>
+            <element signature="e#41#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>

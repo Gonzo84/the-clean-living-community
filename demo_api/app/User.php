@@ -14,7 +14,9 @@ class User extends Model
     protected $fillable = [
         'name',
         'email',
-        'status'
+        'status',
+        'password',
+        'reset_password_token'
     ];
 
     /**
@@ -23,7 +25,5 @@ class User extends Model
      * @var array
      */
     protected $hidden = [
-        'password',
-        'password_reset_hash'
     ];
 }

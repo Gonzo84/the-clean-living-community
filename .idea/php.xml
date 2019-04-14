@@ -83,6 +83,39 @@
       <path value="$PROJECT_DIR$/demo_api/vendor/symfony/http-foundation" />
       <path value="$PROJECT_DIR$/demo_api/vendor/symfony/translation" />
       <path value="$PROJECT_DIR$/demo_api/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/zendframework/zend-diactoros" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/dusterio/lumen-passport" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/league/oauth2-server" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/league/event" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/defuse/php-encryption" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/laravel/passport" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/illuminate/mail" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/laravelista/lumen-vendor-publish" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/jakub-onderka/php-console-color" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/classpreloader/classpreloader" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/flipbox/lumen-generator" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/jakub-onderka/php-console-highlighter" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/nikic/php-parser" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
