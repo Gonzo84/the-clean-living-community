@@ -11,7 +11,7 @@ import {AuthResponse} from './auth-response';
     providedIn: 'root'
 })
 export class AuthService {
-    AUTH_SERVER_ADDRESS = 'http://localhost:8080/api';
+    AUTH_SERVER_ADDRESS = 'http://localhost:9000';
     authSubject = new BehaviorSubject(false);
 
     constructor(private  httpClient: HttpClient,
@@ -23,7 +23,7 @@ export class AuthService {
     }
 
     login(user: User): Observable<AuthResponse> {
-        return this.httpClient.post(`${this.AUTH_SERVER_ADDRESS}/auth/login`, user).pipe(
+        return this.httpClient.post(`${this.AUTH_SERVER_ADDRESS}/users/login`, user).pipe(
             tap(async (res: AuthResponse) => {
 
                 if (res.user) {
@@ -42,7 +42,7 @@ export class AuthService {
     }
 
     register(user: User): Observable<AuthResponse> {
-        return this.httpClient.post<AuthResponse>(`${this.AUTH_SERVER_ADDRESS}/user/register`, user).pipe(
+        return this.httpClient.post<AuthResponse>(`${this.AUTH_SERVER_ADDRESS}/users`, user).pipe(
             tap(async (res: AuthResponse) => {
 
                 if (res.user) {

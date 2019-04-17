@@ -5,15 +5,15 @@ ion-item {
   --color: #fff;
 }
 
-ion-button {
-  --background: $clc-primary-color;
+ion-content ion-button {
+  --background: #22e2b9;
 }
 
 a {
   color: #fff;
 }
 
-ion-content.clc-background {
+ion-content.clc-login-background {
   --background: url('../../../assets/img/auth/background.jpg') 0 0/100% 100% no-repeat;
 }
 

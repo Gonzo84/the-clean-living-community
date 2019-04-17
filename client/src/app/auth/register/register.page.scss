@@ -1,4 +1,6 @@
-ion-content.clc-background {
+@import "../../../theme/variables";
+
+ion-content.clc-register-background {
   --background: url('../../../assets/img/auth/background.jpg') 0 0/100% 100% no-repeat;
 }
 
@@ -10,4 +12,21 @@ ion-content.clc-background {
     width: 100%;
     height: auto;
   }
+}
+
+ion-item {
+  --background: transparent;
+  --color: #fff;
+  border-bottom: 1px solid $clc-primary-color;
+}
+
+a {
+  color: #fff;
+}
+
+ion-content ion-button {
+  --background: #22e2b9;
+}
+.clc-login-button{
+
 }
