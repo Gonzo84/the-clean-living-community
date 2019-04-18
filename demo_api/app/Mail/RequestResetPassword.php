@@ -37,7 +37,7 @@ class RequestResetPassword extends Mailable
     {
         return $this->markdown(
             'mail.RequestResetPassword',
-            ['resetPasswordUrl' => env('APP_DOMAIN') . '/reset-password/' . $this->user->reset_password_token]
+            ['resetPass' => $this->user->reset_password_token]
         );
     }
 }

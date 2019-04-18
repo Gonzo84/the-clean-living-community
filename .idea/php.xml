@@ -107,8 +107,6 @@
       <path value="$PROJECT_DIR$/demo_api/vendor/symfony/css-selector" />
       <path value="$PROJECT_DIR$/demo_api/vendor/symfony/polyfill-iconv" />
       <path value="$PROJECT_DIR$/demo_api/vendor/symfony/polyfill-intl-idn" />
-      <path value="$PROJECT_DIR$/demo_api/vendor/laravelista/lumen-vendor-publish" />
-      <path value="$PROJECT_DIR$/demo_api/vendor/league/flysystem" />
       <path value="$PROJECT_DIR$/demo_api/vendor/jakub-onderka/php-console-color" />
       <path value="$PROJECT_DIR$/demo_api/vendor/classpreloader/classpreloader" />
       <path value="$PROJECT_DIR$/demo_api/vendor/flipbox/lumen-generator" />

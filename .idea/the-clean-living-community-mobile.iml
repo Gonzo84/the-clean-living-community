@@ -49,10 +49,8 @@
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/jakub-onderka/php-console-highlighter" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/laravel/lumen-framework" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/laravel/passport" />
-      <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/laravelista/lumen-vendor-publish" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/lcobucci/jwt" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/league/event" />
-      <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/league/flysystem" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/league/oauth2-server" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/monolog/monolog" />
