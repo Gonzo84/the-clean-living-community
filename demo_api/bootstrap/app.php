@@ -95,6 +95,8 @@ $app->singleton(
  $app->register(\Dusterio\LumenPassport\PassportServiceProvider::class);
  $app->register(Illuminate\Mail\MailServiceProvider::class);
  $app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
+ $app->register(Illuminate\Redis\RedisServiceProvider::class);
+
 
 /*
 |--------------------------------------------------------------------------

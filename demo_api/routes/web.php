@@ -33,6 +33,12 @@ $router->group([
     $router->post('/users/logout', 'UserController@logout');
 });
 
+    //chat
+    $router->post('/chat/send', 'ChatController@sendMessage');
+//});
+
+
+
 // survey
 $router->get('/surveys', 'SurveyController@index');
 $router->get('/surveys/{id}', 'SurveyController@show');

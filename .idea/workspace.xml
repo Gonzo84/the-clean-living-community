@@ -2,25 +2,788 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67ac8f58-d86d-4cb7-985e-3bb3186aa119" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/app/home/messages/messages.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/home/messages/messages.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/home/messages/messages.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/home/search/search.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/home/search/search.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/home/search/search.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/chat-room/chat-room.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/chat-room/chat-room.page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/chat-room/chat-room.page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/chat-room/chat-room.page.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/chat-room/chat-room.page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/chat/chat.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/chat/chat.page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/chat/chat.page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/chat/chat.page.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/chat/chat.page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/services/chat-service.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/app/Http/Controllers/ChatController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/.bin/mime" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/.bin/mime.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/accepts/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/accepts/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/accepts/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/accepts/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/accepts/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/after/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/after/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/after/LICENCE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/after/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/after/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/after/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/after/test/after-test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/array-flatten/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/array-flatten/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/array-flatten/array-flatten.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/array-flatten/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/arraybuffer.slice/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/arraybuffer.slice/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/arraybuffer.slice/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/arraybuffer.slice/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/arraybuffer.slice/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/arraybuffer.slice/test/slice-buffer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/backo2/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/backo2/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/backo2/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/backo2/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/backo2/component.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/backo2/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/backo2/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/backo2/test/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/base64-arraybuffer/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/base64-arraybuffer/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/base64-arraybuffer/LICENSE-MIT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/base64-arraybuffer/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/base64-arraybuffer/lib/base64-arraybuffer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/base64-arraybuffer/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/base64id/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/base64id/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/base64id/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/base64id/lib/base64id.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/base64id/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/better-assert/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/better-assert/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/better-assert/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/better-assert/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/better-assert/example.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/better-assert/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/better-assert/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/blob/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/blob/.zuul.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/blob/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/blob/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/blob/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/blob/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/blob/test/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/body-parser/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/body-parser/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/body-parser/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/body-parser/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/body-parser/lib/read.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/body-parser/lib/types/json.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/body-parser/lib/types/raw.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/body-parser/lib/types/text.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/body-parser/lib/types/urlencoded.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/body-parser/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/bytes/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/bytes/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/bytes/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/bytes/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/bytes/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/callsite/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/callsite/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/callsite/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/callsite/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/callsite/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/callsite/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-bind/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-bind/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-bind/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-bind/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-bind/component.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-bind/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-bind/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-emitter/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-emitter/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-emitter/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-emitter/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-emitter/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-emitter/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-emitter/component.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-emitter/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-emitter/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-inherit/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-inherit/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-inherit/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-inherit/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-inherit/component.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-inherit/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-inherit/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/component-inherit/test/inherit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/content-disposition/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/content-disposition/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/content-disposition/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/content-disposition/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/content-disposition/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/content-type/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/content-type/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/content-type/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/content-type/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/content-type/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/cookie-signature/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/cookie-signature/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/cookie-signature/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/cookie-signature/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/cookie-signature/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/cookie/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/cookie/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/cookie/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/cookie/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/cookie/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/debug/.coveralls.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/debug/.eslintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/debug/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/debug/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/debug/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/debug/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/debug/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/debug/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/debug/component.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/debug/karma.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/debug/node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/debug/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/debug/src/browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/debug/src/debug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/debug/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/debug/src/inspector-log.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/debug/src/node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/depd/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/depd/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/depd/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/depd/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/depd/lib/browser/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/depd/lib/compat/callsite-tostring.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/depd/lib/compat/event-listener-count.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/depd/lib/compat/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/depd/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/destroy/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/destroy/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/destroy/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/destroy/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/double-ended-queue/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/double-ended-queue/Gruntfile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/double-ended-queue/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/double-ended-queue/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/double-ended-queue/js/deque.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/double-ended-queue/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ee-first/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ee-first/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ee-first/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ee-first/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/encodeurl/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/encodeurl/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/encodeurl/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/encodeurl/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/encodeurl/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/engine.io.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/lib/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/lib/socket.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/lib/transport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/lib/transports/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/lib/transports/polling-jsonp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/lib/transports/polling-xhr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/lib/transports/polling.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/lib/transports/websocket.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/lib/xmlhttprequest.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/node_modules/component-emitter/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/node_modules/component-emitter/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/node_modules/component-emitter/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/node_modules/component-emitter/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/node_modules/component-emitter/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/node_modules/debug/.jshintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/node_modules/debug/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/node_modules/debug/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/node_modules/debug/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/node_modules/debug/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/node_modules/debug/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/node_modules/debug/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/node_modules/debug/browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/node_modules/debug/component.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/node_modules/debug/debug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/node_modules/debug/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/node_modules/debug/node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/node_modules/debug/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/node_modules/ms/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/node_modules/ms/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/node_modules/ms/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/node_modules/ms/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-client/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-parser/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-parser/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-parser/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-parser/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-parser/lib/browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-parser/lib/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-parser/lib/keys.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io-parser/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/lib/engine.io.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/lib/server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/lib/socket.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/lib/transport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/lib/transports/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/lib/transports/polling-jsonp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/lib/transports/polling-xhr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/lib/transports/polling.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/lib/transports/websocket.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/node_modules/accepts/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/node_modules/accepts/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/node_modules/accepts/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/node_modules/accepts/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/node_modules/accepts/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/node_modules/debug/.jshintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/node_modules/debug/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/node_modules/debug/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/node_modules/debug/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/node_modules/debug/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/node_modules/debug/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/node_modules/debug/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/node_modules/debug/browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/node_modules/debug/component.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/node_modules/debug/debug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/node_modules/debug/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/node_modules/debug/node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/node_modules/debug/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/node_modules/ms/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/node_modules/ms/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/node_modules/ms/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/node_modules/ms/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/engine.io/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/escape-html/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/escape-html/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/escape-html/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/escape-html/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/etag/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/etag/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/etag/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/etag/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/etag/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/express/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/express/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/express/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/express/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/express/lib/application.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/express/lib/express.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/express/lib/middleware/init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/express/lib/middleware/query.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/express/lib/request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/express/lib/response.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/express/lib/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/express/lib/router/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/express/lib/router/route.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/express/lib/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/express/lib/view.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/express/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/finalhandler/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/finalhandler/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/finalhandler/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/finalhandler/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/finalhandler/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/forwarded/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/forwarded/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/forwarded/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/forwarded/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/forwarded/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/fresh/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/fresh/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/fresh/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/fresh/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/fresh/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/has-binary/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/has-binary/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/has-binary/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/has-binary/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/has-binary/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/has-binary/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/has-binary/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/has-binary/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/has-cors/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/has-cors/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/has-cors/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/has-cors/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/has-cors/component.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/has-cors/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/has-cors/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/has-cors/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/http-errors/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/http-errors/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/http-errors/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/http-errors/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/http-errors/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/Changelog.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/encodings/dbcs-codec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/encodings/dbcs-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/encodings/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/encodings/internal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/encodings/sbcs-codec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/encodings/sbcs-data-generated.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/encodings/sbcs-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/encodings/tables/big5-added.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/encodings/tables/cp936.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/encodings/tables/cp949.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/encodings/tables/cp950.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/encodings/tables/eucjp.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/encodings/tables/gb18030-ranges.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/encodings/tables/gbk-added.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/encodings/tables/shiftjis.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/encodings/utf16.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/encodings/utf7.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/lib/bom-handling.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/lib/extend-node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/lib/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/lib/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/lib/streams.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/iconv-lite/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/indexof/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/indexof/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/indexof/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/indexof/component.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/indexof/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/indexof/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/inherits/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/inherits/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/inherits/inherits.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/inherits/inherits_browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/inherits/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ipaddr.js/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ipaddr.js/ipaddr.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ipaddr.js/lib/ipaddr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ipaddr.js/lib/ipaddr.js.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ipaddr.js/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/isarray/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/isarray/build/build.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/isarray/component.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/isarray/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/isarray/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/json3/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/json3/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/json3/lib/json3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/json3/lib/json3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/json3/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/media-typer/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/media-typer/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/media-typer/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/media-typer/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/media-typer/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/merge-descriptors/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/merge-descriptors/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/merge-descriptors/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/merge-descriptors/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/merge-descriptors/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/methods/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/methods/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/methods/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/methods/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/methods/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/mime-db/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/mime-db/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/mime-db/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/mime-db/db.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/mime-db/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/mime-db/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/mime-types/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/mime-types/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/mime-types/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/mime-types/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/mime-types/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/mime/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/mime/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/mime/build/build.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/mime/build/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/mime/cli.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/mime/mime.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/mime/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/mime/types.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ms/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ms/license.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ms/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ms/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/negotiator/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/negotiator/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/negotiator/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/negotiator/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/negotiator/lib/charset.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/negotiator/lib/encoding.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/negotiator/lib/language.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/negotiator/lib/mediaType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/negotiator/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/object-assign/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/object-assign/license" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/object-assign/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/object-assign/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/object-component/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/object-component/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/object-component/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/object-component/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/object-component/component.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/object-component/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/object-component/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/object-component/test/object.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/on-finished/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/on-finished/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/on-finished/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/on-finished/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/on-finished/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/options/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/options/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/options/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/options/lib/options.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/options/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parsejson/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parsejson/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parsejson/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parsejson/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parsejson/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parsejson/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parsejson/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parseqs/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parseqs/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parseqs/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parseqs/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parseqs/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parseqs/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parseqs/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parseuri/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parseuri/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parseuri/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parseuri/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parseuri/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parseuri/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parseuri/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parseuri/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parseurl/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parseurl/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parseurl/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parseurl/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/parseurl/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/path-to-regexp/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/path-to-regexp/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/path-to-regexp/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/path-to-regexp/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/path-to-regexp/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/proxy-addr/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/proxy-addr/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/proxy-addr/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/proxy-addr/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/proxy-addr/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/qs/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/qs/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/qs/.eslintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/qs/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/qs/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/qs/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/qs/dist/qs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/qs/lib/formats.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/qs/lib/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/qs/lib/parse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/qs/lib/stringify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/qs/lib/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/qs/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/qs/test/.eslintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/qs/test/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/qs/test/parse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/qs/test/stringify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/qs/test/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/range-parser/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/range-parser/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/range-parser/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/range-parser/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/range-parser/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/raw-body/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/raw-body/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/raw-body/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/raw-body/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/raw-body/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/raw-body/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis-commands/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis-commands/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis-commands/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis-commands/changelog.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis-commands/commands.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis-commands/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis-commands/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis-commands/tools/build.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis-parser/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis-parser/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis-parser/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis-parser/changelog.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis-parser/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis-parser/lib/hiredis.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis-parser/lib/parser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis-parser/lib/parserError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis-parser/lib/redisError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis-parser/lib/replyError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis-parser/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis/.eslintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis/.github/ISSUE_TEMPLATE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis/.github/PULL_REQUEST_TEMPLATE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis/changelog.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis/lib/command.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis/lib/commands.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis/lib/createClient.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis/lib/customErrors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis/lib/debug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis/lib/extendedApi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis/lib/individualCommands.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis/lib/multi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis/lib/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/redis/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/safe-buffer/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/safe-buffer/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/safe-buffer/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/safe-buffer/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/safe-buffer/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/safer-buffer/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/safer-buffer/Porting-Buffer.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/safer-buffer/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/safer-buffer/dangerous.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/safer-buffer/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/safer-buffer/safer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/safer-buffer/tests.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/send/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/send/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/send/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/send/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/send/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/serve-static/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/serve-static/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/serve-static/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/serve-static/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/serve-static/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/setprototypeof/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/setprototypeof/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/setprototypeof/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/setprototypeof/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/setprototypeof/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/node_modules/debug/.jshintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/node_modules/debug/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/node_modules/debug/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/node_modules/debug/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/node_modules/debug/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/node_modules/debug/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/node_modules/debug/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/node_modules/debug/browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/node_modules/debug/component.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/node_modules/debug/debug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/node_modules/debug/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/node_modules/debug/node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/node_modules/debug/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/node_modules/ms/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/node_modules/ms/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/node_modules/ms/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/node_modules/ms/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-adapter/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/dist/socket.io.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/dist/socket.io.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/dist/socket.io.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/dist/socket.io.slim.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/dist/socket.io.slim.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/dist/socket.io.slim.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/lib/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/lib/manager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/lib/on.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/lib/socket.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/lib/url.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/node_modules/component-emitter/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/node_modules/component-emitter/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/node_modules/component-emitter/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/node_modules/component-emitter/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/node_modules/component-emitter/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/node_modules/debug/.jshintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/node_modules/debug/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/node_modules/debug/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/node_modules/debug/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/node_modules/debug/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/node_modules/debug/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/node_modules/debug/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/node_modules/debug/browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/node_modules/debug/component.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/node_modules/debug/debug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/node_modules/debug/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/node_modules/debug/node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/node_modules/debug/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/node_modules/ms/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/node_modules/ms/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/node_modules/ms/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/node_modules/ms/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-client/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/binary.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/is-buffer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/node_modules/debug/.jshintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/node_modules/debug/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/node_modules/debug/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/node_modules/debug/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/node_modules/debug/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/node_modules/debug/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/node_modules/debug/browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/node_modules/debug/component.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/node_modules/debug/debug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/node_modules/debug/node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/node_modules/debug/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/node_modules/ms/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/node_modules/ms/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/node_modules/ms/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/node_modules/ms/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/node_modules/ms/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/node_modules/ms/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io-parser/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/lib/client.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/lib/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/lib/namespace.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/lib/socket.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/node_modules/debug/.jshintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/node_modules/debug/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/node_modules/debug/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/node_modules/debug/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/node_modules/debug/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/node_modules/debug/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/node_modules/debug/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/node_modules/debug/browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/node_modules/debug/component.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/node_modules/debug/debug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/node_modules/debug/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/node_modules/debug/node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/node_modules/debug/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/node_modules/ms/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/node_modules/ms/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/node_modules/ms/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/node_modules/ms/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/socket.io/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/statuses/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/statuses/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/statuses/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/statuses/codes.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/statuses/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/statuses/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/to-array/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/to-array/LICENCE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/to-array/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/to-array/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/to-array/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/type-is/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/type-is/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/type-is/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/type-is/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/type-is/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ultron/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ultron/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ultron/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ultron/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ultron/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ultron/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ultron/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/unpipe/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/unpipe/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/unpipe/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/unpipe/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/unpipe/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/utils-merge/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/utils-merge/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/utils-merge/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/utils-merge/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/utils-merge/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/vary/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/vary/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/vary/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/vary/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/vary/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ws/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ws/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ws/lib/BufferPool.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ws/lib/BufferUtil.fallback.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ws/lib/BufferUtil.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ws/lib/ErrorCodes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ws/lib/Extensions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ws/lib/PerMessageDeflate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ws/lib/Receiver.hixie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ws/lib/Receiver.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ws/lib/Sender.hixie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ws/lib/Sender.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ws/lib/Validation.fallback.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ws/lib/Validation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ws/lib/WebSocket.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ws/lib/WebSocketServer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/ws/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/wtf-8/LICENSE-MIT.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/wtf-8/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/wtf-8/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/wtf-8/wtf-8.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/xmlhttprequest-ssl/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/xmlhttprequest-ssl/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/xmlhttprequest-ssl/autotest.watchr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/xmlhttprequest-ssl/example/demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/xmlhttprequest-ssl/lib/XMLHttpRequest.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/xmlhttprequest-ssl/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/xmlhttprequest-ssl/tests/test-constants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/xmlhttprequest-ssl/tests/test-events.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/xmlhttprequest-ssl/tests/test-exceptions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/xmlhttprequest-ssl/tests/test-headers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/xmlhttprequest-ssl/tests/test-redirect-302.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/xmlhttprequest-ssl/tests/test-redirect-303.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/xmlhttprequest-ssl/tests/test-redirect-307.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/xmlhttprequest-ssl/tests/test-request-methods.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/xmlhttprequest-ssl/tests/test-request-protocols.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/xmlhttprequest-ssl/tests/testdata.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/yeast/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/yeast/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/yeast/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/node_modules/yeast/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/{" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/the-clean-living-community-mobile.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/the-clean-living-community-mobile.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/auth/login/login.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/auth/login/login.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/auth/login/login.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/auth/login/login.page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/auth/register/register.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/auth/register/register.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/auth/register/register.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/auth/register/register.page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/auth/register/register.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/auth/register/register.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/home/home.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/home/home.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/home/home.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/home/home.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/home/home.page.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/services/auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/services/auth.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/img/auth/background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/img/auth/background.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/polyfills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/polyfills.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/tslint.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/tslint.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_api/bootstrap/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/demo_api/bootstrap/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_api/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/demo_api/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_api/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/demo_api/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_api/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/demo_api/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,107 +796,12 @@
     <executablePath>composer</executablePath>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/auth/login/login.page.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="70" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/app/home/home.module.ts">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/home/messages/messages.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="30" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/home/home.page.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="39" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/home/home.page.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/app.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/home/search/search.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="28" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/app-routing.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/services/auth.guard.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/app.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="136">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -142,11 +810,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>variab</find>
+      <find>'add-message</find>
     </findStrings>
-    <dirStrings>
-      <dir>$PROJECT_DIR$/client/src</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -172,22 +837,9 @@
         <option value="$PROJECT_DIR$/demo_api/database/migrations/2019_04_13_193757_create_users_table.php" />
         <option value="$PROJECT_DIR$/demo_api/app/User.php" />
         <option value="$PROJECT_DIR$/demo_api/app/Http/Controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/demo_api/app/Http/Controllers/ChatController.php" />
+        <option value="$PROJECT_DIR$/client/src/app/chat-room/chat-room.page.ts" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/client/src/global.scss" />
-        <option value="$PROJECT_DIR$/client/src/theme/reset.scss" />
-        <option value="$PROJECT_DIR$/client/src/theme/variables.scss" />
-        <option value="$PROJECT_DIR$/client/src/app/auth/auth.service.ts" />
-        <option value="$PROJECT_DIR$/client/src/app/auth/login/login.page.scss" />
-        <option value="$PROJECT_DIR$/client/src/app/auth/register/register.page.html" />
-        <option value="$PROJECT_DIR$/client/src/app/auth/register/register.page.scss" />
-        <option value="$PROJECT_DIR$/client/src/app/auth/register/register.page.ts" />
-        <option value="$PROJECT_DIR$/client/src/app/auth/login/login.page.html" />
-        <option value="$PROJECT_DIR$/client/src/app/app-routing.module.ts" />
-        <option value="$PROJECT_DIR$/client/src/app/home/home.page.ts" />
-        <option value="$PROJECT_DIR$/client/src/app/services/auth.guard.ts" />
-        <option value="$PROJECT_DIR$/client/src/app/app.component.ts" />
-        <option value="$PROJECT_DIR$/client/src/app/home/home.page.html" />
-        <option value="$PROJECT_DIR$/client/src/app/home/home.module.ts" />
       </list>
     </option>
   </component>
@@ -307,6 +959,8 @@
       <path value="$PROJECT_DIR$/demo_api/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/demo_api/vendor/dnoegel/php-xdg-base-dir" />
       <path value="$PROJECT_DIR$/demo_api/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/illuminate/redis" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/predis/predis" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -328,68 +982,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="the-clean-living-community" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-clean-living-community" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="the-clean-living-community" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-clean-living-community" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="the-clean-living-community" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-clean-living-community" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="the-clean-living-community" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-clean-living-community" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="the-clean-living-community" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-clean-living-community" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="the-clean-living-community" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-clean-living-community" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="messages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="the-clean-living-community" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-clean-living-community" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="search" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="the-clean-living-community" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-clean-living-community" type="462c0819:PsiDirectoryNode" />
-              <item name="search" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="the-clean-living-community" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-clean-living-community" type="462c0819:PsiDirectoryNode" />
-              <item name="search" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="the-clean-living-community" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-clean-living-community" type="462c0819:PsiDirectoryNode" />
-              <item name="survey" type="462c0819:PsiDirectoryNode" />
+              <item name="cleanLivingCommunity" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cleanLivingCommunity" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -402,24 +996,21 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/theme" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/demo_api" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/client/node_modules/typescript/lib" />
+    <property name="ts.external.directory.path" value="E:\Sites\Development\01.sajtovi\cleanLivingCommunity\client\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client/src/app/home" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client/src/theme" />
       <recent name="$PROJECT_DIR$/demo_api/resources/views" />
       <recent name="$PROJECT_DIR$/demo_api" />
       <recent name="$PROJECT_DIR$/auth" />
       <recent name="$PROJECT_DIR$/survey/server" />
+      <recent name="$PROJECT_DIR$/survey/client" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -450,8 +1041,7 @@
       <workItem from="1555182158152" duration="284000" />
       <workItem from="1555182535321" duration="604000" />
       <workItem from="1555183171621" duration="17606000" />
-      <workItem from="1555274903921" duration="223000" />
-      <workItem from="1555525135497" duration="7688000" />
+      <workItem from="1555411663477" duration="3207000" />
     </task>
     <task id="LOCAL-00001" summary="folder structure">
       <created>1555168593450</created>
@@ -467,23 +1057,17 @@
       <option name="project" value="LOCAL" />
       <updated>1555168759587</updated>
     </task>
-    <task id="LOCAL-00003" summary="login styling">
-      <created>1555274306936</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1555274306936</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33013000" />
+    <option name="totallyTimeSpent" value="24431000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26508024" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29424307" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -494,38 +1078,16 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.39762932" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.13379164" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="TypeScript" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.39891893" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.39869988" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25345877" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32998413" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.31027028" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="TypeScript" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.28972974" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -535,23 +1097,56 @@
       </list>
     </option>
   </component>
-  <component name="Vcs.Log.History.Properties">
-    <option name="COLUMN_ORDER">
-      <list>
-        <option value="0" />
-        <option value="2" />
-        <option value="3" />
-        <option value="1" />
-      </list>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="folder structure" />
     <MESSAGE value="folder structure init" />
-    <MESSAGE value="login styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="login styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="folder structure init" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/auth/client/readme.md" />
+    <entry file="file://$PROJECT_DIR$/auth/server/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chat/client/readme.md" />
+    <entry file="file://$PROJECT_DIR$/chat/server/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/search/client/readme.md" />
+    <entry file="file://$PROJECT_DIR$/search/server/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/survey/server/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth/client/tslint.json" />
+    <entry file="file://$PROJECT_DIR$/auth/client/tsconfig.json" />
+    <entry file="file://$PROJECT_DIR$/auth/client/package.json" />
+    <entry file="file://$PROJECT_DIR$/auth/client/ionic.config.json" />
+    <entry file="file://$PROJECT_DIR$/auth/client/angular.json" />
+    <entry file="file://$PROJECT_DIR$/auth/client/.gitignore" />
+    <entry file="file://$PROJECT_DIR$/auth/client/e2e/src/app.po.ts" />
+    <entry file="file://$PROJECT_DIR$/survey/client/readme.md" />
+    <entry file="file://$PROJECT_DIR$/demo_api/database/migrations/2019_04_13_193628_create_users_table.php" />
     <entry file="file://$PROJECT_DIR$/demo_api/database/migrations/2019_04_13_193656_create_users_table.php" />
     <entry file="file://$PROJECT_DIR$/demo_api/database/factories/ModelFactory.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -570,9 +1165,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo_api/vendor/illuminate/http/Request.php" />
-    <entry file="file://$PROJECT_DIR$/demo_api/vendor/illuminate/http/Response.php" />
-    <entry file="file://$PROJECT_DIR$/demo_api/vendor/illuminate/http/JsonResponse.php" />
+    <entry file="file://$PROJECT_DIR$/demo_api/vendor/illuminate/http/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/vendor/illuminate/http/Response.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/vendor/illuminate/http/JsonResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/demo_api/app/Traits/ApiResponser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -638,9 +1251,7 @@
     <entry file="file://$PROJECT_DIR$/demo_api/resources/views/mail/markdown/button.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo_api/resources/views/mail/html/button.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/resources/views/mail/html/button.blade.php" />
     <entry file="file://$PROJECT_DIR$/demo_api/resources/views/mail/RequestResetPassword.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -679,31 +1290,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo_api/.env" />
-    <entry file="file://$PROJECT_DIR$/demo_api/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo_api/database/migrations/2019_04_13_193757_create_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
+        <state relative-caret-position="357">
           <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo_api/app/User.php">
+    <entry file="file://$PROJECT_DIR$/demo_api/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+        <state relative-caret-position="136">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="17" selection-start-line="17" selection-end-line="17" selection-end-column="81" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demo_api/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
+        <state relative-caret-position="470">
           <caret line="149" selection-start-line="149" selection-end-line="149" />
           <folding>
             <element signature="e#41#69#0#PHP" expanded="true" />
@@ -711,172 +1324,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/global.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/assets/img/auth/background.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/theme/variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="78" column="27" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/theme/reset.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="61" column="10" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/auth/login/login.page.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/auth/register/register.page.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/auth/auth.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/auth/register/register.page.ts">
+    <entry file="file://$PROJECT_DIR$/demo_api/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
+          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/auth/register/register.page.html">
+    <entry file="file://$PROJECT_DIR$/demo_api/chat-server/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="30" column="70" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="70" />
+        <state relative-caret-position="289">
+          <caret line="29" column="44" lean-forward="true" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/auth/login/login.module.ts">
+    <entry file="file://$PROJECT_DIR$/client/src/app/chat-room/chat-room.page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/app.module.ts">
+    <entry file="file://$PROJECT_DIR$/client/src/app/chat-room/chat-room.page.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/home/home.page.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/services/auth.guard.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/auth/login/login.page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="70" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+        <state relative-caret-position="103">
+          <caret line="57" column="26" lean-forward="true" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/home/search/search.component.ts">
+    <entry file="file://$PROJECT_DIR$/demo_api/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="28" />
+        <state relative-caret-position="466">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/app-routing.module.ts">
+    <entry file="file://$PROJECT_DIR$/demo_api/app/Http/Controllers/ChatController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="374">
+          <caret line="33" column="51" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/home/home.page.html">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/home/messages/messages.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/home/home.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
