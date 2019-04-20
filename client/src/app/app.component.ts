@@ -24,8 +24,8 @@ export class AppComponent {
     initializeApp() {
         this.platform.ready().then(() => {
             this.statusBar.styleDefault();
-            const route = this.authService.isLoggedIn() ? '/home' : '/login';
-            this.router.navigateByUrl(route);
+            // const route = this.authService.isLoggedIn() ? '/home' : '/login';
+            // this.router.navigateByUrl(route);
             this.splashScreen.hide();
         });
     }

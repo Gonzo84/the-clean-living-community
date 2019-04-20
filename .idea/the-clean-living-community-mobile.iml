@@ -40,6 +40,7 @@
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/illuminate/pagination" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/illuminate/pipeline" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/illuminate/queue" />
+      <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/illuminate/redis" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/illuminate/session" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/illuminate/support" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/illuminate/translation" />
@@ -49,8 +50,10 @@
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/jakub-onderka/php-console-highlighter" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/laravel/lumen-framework" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/laravel/passport" />
+      <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/laravelista/lumen-vendor-publish" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/lcobucci/jwt" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/league/event" />
+      <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/league/flysystem" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/league/oauth2-server" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/monolog/monolog" />
@@ -74,6 +77,7 @@
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/phpunit/php-timer" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/phpunit/php-token-stream" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/predis/predis" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/psr/http-factory" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/psr/http-message" />

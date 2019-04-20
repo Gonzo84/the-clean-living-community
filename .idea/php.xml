@@ -114,6 +114,10 @@
       <path value="$PROJECT_DIR$/demo_api/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/demo_api/vendor/dnoegel/php-xdg-base-dir" />
       <path value="$PROJECT_DIR$/demo_api/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/illuminate/redis" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/predis/predis" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/laravelista/lumen-vendor-publish" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/league/flysystem" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

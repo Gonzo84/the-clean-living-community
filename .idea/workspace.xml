@@ -2,25 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67ac8f58-d86d-4cb7-985e-3bb3186aa119" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/app/home/messages/messages.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/home/messages/messages.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/home/messages/messages.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/home/search/search.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/home/search/search.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/home/search/search.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/chat-room/chat-room.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/chat-room/chat-room.page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/chat-room/chat-room.page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/chat-room/chat-room.page.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/chat-room/chat-room.page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/chat/chat.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/chat/chat.page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/chat/chat.page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/chat/chat.page.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/chat/chat.page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/services/chat-service.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/app/Http/Controllers/ChatController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_api/chat-server/{" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/the-clean-living-community-mobile.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/the-clean-living-community-mobile.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/auth/login/login.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/auth/login/login.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/auth/login/login.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/auth/login/login.page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/auth/register/register.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/auth/register/register.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/auth/register/register.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/auth/register/register.page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/auth/register/register.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/auth/register/register.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/home/home.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/home/home.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/home/home.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/home/home.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/home/home.page.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/services/auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/services/auth.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/img/auth/background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/img/auth/background.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/polyfills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/polyfills.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/tslint.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/tslint.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_api/bootstrap/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/demo_api/bootstrap/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_api/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/demo_api/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_api/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/demo_api/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo_api/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/demo_api/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,107 +45,51 @@
     <executablePath>composer</executablePath>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/auth/login/login.page.html">
+        <entry file="file://$PROJECT_DIR$/demo_api/database/migrations/2019_04_20_072722_update_user_survey.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="70" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
+            <state relative-caret-position="422">
+              <caret line="42" column="42" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
+              <folding>
+                <element signature="e#7#45#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/app/home/home.module.ts">
+        <entry file="file://$PROJECT_DIR$/demo_api/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="656">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/home/messages/messages.component.ts">
+        <entry file="file://$PROJECT_DIR$/demo_api/app/OauthClient.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="30" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="30" />
+            <state relative-caret-position="369">
+              <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/home/home.page.html">
+        <entry file="file://$PROJECT_DIR$/demo_api/database/migrations/2019_04_13_193757_create_users_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="39" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="39" />
+            <state relative-caret-position="738">
+              <caret line="20" column="29" selection-start-line="20" selection-end-line="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/home/home.page.ts">
+        <entry file="file://$PROJECT_DIR$/demo_api/database/migrations/2019_04_18_210736_update_users_table_data.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/app.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/home/search/search.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="28" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/app-routing.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/services/auth.guard.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/app/app.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1107">
+              <caret line="29" column="55" selection-start-line="16" selection-start-column="12" selection-end-line="29" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -142,11 +98,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>variab</find>
+      <find>'add-message</find>
     </findStrings>
-    <dirStrings>
-      <dir>$PROJECT_DIR$/client/src</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -163,7 +116,6 @@
         <option value="$PROJECT_DIR$/demo_api/config/auth.php" />
         <option value="$PROJECT_DIR$/demo_api/config/services.php" />
         <option value="$PROJECT_DIR$/demo_api/.env.example" />
-        <option value="$PROJECT_DIR$/demo_api/composer.json" />
         <option value="$PROJECT_DIR$/demo_api/bootstrap/app.php" />
         <option value="$PROJECT_DIR$/demo_api/app/Mail/ResetPassword.php" />
         <option value="$PROJECT_DIR$/demo_api/app/Mail/RequestResetPassword.php" />
@@ -172,22 +124,10 @@
         <option value="$PROJECT_DIR$/demo_api/database/migrations/2019_04_13_193757_create_users_table.php" />
         <option value="$PROJECT_DIR$/demo_api/app/User.php" />
         <option value="$PROJECT_DIR$/demo_api/app/Http/Controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/demo_api/app/Http/Controllers/ChatController.php" />
+        <option value="$PROJECT_DIR$/client/src/app/chat-room/chat-room.page.ts" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/client/src/global.scss" />
-        <option value="$PROJECT_DIR$/client/src/theme/reset.scss" />
-        <option value="$PROJECT_DIR$/client/src/theme/variables.scss" />
-        <option value="$PROJECT_DIR$/client/src/app/auth/auth.service.ts" />
-        <option value="$PROJECT_DIR$/client/src/app/auth/login/login.page.scss" />
-        <option value="$PROJECT_DIR$/client/src/app/auth/register/register.page.html" />
-        <option value="$PROJECT_DIR$/client/src/app/auth/register/register.page.scss" />
-        <option value="$PROJECT_DIR$/client/src/app/auth/register/register.page.ts" />
-        <option value="$PROJECT_DIR$/client/src/app/auth/login/login.page.html" />
-        <option value="$PROJECT_DIR$/client/src/app/app-routing.module.ts" />
-        <option value="$PROJECT_DIR$/client/src/app/home/home.page.ts" />
-        <option value="$PROJECT_DIR$/client/src/app/services/auth.guard.ts" />
-        <option value="$PROJECT_DIR$/client/src/app/app.component.ts" />
-        <option value="$PROJECT_DIR$/client/src/app/home/home.page.html" />
-        <option value="$PROJECT_DIR$/client/src/app/home/home.module.ts" />
+        <option value="$PROJECT_DIR$/demo_api/composer.json" />
       </list>
     </option>
   </component>
@@ -298,8 +238,6 @@
       <path value="$PROJECT_DIR$/demo_api/vendor/symfony/css-selector" />
       <path value="$PROJECT_DIR$/demo_api/vendor/symfony/polyfill-iconv" />
       <path value="$PROJECT_DIR$/demo_api/vendor/symfony/polyfill-intl-idn" />
-      <path value="$PROJECT_DIR$/demo_api/vendor/laravelista/lumen-vendor-publish" />
-      <path value="$PROJECT_DIR$/demo_api/vendor/league/flysystem" />
       <path value="$PROJECT_DIR$/demo_api/vendor/jakub-onderka/php-console-color" />
       <path value="$PROJECT_DIR$/demo_api/vendor/classpreloader/classpreloader" />
       <path value="$PROJECT_DIR$/demo_api/vendor/flipbox/lumen-generator" />
@@ -307,6 +245,10 @@
       <path value="$PROJECT_DIR$/demo_api/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/demo_api/vendor/dnoegel/php-xdg-base-dir" />
       <path value="$PROJECT_DIR$/demo_api/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/illuminate/redis" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/predis/predis" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/laravelista/lumen-vendor-publish" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/league/flysystem" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -328,68 +270,32 @@
         <subPane>
           <expand>
             <path>
-              <item name="the-clean-living-community" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-clean-living-community" type="462c0819:PsiDirectoryNode" />
+              <item name="cleanliving" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cleanliving" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="the-clean-living-community" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-clean-living-community" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="cleanliving" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cleanliving" type="462c0819:PsiDirectoryNode" />
+              <item name="demo_api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="the-clean-living-community" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-clean-living-community" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="the-clean-living-community" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-clean-living-community" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cleanliving" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cleanliving" type="462c0819:PsiDirectoryNode" />
+              <item name="demo_api" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="the-clean-living-community" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-clean-living-community" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="cleanliving" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cleanliving" type="462c0819:PsiDirectoryNode" />
+              <item name="demo_api" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="the-clean-living-community" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-clean-living-community" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="messages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="the-clean-living-community" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-clean-living-community" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="search" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="the-clean-living-community" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-clean-living-community" type="462c0819:PsiDirectoryNode" />
-              <item name="search" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="the-clean-living-community" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-clean-living-community" type="462c0819:PsiDirectoryNode" />
-              <item name="search" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="the-clean-living-community" type="b2602c69:ProjectViewProjectNode" />
-              <item name="the-clean-living-community" type="462c0819:PsiDirectoryNode" />
-              <item name="survey" type="462c0819:PsiDirectoryNode" />
+              <item name="cleanliving" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cleanliving" type="462c0819:PsiDirectoryNode" />
+              <item name="demo_api" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -402,24 +308,21 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/theme" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/demo_api" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/client/node_modules/typescript/lib" />
+    <property name="ts.external.directory.path" value="E:\Sites\Development\01.sajtovi\cleanLivingCommunity\client\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client/src/app/home" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client/src/theme" />
       <recent name="$PROJECT_DIR$/demo_api/resources/views" />
       <recent name="$PROJECT_DIR$/demo_api" />
       <recent name="$PROJECT_DIR$/auth" />
       <recent name="$PROJECT_DIR$/survey/server" />
+      <recent name="$PROJECT_DIR$/survey/client" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -450,8 +353,7 @@
       <workItem from="1555182158152" duration="284000" />
       <workItem from="1555182535321" duration="604000" />
       <workItem from="1555183171621" duration="17606000" />
-      <workItem from="1555274903921" duration="223000" />
-      <workItem from="1555525135497" duration="7688000" />
+      <workItem from="1555411663477" duration="3207000" />
     </task>
     <task id="LOCAL-00001" summary="folder structure">
       <created>1555168593450</created>
@@ -467,23 +369,17 @@
       <option name="project" value="LOCAL" />
       <updated>1555168759587</updated>
     </task>
-    <task id="LOCAL-00003" summary="login styling">
-      <created>1555274306936</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1555274306936</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33013000" />
+    <option name="totallyTimeSpent" value="24459000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <frame x="134" y="35" width="3706" height="2125" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26508024" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2498618" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -494,38 +390,16 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.39762932" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.13379164" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="TypeScript" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.39891893" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.39869988" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25345877" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32998413" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.31027028" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="TypeScript" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.28972974" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -535,23 +409,56 @@
       </list>
     </option>
   </component>
-  <component name="Vcs.Log.History.Properties">
-    <option name="COLUMN_ORDER">
-      <list>
-        <option value="0" />
-        <option value="2" />
-        <option value="3" />
-        <option value="1" />
-      </list>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="folder structure" />
     <MESSAGE value="folder structure init" />
-    <MESSAGE value="login styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="login styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="folder structure init" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/auth/client/readme.md" />
+    <entry file="file://$PROJECT_DIR$/auth/server/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chat/client/readme.md" />
+    <entry file="file://$PROJECT_DIR$/chat/server/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/search/client/readme.md" />
+    <entry file="file://$PROJECT_DIR$/search/server/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/survey/server/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth/client/tslint.json" />
+    <entry file="file://$PROJECT_DIR$/auth/client/tsconfig.json" />
+    <entry file="file://$PROJECT_DIR$/auth/client/package.json" />
+    <entry file="file://$PROJECT_DIR$/auth/client/ionic.config.json" />
+    <entry file="file://$PROJECT_DIR$/auth/client/angular.json" />
+    <entry file="file://$PROJECT_DIR$/auth/client/.gitignore" />
+    <entry file="file://$PROJECT_DIR$/auth/client/e2e/src/app.po.ts" />
+    <entry file="file://$PROJECT_DIR$/survey/client/readme.md" />
+    <entry file="file://$PROJECT_DIR$/demo_api/database/migrations/2019_04_13_193628_create_users_table.php" />
     <entry file="file://$PROJECT_DIR$/demo_api/database/migrations/2019_04_13_193656_create_users_table.php" />
     <entry file="file://$PROJECT_DIR$/demo_api/database/factories/ModelFactory.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -570,9 +477,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo_api/vendor/illuminate/http/Request.php" />
-    <entry file="file://$PROJECT_DIR$/demo_api/vendor/illuminate/http/Response.php" />
-    <entry file="file://$PROJECT_DIR$/demo_api/vendor/illuminate/http/JsonResponse.php" />
+    <entry file="file://$PROJECT_DIR$/demo_api/vendor/illuminate/http/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/vendor/illuminate/http/Response.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/vendor/illuminate/http/JsonResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/demo_api/app/Traits/ApiResponser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -638,9 +563,7 @@
     <entry file="file://$PROJECT_DIR$/demo_api/resources/views/mail/markdown/button.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo_api/resources/views/mail/html/button.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/demo_api/resources/views/mail/html/button.blade.php" />
     <entry file="file://$PROJECT_DIR$/demo_api/resources/views/mail/RequestResetPassword.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -667,8 +590,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demo_api/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="656">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
@@ -679,31 +602,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo_api/.env" />
+    <entry file="file://$PROJECT_DIR$/demo_api/database/migrations/2019_04_13_193757_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="738">
+          <caret line="20" column="29" selection-start-line="20" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/demo_api/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
+        <state relative-caret-position="136">
           <caret line="17" column="30" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo_api/database/migrations/2019_04_13_193757_create_users_table.php">
+    <entry file="file://$PROJECT_DIR$/client/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo_api/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+        <state relative-caret-position="45">
+          <caret line="17" selection-start-line="17" selection-end-line="17" selection-end-column="81" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demo_api/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
+        <state relative-caret-position="470">
           <caret line="149" selection-start-line="149" selection-end-line="149" />
           <folding>
             <element signature="e#41#69#0#PHP" expanded="true" />
@@ -711,172 +636,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/global.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/assets/img/auth/background.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/theme/variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="78" column="27" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/theme/reset.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="61" column="10" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/auth/login/login.page.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/auth/register/register.page.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/auth/auth.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/auth/register/register.page.ts">
+    <entry file="file://$PROJECT_DIR$/demo_api/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
+          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/auth/register/register.page.html">
+    <entry file="file://$PROJECT_DIR$/demo_api/chat-server/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="30" column="70" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="70" />
+        <state relative-caret-position="289">
+          <caret line="29" column="44" lean-forward="true" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/auth/login/login.module.ts">
+    <entry file="file://$PROJECT_DIR$/client/src/app/chat-room/chat-room.page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/app.module.ts">
+    <entry file="file://$PROJECT_DIR$/client/src/app/chat-room/chat-room.page.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/home/home.page.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/services/auth.guard.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/auth/login/login.page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="70" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+        <state relative-caret-position="103">
+          <caret line="57" column="26" lean-forward="true" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/home/search/search.component.ts">
+    <entry file="file://$PROJECT_DIR$/demo_api/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="28" />
+        <state relative-caret-position="466">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/app-routing.module.ts">
+    <entry file="file://$PROJECT_DIR$/demo_api/app/Http/Controllers/ChatController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="374">
+          <caret line="33" column="51" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/home/home.page.html">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/home/messages/messages.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/home/home.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
