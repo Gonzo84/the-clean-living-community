@@ -1,3 +1,6 @@
-<p>
-  messages works!
-</p>
+<ion-list *ngIf="responseReady">
+    <ion-item *ngFor="let message of messageList">
+        <ion-label (click)="enterChatRoom(message)">{{  message.user }}</ion-label>
+    </ion-item>
+</ion-list>
+

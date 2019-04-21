@@ -33,9 +33,11 @@ $router->group([
     $router->post('/users/logout', 'UserController@logout');
 });
 
-    //chat
-    $router->post('/chat/send', 'ChatController@sendMessage');
-//});
+//chat
+$router->post('/chat/send', 'ChatController@sendMessage');
+$router->get('/chat/listing', 'ChatController@getConversationsList');
+$router->post('/chat/history', 'ChatController@getConversationHistory');
+
 
 
 
