@@ -107,8 +107,6 @@
       <path value="$PROJECT_DIR$/demo_api/vendor/symfony/css-selector" />
       <path value="$PROJECT_DIR$/demo_api/vendor/symfony/polyfill-iconv" />
       <path value="$PROJECT_DIR$/demo_api/vendor/symfony/polyfill-intl-idn" />
-      <path value="$PROJECT_DIR$/demo_api/vendor/laravelista/lumen-vendor-publish" />
-      <path value="$PROJECT_DIR$/demo_api/vendor/league/flysystem" />
       <path value="$PROJECT_DIR$/demo_api/vendor/jakub-onderka/php-console-color" />
       <path value="$PROJECT_DIR$/demo_api/vendor/classpreloader/classpreloader" />
       <path value="$PROJECT_DIR$/demo_api/vendor/flipbox/lumen-generator" />
@@ -116,6 +114,13 @@
       <path value="$PROJECT_DIR$/demo_api/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/demo_api/vendor/dnoegel/php-xdg-base-dir" />
       <path value="$PROJECT_DIR$/demo_api/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/illuminate/redis" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/predis/predis" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/laravelista/lumen-vendor-publish" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/doctrine/cache" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

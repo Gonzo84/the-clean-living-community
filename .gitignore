@@ -2,4 +2,8 @@
 /demo_api/vendor
 /demo_api/.env
 /demo_api/storage/*.key
-package-lock.json
+demo_api/package-lock.json
+demo_api/composer.lock
+/demo_api/composer.lock
+.idea
+demo_api/chat-server/node_modules

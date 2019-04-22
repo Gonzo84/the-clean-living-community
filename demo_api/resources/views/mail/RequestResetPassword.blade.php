@@ -4,11 +4,9 @@
 
 Hello {{ $user->name }},
 
-To reset your password, click following link and type in your new password:
+Use this temporary password for login:
 
-@component('mail::button', ['url' => $resetPasswordUrl])
-Reset password
-@endcomponent
+{{$resetPass}}
 
 Thanks,<br>
 {{ env('APP_NAME') }}<br>

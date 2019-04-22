@@ -7,6 +7,9 @@
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/defuse/php-encryption" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/dnoegel/php-xdg-base-dir" />
+      <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/doctrine/event-manager" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/doctrine/lexer" />
@@ -40,6 +43,7 @@
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/illuminate/pagination" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/illuminate/pipeline" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/illuminate/queue" />
+      <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/illuminate/redis" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/illuminate/session" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/illuminate/support" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/illuminate/translation" />
@@ -76,6 +80,7 @@
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/phpunit/php-timer" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/phpunit/php-token-stream" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/predis/predis" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/psr/http-factory" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/psr/http-message" />
