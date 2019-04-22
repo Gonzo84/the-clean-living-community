@@ -1,3 +1,35 @@
-<p>
-  search works!
-</p>
+<ion-content class="clc-search-background" fullscreen="true" padding>
+    <div class="clc-search-overlay">
+        <ion-grid>
+            <ion-row color="primary" justify-content-center>
+                <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+                    <div text-center padding class="clc-search-title">
+                        FIND CONNECTIONS
+                    </div>
+                    <div text-center padding>
+                        <p>Welcome to the Clean Living Relationship Finder!</p>
+                        Here is where you can find clean connections by using our unique survey and matching process
+                    </div>
+                    <div text-center padding>
+                        Who would you like to meet?
+                    </div>
+                    <ion-segment [(ngModel)]="likeToMeet" class="clc-segment-button">
+                        <ion-segment-button value="friend">
+                            A Friend
+                        </ion-segment-button>
+                        <ion-segment-button value="mentor">
+                            A Mentor
+                        </ion-segment-button>
+                    </ion-segment>
+                    <div padding text-center>
+                        <ion-button size="large" type="submit" shape="round"class="clc-search-start-button">
+                            START
+                        </ion-button>
+                    </div>
+
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+</ion-content>
