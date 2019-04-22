@@ -15,7 +15,6 @@ import {AppRoutingModule} from './app-routing.module';
 import {AuthModule} from './auth/auth.module';
 
 import {SocketIoModule, SocketIoConfig} from 'ng-socket-io';
-import {HttpClientModule} from '@angular/common/http';
 const config: SocketIoConfig = { url: 'http://192.168.10.10:3000', options: {} };
 
 @NgModule({
@@ -26,8 +25,7 @@ const config: SocketIoConfig = { url: 'http://192.168.10.10:3000', options: {} }
         AppRoutingModule,
         AuthModule,
         FontAwesomeModule,
-        SocketIoModule.forRoot(config),
-        HttpClientModule
+        SocketIoModule.forRoot(config)
     ],
     providers: [
         StatusBar,

@@ -19,7 +19,7 @@ export class ChatServiceService {
 
     getMessages() {
         const observable = new Observable(observer => {
-            this.socket.on('message', (data) => {
+            this.socket.on('1', (data) => {
                 observer.next(data);
             });
         });
@@ -28,17 +28,20 @@ export class ChatServiceService {
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
 
-    sendMessage(message: string, idAnotherUser: number) {
-        const body = this.jsonToURLEncoded({message: message, idAnotherUser: idAnotherUser});
-        return this.httpClient.post('http://192.168.10.10/chat/send', body);
+    sendMessage(message: string, sendToUserId: number) {
+        return this.httpClient.post('http://192.168.10.10/chat/send', {message: message, sendToUserId: sendToUserId});
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
 
-    private jsonToURLEncoded(jsonString) {
-        return Object.keys(jsonString).map(function(key){
-            return encodeURIComponent(key) + '=' + encodeURIComponent(jsonString[key]);
-        }).join('&');
+    getConversationsList() {
+        return this.httpClient.get('http://192.168.10.10/chat/listing');
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
+    getConversationHistory(chatId: number) {
+        return this.httpClient.post('http://192.168.10.10/chat/history', {chatId: chatId});
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
