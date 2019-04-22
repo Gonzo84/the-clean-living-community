@@ -41,6 +41,7 @@ class UserController extends Controller
      * @throws
      */
     public function login(Request $request) : JsonResponse {
+
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required|min:6|'
@@ -111,6 +112,7 @@ class UserController extends Controller
     /**
      * Show one new user.
      *
+     * @param $id
      * @return JsonResponse
      * @throws
      */

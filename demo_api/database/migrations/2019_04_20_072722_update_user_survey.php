@@ -14,7 +14,6 @@ class UpdateUserSurvey extends Migration
      */
     public function up()
     {
-
         Schema::table('users', function($table)
         {
             $table->dropColumn('status');
@@ -37,7 +36,6 @@ class UpdateUserSurvey extends Migration
             $table->integer('zip_code')->nullable()->change();
             $table->string('state')->nullable()->change();
             $table->enum('status', ['pending', 'regular', 'deleted'])->default('regular')->after('password');
-
         });
 
         Artisan::call('passport:install');
@@ -50,6 +48,21 @@ class UpdateUserSurvey extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('users', function($table) {
+            $table->integer('age')->change();
+            $table->boolean('married')->change();
+            $table->boolean('children')->change();
+            $table->boolean('pet')->change();
+            $table->string('education')->change();
+            $table->string('religion')->change();
+            $table->string('gender')->change();
+            $table->string('sex_orientation')->change();
+            $table->integer('last_relapse')->change();
+            $table->boolean('smoker')->change();
+            $table->boolean('support_groups')->change();
+            $table->string('city')->change();
+            $table->integer('zip_code')->change();
+            $table->string('state')->change();
+        });
     }
 }

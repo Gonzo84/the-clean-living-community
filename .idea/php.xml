@@ -118,6 +118,9 @@
       <path value="$PROJECT_DIR$/demo_api/vendor/predis/predis" />
       <path value="$PROJECT_DIR$/demo_api/vendor/laravelista/lumen-vendor-publish" />
       <path value="$PROJECT_DIR$/demo_api/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/demo_api/vendor/doctrine/cache" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
