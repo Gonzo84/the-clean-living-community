@@ -10,3 +10,42 @@
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
 @import 'theme/reset';
+
+
+.clc-search-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  height: 100%;
+  width: 100%;
+  background: rgba(93, 99, 141, 0.7);
+}
+
+.clc-search-title {
+  font-size: 22px;
+  margin: 10vw;
+}
+
+ion-segment {
+  border: 1px solid #22e2b9;
+}
+
+.clc-segment-button {
+  --background: transparent;
+  --color: #22e2b9;
+  margin: 10vh 0;
+}
+
+.segment-button-checked {
+  background: #22e2b9;
+  color: #5d638d;
+}
+
+.clc-search-start-button {
+  --background: #22e2b9;
+  --color: white;
+  width: 80vw;
+  height: 36px;
+  font-size: 20px;
+}

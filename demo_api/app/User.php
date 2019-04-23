@@ -14,5 +14,6 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     use Authenticatable, Authorizable, HasApiTokens;
 
     protected $guarded = [];
+    protected $hidden = array('password');
 
 }

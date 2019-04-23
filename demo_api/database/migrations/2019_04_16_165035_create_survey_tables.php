@@ -23,7 +23,7 @@ class CreateSurveyTables extends Migration
         Schema::create('survey_categories', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('survey_id')->unsigned();
-            $table->foreign('survey_id')->references('id')->on('surveys');
+            $table->foreign('survey_id')->references('id')->on('surveys')->onDelete('cascade');
             $table->string('title');
             $table->string('type');
             $table->timestamps();
@@ -33,7 +33,7 @@ class CreateSurveyTables extends Migration
         Schema::create('survey_questions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('category_id')->unsigned();
-            $table->foreign('category_id')->references('id')->on('survey_categories');
+            $table->foreign('category_id')->references('id')->on('survey_categories')->onDelete('cascade');
             $table->string('question');
             $table->timestamps();
             $table->softDeletes();
@@ -43,9 +43,9 @@ class CreateSurveyTables extends Migration
             $table->increments('id');
             $table->string('answer');
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('question_id')->unsigned();
-            $table->foreign('question_id')->references('id')->on('survey_questions');
+            $table->foreign('question_id')->references('id')->on('survey_questions')->onDelete('cascade');
             $table->timestamps();
 
             $table->unique(['user_id', 'question_id']);

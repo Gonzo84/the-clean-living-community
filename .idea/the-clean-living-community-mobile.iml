@@ -7,6 +7,9 @@
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/defuse/php-encryption" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/dnoegel/php-xdg-base-dir" />
+      <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/doctrine/event-manager" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/doctrine/lexer" />

@@ -12,8 +12,8 @@ class Survey extends Model
 {
     protected $table = 'surveys';
 
-    public function categories(): belongsTo
+    public function categories()
     {
-        return $this->belongsTo('App\Category', 'survey_id', 'id');
+        return $this->hasMany(Categories::class, 'survey_id', 'id');
     }
 }

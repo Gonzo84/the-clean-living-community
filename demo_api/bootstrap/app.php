@@ -73,6 +73,7 @@ $app->singleton(
  $app->routeMiddleware([
 //     'auth' => App\Http\Middleware\Authenticate::class,
      'auth' => \Laravel\Passport\Http\Middleware\CheckClientCredentials::class,
+//     'cors' => \App\Http\Middleware\CorsMiddleware::class,
  ]);
 
 /*
@@ -96,7 +97,7 @@ $app->singleton(
  $app->register(Illuminate\Mail\MailServiceProvider::class);
  $app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
  $app->register(Illuminate\Redis\RedisServiceProvider::class);
-
+ $app->register(\App\Providers\CatchAllOptionsRequestsProvider::class);
 
 /*
 |--------------------------------------------------------------------------

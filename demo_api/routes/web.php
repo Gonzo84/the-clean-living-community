@@ -18,12 +18,6 @@ $router->post('/users/login', 'UserController@login');
 //$router->post('/password/reset_request', 'UserController@resetPassword');
 $router->post('/users/password/reset', 'UserController@resetPassword');
 
-//token
-$router->post('/oauth/token', 'Laravel\Passport\Http\Controllers\AccessTokenController@issueToken');
-$router->post('/oauth/token/refresh', 'Laravel\Passport\Http\Controllers\AccessTokenController@refresh');
-$router->get('/oauth/clients', 'Laravel\Passport\Http\Controllers\ClientController@forUser');
-$router->delete('/oauth/personal-access-tokens/{token_id}', '\Laravel\Passport\Http\Controllers\PersonalAccessTokenController@destroy');
-
 $router->group([
     'middleware' => 'auth'
 ], function() use($router) {
@@ -42,10 +36,12 @@ $router->post('/chat/history', 'ChatController@getConversationHistory');
 
 
 // survey
-$router->get('/surveys', 'SurveyController@index');
-$router->get('/surveys/{id}', 'SurveyController@show');
+$router->get('/survey', 'SurveyController@index');
+$router->get('/survey/{id}', 'SurveyController@show');
+$router->get('/survey/{id}/category', 'SurveyController@categories');
+$router->get('/survey/{id}/finish', 'SurveyController@finish');
 
-$router->get('/survey/category', 'CategoryController@index');
-$router->get('/survey/category/{id}', 'CategoryController@show');
+$router->get('/survey/category/{id}', 'SurveyController@questions');
+$router->post('/survey/category/{id}', 'SurveyController@storeQuestions');
 
-$router->get('/survey/categories/{id}', 'CategoryController@getCategorySurvey');
+$router->post('/survey/categories/question', 'SurveyController@storeQuestion');
