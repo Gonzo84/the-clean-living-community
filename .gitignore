@@ -5,5 +5,6 @@
 demo_api/package-lock.json
 demo_api/composer.lock
 /demo_api/composer.lock
-.idea
+/.idea
 demo_api/chat-server/node_modules
+/client/package-lock.json
