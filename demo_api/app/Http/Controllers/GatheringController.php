@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Gathering;
 use App\Traits\ApiResponser;
+use App\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -86,6 +87,57 @@ class GatheringController extends Controller
 
     public function joinGathering(Request $request)
     {
+        $this->validate($request, [
+            'gathering_id' => 'required',
+            'user_id' => 'required'
+        ]);
 
+        $gathering = Gathering::findOrFail($request->input('gathering_id'));
+        $user = User::findOrFail($request->input('user_id'));
+        $gathering->users()->sync($user);
+
+        return $this->successResponse(['success' => true]);
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Get one gathering details and all participants
+     * @return JsonResponse
+     * @param $id
+     * @throws \Illuminate\Validation\ValidationException
+     */
+
+    public function getOneGathering($id)
+    {
+        $gathering = Gathering::with('user')->findOrFail($id);
+        $gathering['users'] = $gathering->users;
+
+        return $this->successResponse($gathering);
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Leave gathering
+     * @return JsonResponse
+     * @param $request Request
+     * @throws \Illuminate\Validation\ValidationException
+     */
+
+    public function leaveGathering(Request $request)
+    {
+        $this->validate($request, [
+            'gathering_id' => 'required',
+            'user_id' => 'required'
+        ]);
+
+        $gathering = Gathering::findOrFail($request->input('gathering_id'));
+        $user = User::findOrFail($request->input('user_id'));
+        $gathering->users()->detach($user);
+
+        return $this->successResponse(['success' => true]);
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

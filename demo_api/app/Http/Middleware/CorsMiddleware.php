@@ -24,6 +24,11 @@ class CorsMiddleware
             'Access-Control-Allow-Headers' => 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Authorization , Access-Control-Request-Headers',
         ];
 
+        if ($request->isMethod('OPTIONS'))
+        {
+            return response()->json('{"method":"OPTIONS"}', 200, $headers);
+        }
+
         if($response instanceof $IlluminateResponse) {
             foreach ($headers as $key => $value) {
                 $response->header($key, $value);

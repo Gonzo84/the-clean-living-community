@@ -36,6 +36,8 @@ $router->post('/chat/history', 'ChatController@getConversationHistory');
 $router->post('/gathering', 'GatheringController@createGathering');
 $router->post('/gathering/all', 'GatheringController@getGatherings');
 $router->post('/gathering/join', 'GatheringController@joinGathering');
+$router->get('/gathering/{id}', 'GatheringController@getOneGathering');
+$router->post('/gathering/leave', 'GatheringController@leaveGathering');
 
 // survey
 $router->get('/survey', 'SurveyController@index');
