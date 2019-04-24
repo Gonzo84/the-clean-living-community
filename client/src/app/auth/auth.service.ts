@@ -6,16 +6,20 @@ import {Observable, BehaviorSubject} from 'rxjs';
 import {Storage} from '@ionic/storage';
 import {User} from './user';
 import {AuthResponse} from './auth-response';
+import ENV from '../../ENV';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
-    AUTH_SERVER_ADDRESS = 'http://localhost:9000';
     authSubject = new BehaviorSubject(false);
 
     constructor(private  httpClient: HttpClient,
                 private  storage: Storage) {
+    }
+
+    public getAccessToken() {
+        return this.storage.get('ACCESS_TOKEN');
     }
 
     isLoggedIn() {
@@ -23,7 +27,7 @@ export class AuthService {
     }
 
     login(user: User): Observable<AuthResponse> {
-        return this.httpClient.post(`${this.AUTH_SERVER_ADDRESS}/users/login`, user).pipe(
+        return this.httpClient.post(`${ENV.SERVER_ADDRESS}/users/login`, user).pipe(
             tap(async (res: AuthResponse) => {
 
                 if (res.user) {
@@ -42,15 +46,6 @@ export class AuthService {
     }
 
     register(user: User): Observable<AuthResponse> {
-        return this.httpClient.post<AuthResponse>(`${this.AUTH_SERVER_ADDRESS}/users`, user).pipe(
-            tap(async (res: AuthResponse) => {
-
-                if (res.user) {
-                    await this.storage.set('ACCESS_TOKEN', res.user.access_token);
-                    await this.storage.set('EXPIRES_IN', res.user.expires_in);
-                    this.authSubject.next(true);
-                }
-            })
-        );
+        return this.httpClient.post<AuthResponse>(`${ENV.SERVER_ADDRESS}/users`, user);
     }
 }
