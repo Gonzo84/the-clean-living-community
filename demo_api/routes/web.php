@@ -25,6 +25,8 @@ $router->group([
     $router->get('/users/{id}', 'UserController@show');
     $router->patch('/users/{id}', 'UserController@update');
     $router->post('/users/logout', 'UserController@logout');
+    $router->post('/users/{id}/data', 'UserController@data');
+    $router->get('/users/{id}/data', 'UserController@getdata');
 });
 
 //chat

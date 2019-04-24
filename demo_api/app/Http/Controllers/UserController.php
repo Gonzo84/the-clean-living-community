@@ -12,6 +12,7 @@ use App\Mail\RequestResetPassword;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -121,14 +122,15 @@ class UserController extends Controller
     }
 
     /**
-     * Update one new user.
+     * Set user data.
      * @param $request Request
      * @param $id string
      * @return Response|JsonResponse
      * @throws
      */
-    public function update(Request $request, $id) {
+    public function data(Request $request, $id) {
         $data = $this->validate($request, [
+            'type' => 'in:friend,mentor',
             'age' => 'integer',
             'married' => 'boolean',
             'children' => 'boolean',
@@ -143,6 +145,45 @@ class UserController extends Controller
             'city' => 'string|max:255',
             'zip_code' => 'integer',
             'state' => 'string|max:255',
+        ]);
+
+        $user = DB::table('users_data')->where('user_id', $id)->get();
+
+        if ($user->first()) {
+            DB::table('users_data')
+                ->where("user_id", $id)
+                ->update($data);
+        } else {
+            $data['user_id'] = $id;
+            DB::table('users_data')->insert($data);
+        }
+
+        return $this->successResponse($data);
+    }
+
+    /**
+     * Show one new user data.
+     *
+     * @param $id
+     * @return JsonResponse
+     * @throws
+     */
+    public function getdata($id) : JsonResponse {
+        return $this->successResponse(DB::table('users_data')
+            ->where("user_id", $id)->get());
+    }
+
+    /**
+     * Update user.
+     * @param $request Request
+     * @param $id string
+     * @return Response|JsonResponse
+     * @throws
+     */
+    public function update(Request $request, $id) {
+        $data = $this->validate($request, [
+            'name' => 'string',
+            'email' => 'email'
         ]);
 
         $user = User::findOrFail($id);

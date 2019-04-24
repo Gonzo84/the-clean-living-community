@@ -38,6 +38,21 @@ class UpdateUsersTableData extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('users', function($table) {
+            $table->dropColumn('age');
+            $table->dropColumn('married');
+            $table->dropColumn('children');
+            $table->dropColumn('pet');
+            $table->dropColumn('education');
+            $table->dropColumn('religion');
+            $table->dropColumn('gender');
+            $table->dropColumn('sex_orientation');
+            $table->dropColumn('last_relapse');
+            $table->dropColumn('smoker');
+            $table->dropColumn('support_groups');
+            $table->dropColumn('city');
+            $table->dropColumn('zip_code');
+            $table->dropColumn('state');
+        });
     }
 }

@@ -16,5 +16,8 @@ class Questions extends Model
         return $this->belongsTo(Categories::class, 'category_id', 'id');
     }
 
-
+    public function answers()
+    {
+        return $this->hasMany(Answers::class, 'question_id', 'id');
+    }
 }

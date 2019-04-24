@@ -21,8 +21,8 @@ class SurveryOptions extends Migration
 
        Schema::table('survey_categories', function($table) {
            $table->dropColumn('type');
-
        });
+
         Artisan::call('db:seed', array('--class' => 'SurveySeeder'));
     }
 
