@@ -1,15 +1,25 @@
 <ion-content class="clc-search-background" fullscreen="true" padding>
-  <div class="clc-search-overlay">
-    <ion-grid>
-      <ion-row color="primary" justify-content-center>
-        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-          <div text-center padding class="clc-search-title">
-            GATHERINGS
-          </div>
+    <div class="clc-search-overlay">
+        <ion-grid class="ion-grid-gatherings">
+            <ion-row color="primary" justify-content-center class="ion-row-gatherings">
+                <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+                    <div text-center padding class="clc-search-title">
+                        Clean Gatherings
+                    </div>
 
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
+                    <div text-center padding class="clc-search-description">
+                        Welcome to Clean Gatherings! Here is where you can
+                        find and participate in events hosted by people just like you!
+                    </div>
+                </ion-col>
+            </ion-row>
 
+            <ion-row color="primary" justify-content-center class="ion-row-gatherings">
+                <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+                    <ion-button class="ion-button-gatherings" shape="round" routerLink="/home/gatherings/find" routerDirection="backward">Find a Gathering</ion-button>
+                    <ion-button class="ion-button-gatherings" shape="round" routerLink="/home/gatherings/host" routerDirection="backward">Host a Gathering</ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
 </ion-content>

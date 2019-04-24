@@ -1,0 +1,99 @@
+@import "../../../../theme/variables";
+
+.scroll-content {
+    overflow: hidden;
+}
+
+.ion-list-gathering {
+    overflow-y: auto;
+    max-height: 60vh;
+}
+
+.clc-find-gathering-background {
+    --background: url('../../../../assets/img/search/find-gathering-background.jpg') 50% 80%/270% 120% no-repeat;
+
+
+    .clc-search-title {
+        text-transform: uppercase;
+        color: white;
+    }
+
+    .gatherings-search-field {
+        .searchbar-input.sc-ion-searchbar-md {
+            border-radius: 20px;
+        }
+    }
+
+    .list {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        outline: 0;
+        height: 100%;
+
+        .ion-item-gathering {
+            border: none !important;
+            --inner-padding-end: 0px;
+            --padding-start: 0px;
+
+            .item {
+                padding: 0 !important;
+                width: 100%;
+                border: 0;
+
+                div {
+                    width: 100%;
+                }
+
+                .ion-label-gathering {
+                    padding: 0 20px;
+                    font-size: 95% !important;
+                    color: #BFC0C2;
+
+                    &:last-child {
+                        padding-bottom: 20px;
+                    }
+                }
+
+                .item-subheader {
+                    padding: 20px 20px 4px;
+                    font-size: 120% !important;
+                    font-weight: 200;
+                    color: #000;
+                }
+
+                .item-sublast {
+                    padding-bottom: 10px !important;
+                    padding-top: 5px !important;
+
+                    div {
+                        display: inline-block;
+                        line-height: 15px;
+                        vertical-align: top;
+                    }
+                }
+
+
+                .ion-list-header-gathering {
+                    font-size: 140%;
+                    font-weight: bold;
+                    padding: 10px 20px;
+                    background-color: #F5F5F5;
+                    color: var(--ion-color-secondary-tint);
+
+                    .ion-icon-gathering {
+                        margin-right: 10px;
+                    }
+
+                    .ios-time-outline {
+                        font-size: 22px;
+                        height: 35px;
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+

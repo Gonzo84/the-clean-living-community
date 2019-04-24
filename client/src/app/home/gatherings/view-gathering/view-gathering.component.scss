@@ -1,0 +1,63 @@
+@import "../../../../theme/variables";
+
+.clc-find-gathering-background {
+    --background: url('../../../../assets/img/search/view-gathering-background.jpg') 50% 100%/150% 120% no-repeat;
+
+
+    .clc-search-title {
+        text-transform: uppercase;
+        color: white;
+    }
+
+    .clc-search-description {
+        font-size: 120%;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+        padding: 20px 10px;
+        margin-bottom: 5px;
+    }
+
+    .clc-search-created {
+        font-size: 100%;
+        padding-top: 0;
+    }
+
+    .clc-search-time {
+        color: var(--ion-color-secondary-tint);
+
+        .ion-icon-gathering {
+            font-size: 200%;
+            vertical-align: bottom;
+            padding-top: 30px;
+        }
+
+        div {
+            display: inline-block;
+            vertical-align: text-bottom;
+            font-size: 200%;
+            padding-left: 10px;
+        }
+    }
+
+    .ion-label-gathering {
+        bottom: 0;
+        position: fixed;
+        padding-bottom: 10px;
+
+        a {
+            color: white;
+        }
+
+        .ion-icon-gathering {
+            vertical-align: text-top;
+        }
+    }
+
+    .ion-back-button-gathering {
+        background: transparent;
+        padding: 10px 0 0;
+        color: white;
+        position: absolute;
+        z-index: 1;
+    }
+}

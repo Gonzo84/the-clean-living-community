@@ -1,3 +1,40 @@
-ion-content.clc-search-background {
-  --background: url('../../../assets/img/search/search-background.jpg') 0 0/100% 100% no-repeat;
+@import "../../../theme/variables";
+
+.clc-search-background {
+    --background: url('../../../assets/img/search/gathering-background.jpg') 50% 80%/270% 120% no-repeat;
+
+
+    .clc-search-title {
+        text-transform: uppercase;
+    }
+
+    .clc-search-description {
+        font-size: 80%;
+        padding-top: 0;
+    }
+
+    .ion-grid-gatherings {
+        .ion-row-gatherings:first-child {
+            padding-bottom: 40%;
+        }
+
+        .ion-row-gatherings:nth-child(2) {
+
+            .ion-button-gatherings:first-child {
+                margin-bottom: 20%;
+            }
+        }
+    }
+
+    .ion-button-gatherings {
+        text-transform: uppercase;
+        background: transparent;
+        --background: var(--ion-color-secondary-tint);
+        color: white;
+        width: 100%;
+        --padding-top: 20px;
+        --padding-bottom: 20px;
+        font-size: 120%;
+    }
 }
+
