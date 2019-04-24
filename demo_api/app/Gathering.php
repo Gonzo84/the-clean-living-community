@@ -1,0 +1,30 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Gathering extends Model
+{
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    use SoftDeletes;
+    protected $fillable = ['user_id', 'title', 'description', 'city', 'street', 'number', 'time', 'active'];
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //todo check
+    public function user()
+    {
+        $this->belongsTo(User::class);
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //todo check
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+}

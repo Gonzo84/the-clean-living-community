@@ -34,8 +34,10 @@ $router->post('/chat/send', 'ChatController@sendMessage');
 $router->get('/chat/listing', 'ChatController@getConversationsList');
 $router->post('/chat/history', 'ChatController@getConversationHistory');
 
-
-
+//gathering
+$router->post('/gathering', 'GatheringController@createGathering');
+$router->post('/gathering/all', 'GatheringController@getGatherings');
+$router->post('/gathering/join', 'GatheringController@joinGathering');
 
 // survey
 $router->get('/survey', 'SurveyController@index');
