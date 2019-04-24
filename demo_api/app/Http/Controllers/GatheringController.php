@@ -24,13 +24,14 @@ class GatheringController extends Controller
 
     }
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     /**
      * Create new gathering
      * @return JsonResponse
      * @param $request Request
      * @throws \Illuminate\Validation\ValidationException
      */
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public function createGathering(Request $request)
     {
@@ -59,4 +60,32 @@ class GatheringController extends Controller
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Get all gatherings and search gatherings
+     * @return JsonResponse
+     * @param $request Request
+     * @throws \Illuminate\Validation\ValidationException
+     */
+
+    public function getGatherings(Request $request)
+    {
+        $gaterings = Gathering::where('title', 'LIKE', "%{$request->input('search')}%")->get();
+
+        return $this->successResponse($gaterings);
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Join to gathering
+     * @return JsonResponse
+     * @param $request Request
+     * @throws \Illuminate\Validation\ValidationException
+     */
+
+    public function joinGathering(Request $request)
+    {
+
+    }
 }
