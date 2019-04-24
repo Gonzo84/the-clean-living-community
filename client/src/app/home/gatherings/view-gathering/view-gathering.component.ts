@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
-import {AuthService} from '../../../auth/auth.service';
+import ENV from '../../../../ENV';
 
 @Component({
     selector: 'app-view-gathering',
@@ -11,10 +11,10 @@ import {AuthService} from '../../../auth/auth.service';
 export class ViewGatheringComponent implements OnInit {
     gathering: any = {};
 
-    constructor(private activatedRoute: ActivatedRoute, private http: HttpClient, private auth: AuthService) {
+    constructor(private activatedRoute: ActivatedRoute, private http: HttpClient) {
 
         const id = this.activatedRoute.snapshot.paramMap.get('id');
-        this.http.get(`${auth.AUTH_SERVER_ADDRESS}/gathering/${id}`, {}).subscribe(this.updateGathering.bind(this));
+        this.http.get(`${ENV.SERVER_ADDRESS}/gathering/${id}`, {}).subscribe(this.updateGathering.bind(this));
     }
 
     updateGathering(response) {

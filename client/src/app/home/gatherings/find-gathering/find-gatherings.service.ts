@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/map';
 import {HttpClient} from '@angular/common/http';
-import {AuthService} from '../../../auth/auth.service';
+import ENV from '../../../../ENV';
 
 
 @Injectable({
@@ -11,8 +11,8 @@ export class FindGatheringsService {
 
     gatherings: any = [];
 
-    constructor(private http: HttpClient, private auth: AuthService) {
-        this.http.post(`${auth.AUTH_SERVER_ADDRESS}/gathering/all`, {}).subscribe(this.updateGatheringList.bind(this));
+    constructor(private http: HttpClient) {
+        this.http.post(`${ENV.SERVER_ADDRESS}/gathering/all`, {}).subscribe(this.updateGatheringList.bind(this));
     }
 
     updateGatheringList(response) {

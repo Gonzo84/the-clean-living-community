@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Validators, FormBuilder, FormGroup, FormControl} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
-import {AuthService} from '../../../auth/auth.service';
+import ENV from '../../../../ENV';
 
 @Component({
     selector: 'app-host-gathering',
@@ -12,7 +12,7 @@ import {AuthService} from '../../../auth/auth.service';
 export class HostGatheringComponent implements OnInit {
     private gathering: FormGroup;
 
-    constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router, private auth: AuthService) {
+    constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) {
         this.gathering = this.formBuilder.group({
             title: new FormControl('', Validators.required),
             description: new FormControl('', Validators.required),
@@ -37,7 +37,7 @@ export class HostGatheringComponent implements OnInit {
             time: new Date(this.gathering.get('time').value).getTime(),
         };
 
-        this.http.post(`${this.auth.AUTH_SERVER_ADDRESS}/gathering`, data).subscribe((response) => {
+        this.http.post(`${ENV.SERVER_ADDRESS}/gathering`, data).subscribe((response) => {
             this.router.navigateByUrl('/home/gatherings/view/' + response.data.id);
         });
     }
