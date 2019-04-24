@@ -122,38 +122,31 @@ class SurveyController extends Controller
      */
     public function finish($id) {
 
-        $survery = DB::table('survey_categories AS category')
-            ->select('answer.id')
-            ->leftJoin('survey_questions AS question','question.category_id','=','category.id')
-            ->leftJoin('survey_answers AS answer','answer.question_id','=','question.id')
-
-            ->where('answer.user_id', '=', 1)->get();
-//            ->whereNull('t2.answer')->get();
-//        return $this->successResponse($survery);
-
-        return $this->successResponse($survery);
-
-
+        $surveyScore = 0;
         $survey = Survey::find($id)->first();
-        $categories = $survey->categories->toArray();
-                return $this->successResponse($categories);
 
-        print_r($survey->categories);die;
-        $students = \DB::table('students')
-            ->select(
-                'students.id',
-                'first_name'
-            )
-            ->whereNotExists( function ($query) use ($survey) {
-                $query->select(DB::raw(1))
-                    ->from('enrollments')
-                    ->whereRaw('students.id = enrollments.student_id')
-                    ->where('enrollments.academic_id', '=', $survey->id);
-            })
-            ->get();
+        foreach ($survey->categories as $category) {
+
+            $category_questions = array_column($category->questions->toArray(), 'id');
+
+            foreach ($category->questions as $question) {
+
+                $answers = $question->answers->toArray();
+
+                $category_answers = array_column($answers, 'id');
+
+                if (count(array_diff($category_questions, $category_answers)) > 0)
+                {
+                    return $this->errorResponse('All survey questions not answered.', Response::HTTP_FORBIDDEN);
+                }
+
+                $surveyScore += array_sum(array_column($answers, 'answer'));
+            }
+        }
 
 
-        dd($survery);
+        return $this->successResponse(['survey_score' => $surveyScore]);
+
     }
 
     /**
