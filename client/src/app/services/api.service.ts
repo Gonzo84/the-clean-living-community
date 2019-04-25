@@ -8,4 +8,8 @@ export class ApiService {
 
     constructor(private http: HttpClient) {
     }
+
+    public getSurveyQuestions() {
+        return this.http.get('./assets/survey/survey.json');
+    }
 }

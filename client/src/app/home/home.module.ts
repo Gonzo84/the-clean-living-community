@@ -27,31 +27,28 @@ import {HostGatheringComponent} from './gatherings/host-gathering/host-gathering
             children: [{
                 path: 'search',
                 component: SearchComponent
-            },
-                {
-                    path: 'messages',
-                    component: MessagesComponent
-                },
-                {
-                    path: 'chat',
-                    component: ChatRoomComponent
-                },
-                {
-                    path: 'my-profile',
-                    component: MyProfileComponent
-                }, {
-                    path: 'gatherings',
-                    component: GatheringsComponent
-                }, {
-                    path: 'gatherings/find',
-                    component: FindGatheringComponent
-                }, {
-                    path: 'gatherings/view/:id',
-                    component: ViewGatheringComponent
-                }, {
-                    path: 'gatherings/host',
-                    component: HostGatheringComponent
-                }]
+            }, {
+                path: 'messages',
+                component: MessagesComponent
+            }, {
+                path: 'chat',
+                component: ChatRoomComponent
+            }, {
+                path: 'my-profile',
+                component: MyProfileComponent
+            }, {
+                path: 'gatherings',
+                component: GatheringsComponent
+            }, {
+                path: 'gatherings/find',
+                component: FindGatheringComponent
+            }, {
+                path: 'gatherings/view/:id',
+                component: ViewGatheringComponent
+            }, {
+                path: 'gatherings/host',
+                component: HostGatheringComponent
+            }]
         }]),
         ReactiveFormsModule
     ],

@@ -1,0 +1,24 @@
+{
+  "questions": [
+    {
+      "category": "Calculated",
+      "questions": [
+        "I respond to e-mails as soon as possible and hate seeing unread emails.",
+        "Being organized is better than being flexible.",
+        "My personal and professional spaces are very well organized.",
+        "When booking trips, I create a minute-by-minute itinerary.",
+        "I know what I will eat for dinner 2 days before I have it."
+      ]
+    },
+    {
+      "category": "Spontaneous",
+      "questions": [
+        "I improvise more than I plan.",
+        "I accomplish most by working while motivated rather than systematically approaching the task.",
+        "I wait until the night before to complete a task.",
+        "I am witty and a quick thinker.",
+        "I’d rather try a new restaurant than to return to my favorite spot."
+      ]
+    }
+  ]
+}

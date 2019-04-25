@@ -18,7 +18,8 @@ import {AuthModule} from './auth/auth.module';
 
 import {SocketIoModule, SocketIoConfig} from 'ng-socket-io';
 import {ApiService} from './services/api.service';
-import {UserService} from "./services/user.service";
+import {UserService} from './services/user.service';
+import {SurveyPageModule} from './survey/survey.module';
 
 const config: SocketIoConfig = {url: 'http://192.168.10.10:3000', options: {}};
 
@@ -31,7 +32,8 @@ const config: SocketIoConfig = {url: 'http://192.168.10.10:3000', options: {}};
         AppRoutingModule,
         AuthModule,
         FontAwesomeModule,
-        SocketIoModule.forRoot(config)
+        SocketIoModule.forRoot(config),
+        SurveyPageModule
     ],
     providers: [
         ApiService,
