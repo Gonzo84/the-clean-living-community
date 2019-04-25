@@ -37,7 +37,7 @@ export class HostGatheringComponent implements OnInit {
             time: new Date(this.gathering.get('time').value).getTime(),
         };
 
-        this.http.post(`${ENV.SERVER_ADDRESS}/gathering`, data).subscribe((response:any) => {
+        this.http.post(`${ENV.SERVER_ADDRESS}/gathering`, data).subscribe((response: any) => {
             this.router.navigateByUrl('/home/gatherings/view/' + response.data.id);
         });
     }
