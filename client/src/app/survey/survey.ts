@@ -37,10 +37,11 @@ export class SurveyPage implements OnInit {
     }
 
     public ngOnInit() {
-        this.api.getSurveyQuestions().subscribe(this.loadData.bind(this))
+        this.api.getSurveyQuestions()
+            .subscribe(this.loadData.bind(this));
     }
 
-    ionViewDidLoad() {
+    public ionViewDidLoad() {
         this.slidesByCategory.lockSwipes(true);
     }
 
@@ -48,23 +49,23 @@ export class SurveyPage implements OnInit {
         this.categories = data.questions;
     }
 
-    finishSurvey() {
+    private finishSurvey() {
 
     }
 
-    nextCategory() {
+    private nextCategory() {
         this.slidesByCategory.lockSwipes(false);
         this.slidesByCategory.slideNext();
         this.slidesByCategory.lockSwipes(true);
     }
 
-    nextSlide() {
+    private nextSlide() {
         this.slides.lockSwipes(false);
         this.slides.slideNext();
         this.slides.lockSwipes(true);
     }
 
-    selectAnswer(value, index) {
+    private selectAnswer(value, index) {
         this.hasAnswered = true;
         setTimeout(() => {
             this.hasAnswered = false;
