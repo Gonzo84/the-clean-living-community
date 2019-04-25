@@ -1,5 +1,5 @@
 const ENV = {
-    SERVER_ADDRESS: 'http://localhost:9000'
+    SERVER_ADDRESS: 'http://localhost:8000'
 };
 
 export default ENV;
