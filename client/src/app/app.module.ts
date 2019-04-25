@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {RouteReuseStrategy} from '@angular/router';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {TokenInterceptor} from './interceptors/token.interceptor';
 
 import {IonicModule, IonicRouteStrategy, NavParams} from '@ionic/angular';
@@ -18,6 +18,7 @@ import {AuthModule} from './auth/auth.module';
 
 import {SocketIoModule, SocketIoConfig} from 'ng-socket-io';
 import {ApiService} from './services/api.service';
+import {UserService} from "./services/user.service";
 
 const config: SocketIoConfig = {url: 'http://192.168.10.10:3000', options: {}};
 
@@ -36,6 +37,7 @@ const config: SocketIoConfig = {url: 'http://192.168.10.10:3000', options: {}};
         ApiService,
         StatusBar,
         SplashScreen,
+        UserService,
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
         {
             provide: HTTP_INTERCEPTORS,

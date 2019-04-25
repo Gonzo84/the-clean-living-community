@@ -11,10 +11,11 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/operator/mergeMap';
 
-import {AuthService} from '../auth/auth.service';
+import {TokenService} from "../services/token.service";
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
+
     constructor(private injector: Injector) {
     }
 
@@ -27,9 +28,9 @@ export class TokenInterceptor implements HttpInterceptor {
         return next.handle(request);
     }
 
-    public async getAuthorizationBearer() {
-        const authService = this.injector.get(AuthService);
-        return authService.getAccessToken();
+    public getAuthorizationBearer() {
+        const tokenService = this.injector.get(TokenService);
+        return tokenService.getAccessToken();
     }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
