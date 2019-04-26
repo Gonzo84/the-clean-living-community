@@ -9,16 +9,27 @@ import {AuthService} from '../auth.service';
 })
 export class LoginPage implements OnInit {
 
-    constructor(private  authService: AuthService, private  router: Router) {
+    constructor(private  authService: AuthService,
+                private  router: Router) {
     }
 
     ngOnInit() {
     }
 
     login(form) {
-        this.authService.login(form.value).subscribe((res) => {
-            this.router.navigateByUrl('home/search');
-        });
+        this.authService.login(form.value)
+            .subscribe(
+                this.onLoginSuccess.bind(this),
+                this.onLoginFailure.bind(this)
+            );
+    }
+
+    private onLoginSuccess(data) {
+        this.router.navigateByUrl('home/search');
+    }
+
+    private async onLoginFailure(error) {
+        console.log('LoginFailure');
     }
 
 }
