@@ -18,13 +18,14 @@
 
                     <div text-center padding class="clc-search-time">
                         <ion-icon class="ion-icon-gathering" name="time"></ion-icon>
-                        <div>{{gathering.time | date: "dd/MM/yyyy HH:mm a"}}</div>
+                        <div class="ion-gathering-time-short">{{gathering.time | date: "HH:mm a"}}</div>
+                        <div class="ion-gathering-date-short">{{gathering.time | date: "MMM dd yyyy"}}</div>
                     </div>
 
                     <ion-label class="ion-label-gathering">
                         <a href="https://www.google.com/maps?saddr=My+Location&daddr={{gathering.city}}+{{gathering.street}}+{{gathering.number}}"
                            target="_system">
-                            <ion-icon name="pin"></ion-icon>
+                            <ion-icon name="pin" class="ion-gathering-icon-location"></ion-icon>
                             {{gathering.city}} {{gathering.street}} {{gathering.number}}
                         </a>
                     </ion-label>

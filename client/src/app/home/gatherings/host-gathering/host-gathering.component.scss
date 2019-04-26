@@ -71,7 +71,7 @@
         .ion-button-gathering {
             text-transform: uppercase;
             background: transparent;
-            --background: var(--ion-color-secondary-tint);
+            --background: #22e2b9;
             color: white;
             width: 100%;
             --padding-top: 20px;
@@ -79,5 +79,13 @@
             font-size: 120%;
         }
     }
+}
 
+
+.ion-back-button-gathering {
+    background: transparent;
+    padding: 10px 0 0;
+    color: white;
+    position: absolute;
+    z-index: 1;
 }
