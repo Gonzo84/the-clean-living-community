@@ -7,8 +7,8 @@
                         MESSAGES
                     </div>
                     <ion-list *ngIf="responseReady">
-                        <ion-item *ngFor="let message of messageList">
-                            <ion-label (click)="enterChatRoom(message)">{{  message.user }}</ion-label>
+                        <ion-item *ngFor="let message of messageList; let i = index">
+                            <ion-label (click)="enterChatRoom(message, i)" [ngClass]="{'unread-chat-room':message.unread}">{{  message.user }}</ion-label>
                         </ion-item>
                     </ion-list>
 

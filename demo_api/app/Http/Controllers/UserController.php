@@ -53,7 +53,8 @@ class UserController extends Controller
         $user = $this->validate($request, [
             'name' => 'required|max:255',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:6|'
+            'password' => 'required|min:6|',
+            'type' => 'in:friend,mentor'
         ]);
 
         $user['password'] = Hash::make($user['password']);
@@ -152,7 +153,6 @@ class UserController extends Controller
     public function data(Request $request, $id) : JsonResponse
     {
         $data = $this->validate($request, [
-            'type' => 'in:friend,mentor',
             'age' => 'integer',
             'married' => 'boolean',
             'children' => 'boolean',
@@ -168,15 +168,6 @@ class UserController extends Controller
             'zip_code' => 'integer',
             'state' => 'string|max:255',
         ]);
-
-        if (isset($data['type'])) {
-
-            $user = User::findOrFail($id);
-            $user->type = $data['type'];
-            $user->save();
-
-            unset($data['type']);
-        }
 
         $user = DB::table('users_data')->where('user_id', $id)->get();
 
@@ -206,7 +197,7 @@ class UserController extends Controller
         $userdata = array_filter($this->validate($request, [
             'name' => 'string',
             'email' => 'email|unique:users',
-            'type' => 'string',
+            'type' => 'string|in:friend,mentor',
             'status' => 'in:pending,regular,deleted'
         ]));
 

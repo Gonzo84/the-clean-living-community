@@ -1,3 +1,5 @@
+@import "../../theme/variables";
+
 ion-tab-bar {
   --background: #5d638d;
   --color: lightgray;
@@ -5,4 +7,8 @@ ion-tab-bar {
 
 .tab-selected {
   color: #22e2b9;
+}
+
+.unread-message {
+  color: $clc-unread-message;
 }

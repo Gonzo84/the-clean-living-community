@@ -10,7 +10,6 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
-
 // user
 $router->post('/users', 'UserController@store');
 $router->post('/users/login', 'UserController@login');
@@ -37,7 +36,11 @@ $router->group([
 
     $router->post('/survey/category/{id}', 'SurveyController@storeQuestions');
     $router->post('/survey/categories/question', 'SurveyController@storeQuestion');
-    $router->get('/survey/{id}/finish', 'SurveyController@finish');
+    $router->post('/survey/finish', 'SurveyController@finish');
+
+
+    $router->post('/survey/all', 'SurveyController@all');
+
 
     // search
     $router->get('/location/{id}', 'LocationController@getLocation');
@@ -47,8 +50,10 @@ $router->group([
 
 //chat
 $router->post('/chat/send', 'ChatController@sendMessage');
-$router->get('/chat/listing', 'ChatController@getConversationsList');
+$router->post('/chat/listing', 'ChatController@getConversationsList');
 $router->post('/chat/history', 'ChatController@getConversationHistory');
+$router->post('/chat/status', 'ChatController@checkForUnreadMessages');
+$router->post('/chat/status/update', 'ChatController@updateUnreadMessageStatus');
 
 //gathering
 $router->post('/gathering', 'GatheringController@createGathering');

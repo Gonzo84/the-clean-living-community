@@ -1,3 +1,70 @@
-ion-content.clc-search-background {
-  --background: url('../../../assets/img/search/search-background.jpg') 0 0/100% 100% no-repeat;
+@import '../../../theme/variables';
+
+.scroll-content {
+    overflow: hidden;
+}
+
+.clc-search-overlay {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 93vh;
+}
+
+.clc-search-background {
+    --background: url('../../../assets/img/search/search-background.jpg') 0 0/100% 100% no-repeat;
+
+    .clc-search-title {
+        font-size: 200%;
+        color: $clc-primary-color;
+        padding: 0;
+        margin: 15px 0;
+
+        div {
+            padding-top: 5px;
+        }
+
+        .profile-email, .profile-created-at {
+            font-size: 50%;
+            color: white;
+        }
+    }
+
+    .profile-message-icon {
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .profile-personal {
+        font-weight: bold;
+        font-size: 150%;
+    }
+
+    .profile-label {
+        font-size: 100%;
+
+        .profile-label-value {
+            font-size: 150%;
+            color: $clc-primary-color;
+        }
+    }
+
+    .profile-row-border-bottom {
+        border-bottom: 1px solid white;
+    }
+
+    .profile-row-margin-bottom {
+        margin-bottom: 20px;
+    }
+
+    .profile-column-border-right {
+        border-right: 1px solid white;
+    }
+
+    ion-row {
+        --padding-bottom: 20px;
+    }
+
+    ion-col {
+        padding-left: 10px;
+    }
 }
