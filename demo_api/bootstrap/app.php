@@ -67,7 +67,9 @@ $app->singleton(
 
  $app->middleware([
 //     App\Http\Middleware\ExampleMiddleware::class
-     App\Http\Middleware\CorsMiddleware::class
+     App\Http\Middleware\CorsMiddleware::class,
+     \App\Http\Middleware\TransformsRequest::class,
+     \App\Http\Middleware\TrimStrings::class
  ]);
 
  $app->routeMiddleware([

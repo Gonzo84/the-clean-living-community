@@ -1,5 +1,12 @@
-<ion-content>
-    <ion-slides #slidesByCategory>
+<ion-content padding>
+    <ion-slides #slidesByCategory class="test">
+        <ion-slide>
+            <ion-item>
+                <h2>start</h2></ion-item>
+            <ion-item>
+                <button (click)="test()" ion-button full color="primary">start</button>
+            </ion-item>
+        </ion-slide>
         <ion-slide *ngFor="let category of categories;">
             <ion-slides #slides>
                 <ion-slide *ngFor="let question of category.questions; let i = index;">
@@ -10,7 +17,7 @@
 
                         <ion-item *ngFor="let answer of answers; let y = index;">
 
-                            <ion-label>{{y+1}}. {{answer.answer}}</ion-label>
+                            <ion-label>{{y + 1}}. {{answer.answer}}</ion-label>
                             <ion-radio (click)="selectAnswer(answer.value, i)" [disabled]="hasAnswered"></ion-radio>
 
                         </ion-item>
@@ -19,12 +26,9 @@
 
                 </ion-slide>
             </ion-slides>
-
         </ion-slide>
-
         <ion-slide>
             <h2>Finito</h2>
-
             <button (click)="finishSurvey()" ion-button full color="primary">Finish</button>
         </ion-slide>
     </ion-slides>

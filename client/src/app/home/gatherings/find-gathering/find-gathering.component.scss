@@ -6,12 +6,12 @@
 
 .ion-list-gathering {
     overflow-y: auto;
-    max-height: 60vh;
+    max-height: 75vh;
+    border-radius: 10px;
 }
 
 .clc-find-gathering-background {
     --background: url('../../../../assets/img/search/find-gathering-background.jpg') 50% 80%/270% 120% no-repeat;
-
 
     .clc-search-title {
         text-transform: uppercase;
@@ -19,8 +19,10 @@
     }
 
     .gatherings-search-field {
-        .searchbar-input.sc-ion-searchbar-md {
-            border-radius: 20px;
+        border-radius: 20px !important;
+
+        div {
+            height: 42px !important;
         }
     }
 
@@ -33,13 +35,13 @@
 
         .ion-item-gathering {
             border: none !important;
-            --inner-padding-end: 0px;
-            --padding-start: 0px;
+            --inner-padding-end: 0;
+            --padding-start: 0;
 
             .item {
-                padding: 0 !important;
                 width: 100%;
                 border: 0;
+                padding-bottom: 10px;
 
                 div {
                     width: 100%;
@@ -56,7 +58,7 @@
                 }
 
                 .item-subheader {
-                    padding: 20px 20px 4px;
+                    padding: 20px 20px 8px;
                     font-size: 120% !important;
                     font-weight: 200;
                     color: #000;
@@ -79,7 +81,7 @@
                     font-weight: bold;
                     padding: 10px 20px;
                     background-color: #F5F5F5;
-                    color: var(--ion-color-secondary-tint);
+                    color: $clc-secondary-alt-color;
 
                     .ion-icon-gathering {
                         margin-right: 10px;
@@ -90,6 +92,19 @@
                         height: 35px;
 
                     }
+
+                    .ion-gathering-date-short {
+                        font-size: 50%;
+                    }
+                }
+
+                .ion-gathering-location {
+                    color: var(--ion-color-medium-tint);
+
+                    .ion-icon-gathering-location {
+                        padding-left: 15px;
+                        vertical-align: text-bottom;
+                    }
                 }
             }
         }
@@ -97,3 +112,14 @@
 }
 
 
+.ion-back-button-gathering {
+    background: transparent;
+    padding: 10px 0 0;
+    color: white;
+    position: absolute;
+    z-index: 1;
+}
+
+.ion-grid-gathering {
+    margin-top: 40px;
+}

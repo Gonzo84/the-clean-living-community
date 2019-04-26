@@ -3,11 +3,11 @@ import {HttpClient} from '@angular/common/http';
 import {tap} from 'rxjs/operators';
 import {Observable, BehaviorSubject} from 'rxjs';
 import {Storage} from '@ionic/storage';
-import {UserInterface} from "../interfaces/user";
+import {UserInterface} from '../interfaces/user';
 import {AuthResponseInterface} from '../interfaces/auth-response';
 import ENV from '../../ENV';
-import {UserService} from "../services/user.service";
-import {TokenService} from "../services/token.service";
+import {UserService} from '../services/user.service';
+import {TokenService} from '../services/token.service';
 
 @Injectable({
     providedIn: 'root'
@@ -33,9 +33,9 @@ export class AuthService {
         return this.httpClient.post(`${ENV.SERVER_ADDRESS}/users/login`, user).pipe(
             tap(async (res: AuthResponseInterface) => {
                 if (res.data) {
+                    this.authSubject.next(true);
                     await this.tokenService.setAccessToken(res.data.token.access_token);
                     await this.userService.setLoggedUser(res.data);
-                    this.authSubject.next(true);
                 }
             })
         );

@@ -25,7 +25,23 @@ $router->group([
     $router->patch('/users/{id}', 'UserController@update');
     $router->post('/users/logout', 'UserController@logout');
     $router->post('/users/{id}/data', 'UserController@data');
-    $router->get('/users/{id}/data', 'UserController@getdata');
+    $router->delete('/users/{id}', 'UserController@destroy');
+
+    // survey
+    $router->get('/survey', 'SurveyController@index');
+
+    $router->get('/survey/{id}', 'SurveyController@show');
+    $router->get('/survey/{id}/category', 'SurveyController@categories');
+    $router->get('/survey/category/{id}', 'SurveyController@questions');
+
+    $router->post('/survey/category/{id}', 'SurveyController@storeQuestions');
+    $router->post('/survey/categories/question', 'SurveyController@storeQuestion');
+    $router->get('/survey/{id}/finish', 'SurveyController@finish');
+
+    // search
+    $router->get('/location/{id}', 'LocationController@getLocation');
+    $router->post('/location', 'LocationController@storeLocation');
+    $router->post('/location/search', 'LocationController@search');
 });
 
 //chat
@@ -42,13 +58,4 @@ $router->post('/gathering/join', 'GatheringController@joinGathering');
 $router->get('/gathering/{id}', 'GatheringController@getOneGathering');
 $router->post('/gathering/leave', 'GatheringController@leaveGathering');
 
-// survey
-$router->get('/survey', 'SurveyController@index');
-$router->get('/survey/{id}', 'SurveyController@show');
-$router->get('/survey/{id}/category', 'SurveyController@categories');
-$router->get('/survey/{id}/finish', 'SurveyController@finish');
 
-$router->get('/survey/category/{id}', 'SurveyController@questions');
-$router->post('/survey/category/{id}', 'SurveyController@storeQuestions');
-
-$router->post('/survey/categories/question', 'SurveyController@storeQuestion');

@@ -11,39 +11,39 @@
                     </div>
 
                     <form [formGroup]="gathering" (ngSubmit)="createGathering()" class="form-gathering">
-                        <ion-item class="ion-item-gathering">
-                            <ion-label class="ion-label-gathering" position="floating">Title</ion-label>
+                        <ion-item class="input-field-item">
+                            <ion-label class="input-field-label" position="floating">Title</ion-label>
                             <ion-input type="text" formControlName="title"></ion-input>
                         </ion-item>
-                        <ion-item class="ion-item-gathering">
-                            <ion-label class="ion-label-gathering" position="floating">Description</ion-label>
+                        <ion-item class="input-field-item">
+                            <ion-label class="input-field-label" position="floating">Description</ion-label>
                             <ion-textarea formControlName="description"></ion-textarea>
                         </ion-item>
 
-                        <ion-item class="ion-item-gathering">
-                            <ion-label class="ion-label-gathering" position="floating">City</ion-label>
+                        <ion-item class="input-field-item">
+                            <ion-label class="input-field-label" position="floating">City</ion-label>
                             <ion-input formControlName="city"></ion-input>
                         </ion-item>
 
                         <ion-grid>
                             <ion-row color="primary" justify-content-center>
                                 <ion-col align-self-center size-md="10" size-lg="10" size-xs="10">
-                                    <ion-item class="street ion-item-gathering">
-                                        <ion-label class="ion-label-gathering" position="floating">Street</ion-label>
+                                    <ion-item class="street input-field-item">
+                                        <ion-label class="input-field-label" position="floating">Street</ion-label>
                                         <ion-input formControlName="street"></ion-input>
                                     </ion-item>
                                 </ion-col>
                                 <ion-col align-self-center size-md="2" size-lg="2" size-xs="2">
-                                    <ion-item class="street street-no ion-item-gathering">
-                                        <ion-label class="ion-label-gathering" position="floating">No</ion-label>
+                                    <ion-item class="street street-no input-field-item">
+                                        <ion-label class="input-field-label" position="floating">No</ion-label>
                                         <ion-input formControlName="number"></ion-input>
                                     </ion-item>
                                 </ion-col>
                             </ion-row>
                         </ion-grid>
 
-                        <ion-item class="ion-item-gathering">
-                            <ion-label position="floating" class="ion-label-gathering">Time</ion-label>
+                        <ion-item class="input-field-item">
+                            <ion-label position="floating" class="input-field-label">Time</ion-label>
                             <ion-datetime display-format="MMM DD, YYYY HH:mm" formControlName="time"></ion-datetime>
                         </ion-item>
 

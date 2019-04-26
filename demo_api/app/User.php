@@ -34,4 +34,39 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    public function scopeOfType($query, $type)
+    {
+        return $query->where('type', $type);
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public function scopeActive($query)
+    {
+        return $query->where('status', 'regular');
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public function scopeWithData($query)
+    {
+        $query->leftjoin('users_data', 'users_data.user_id', '=', 'users.id')
+        ->addSelect('*');
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public function scopeMapSearch($query, $user)
+    {
+        $query->selectRaw('id, name, (survey_score / ? * 100) AS survey_match, ( 6371 * acos( cos( radians(?) ) *
+                               cos( radians( latitude ) )
+                               * cos( radians( longitude ) - radians(?)
+                               ) + sin( radians(?) ) *
+                               sin( radians( latitude ) ) )
+                             ) AS distance', [$user->survey_score, $user->latitude, $user->longitude, $user->latitude])
+            ->havingRaw("distance > ?", [1])
+            ->groupBy('id')
+            ->orderBy('distance');
+    }
+
 }
