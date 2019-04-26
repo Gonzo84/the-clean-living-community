@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FindGatheringsService} from './find-gatherings.service';
 import {Router} from '@angular/router';
+import ENV from '../../../../ENV';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
     selector: 'app-find-gathering',
@@ -11,22 +12,47 @@ export class FindGatheringComponent implements OnInit {
 
     searchTerm: any = '';
     gatherings: any;
+    filteredGatherings: any = [];
 
-    constructor(public findGathering: FindGatheringsService, public router: Router) {
+    constructor(public router: Router, private http: HttpClient) {
+        this.getGatheringList().subscribe(this.updateGatheringList.bind(this));
+    }
+
+    updateGatheringList(response) {
+        // noinspection TypeScriptUnresolvedVariable
+        this.gatherings = this.filteredGatherings = response.data;
+    }
+
+    getGatheringList() {
+        return this.http.post(`${ENV.SERVER_ADDRESS}/gathering/all`, {});
+    }
+
+    filterItems(searchTerm) {
+        let gatherings = [];
+
+        if (this.gatherings) {
+            gatherings = JSON.parse(JSON.stringify(this.gatherings));
+            if (searchTerm && searchTerm.length) {
+                gatherings = gatherings.filter((gathering) => {
+                    return searchTerm && gathering.title.toLowerCase().startsWith(searchTerm.toLowerCase());
+                });
+            }
+        }
+        return gatherings;
     }
 
     ngOnInit() {
-        this.setFilteredItems(undefined);
     }
 
     setFilteredItems(ev) {
         if (ev) {
             this.searchTerm = ev.target.value;
         }
-        this.gatherings = this.findGathering.filterItems(this.searchTerm);
+        this.filteredGatherings = this.filterItems(this.searchTerm);
     }
 
     viewGathering(gathering) {
+        // noinspection JSIgnoredPromiseFromCall
         this.router.navigateByUrl('/home/gatherings/view/' + gathering.id);
     }
 }

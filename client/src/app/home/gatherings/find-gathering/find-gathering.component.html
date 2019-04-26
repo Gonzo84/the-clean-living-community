@@ -1,40 +1,36 @@
 <ion-content class="clc-find-gathering-background" fullscreen="true" padding>
     <div class="clc-search-overlay">
-        <ion-back-button defaultHref="/home/gatherings"></ion-back-button>
+        <ion-back-button defaultHref="/home/gatherings" class="ion-back-button-gathering"></ion-back-button>
 
-        <ion-grid>
+        <ion-grid class="ion-grid-gathering">
             <ion-row color="primary" justify-content-center>
                 <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-                    <div text-center padding class="clc-search-title">
-                        Find a Gathering
-                    </div>
-
                     <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems($event)"
                                    class="gatherings-search-field" type="search" placeholder="Find a Gathering"
                                    autocomplete></ion-searchbar>
 
-                    <ion-list class="list ion-list-gathering">
-
-                        <ion-item class="ion-item-gathering" *ngFor="let gathering of gatherings"
+                    <ion-virtual-scroll class="list ion-list-gathering" [items]="filteredGatherings">
+                        <ion-item class="ion-item-gathering" *virtualItem="let gathering"
                                   (click)="viewGathering(gathering)" no-margin
                                   no-padding>
 
                             <div class="item">
                                 <ion-list-header class="ion-list-header-gathering">
                                     <ion-icon class="ion-icon-gathering" name="time"></ion-icon>
-                                    <div>{{gathering.time | date: "dd/MM/yyyy HH:mm a"}}</div>
+                                    <div class="ion-gathering-time-short">{{gathering.time | date: "HH:mm a"}}</div>
+                                    <div class="ion-gathering-date-short">{{gathering.time | date: "MMM dd yyyy"}}</div>
                                 </ion-list-header>
 
                                 <ion-label class="item-subheader ion-label-gathering">{{gathering.title}}</ion-label>
                                 <ion-label class="item-subshort ion-label-gathering">{{gathering.short}}</ion-label>
-                                <ion-label>
-                                    <ion-icon class="ion-icon-gathering" name="pin"></ion-icon>
+                                <ion-label class="ion-gathering-location">
+                                    <ion-icon class="ion-icon-gathering ion-icon-gathering-location" name="pin"></ion-icon>
                                     {{gathering.street}} {{gathering.number}}, {{gathering.city}}
                                 </ion-label>
                             </div>
 
                         </ion-item>
-                    </ion-list>
+                    </ion-virtual-scroll>
                 </ion-col>
             </ion-row>
         </ion-grid>

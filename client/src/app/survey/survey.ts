@@ -4,6 +4,7 @@ import {ApiService} from '../services/api.service';
 @Component({
     selector: 'page-survey',
     templateUrl: 'survey.html',
+    styleUrls: ['./survey.scss'],
 })
 export class SurveyPage implements OnInit {
 
@@ -41,7 +42,8 @@ export class SurveyPage implements OnInit {
             .subscribe(this.loadData.bind(this));
     }
 
-    public ionViewDidLoad() {
+    public ionViewDidEnter() {
+        this.slides.lockSwipes(true);
         this.slidesByCategory.lockSwipes(true);
     }
 
@@ -53,27 +55,22 @@ export class SurveyPage implements OnInit {
 
     }
 
-    private nextCategory() {
-        this.slidesByCategory.lockSwipes(false);
-        this.slidesByCategory.slideNext();
-        this.slidesByCategory.lockSwipes(true);
-    }
-
-    private nextSlide() {
-        this.slides.lockSwipes(false);
-        this.slides.slideNext();
-        this.slides.lockSwipes(true);
+    private nextSlide(slides) {
+        slides.lockSwipes(false);
+        slides.slideNext();
+        slides.lockSwipes(true);
     }
 
     private selectAnswer(value, index) {
         this.hasAnswered = true;
         setTimeout(() => {
             this.hasAnswered = false;
-            if (index === 4) {
-                this.nextCategory();
-            } else {
-                this.nextSlide();
-            }
+            const slides = index < 4 ? this.slides : this.slidesByCategory;
+            this.nextSlide(slides);
         }, 1000);
+    }
+
+    test() {
+        this.nextSlide(this.slidesByCategory);
     }
 }

@@ -4,19 +4,24 @@ import {
     HttpHandler,
     HttpEvent,
     HttpInterceptor,
-    HttpHeaders
+    HttpHeaders, HttpErrorResponse, HttpResponse
 } from '@angular/common/http';
 
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/observable/of';
+import {throwError} from 'rxjs';
+import {map, catchError} from 'rxjs/operators';
 
-import {TokenService} from "../services/token.service";
+import {TokenService} from '../services/token.service';
+import {ToastController} from '@ionic/angular';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
 
-    constructor(private injector: Injector) {
+    constructor(private injector: Injector,
+                private toastCtrl: ToastController) {
     }
 
     private authorizationObservableMergeMap(request: HttpRequest<any>, next: HttpHandler, headers: HttpHeaders, authBearer: string): Observable<HttpEvent<any>> {
@@ -33,7 +38,7 @@ export class TokenInterceptor implements HttpInterceptor {
         return tokenService.getAccessToken();
     }
 
-    intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    public intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         let observable;
         if (this.requestNeedsToBeIntercepted(request)) {
             observable = this.setAuthorizationHeader(request, next);
@@ -41,7 +46,49 @@ export class TokenInterceptor implements HttpInterceptor {
             observable = next.handle(request);
         }
 
-        return observable;
+
+        return observable.pipe(
+            catchError((error: HttpErrorResponse) => {
+                let msg = '';
+                switch (error.status) {
+                    case 401:
+                        msg = this.generateErrorMsg(error);
+                        this.presentToast(msg);
+                        break;
+                    case 403:
+                        msg = this.generateErrorMsg(error);
+                        this.presentToast(msg);
+                        break;
+                    case 422:
+                        msg = this.generateErrorMsg(error);
+                        this.presentToast(msg);
+                        break;
+                    default:
+                        this.presentToast('Something went wrong!');
+                        break;
+                }
+                return throwError(error);
+            }));
+    }
+
+    private generateErrorMsg(error: HttpErrorResponse) {
+        const errorObj = error.error.error;
+        let msg = '';
+        if (typeof errorObj === 'string') {
+            msg = errorObj;
+        } else {
+            msg = errorObj[Object.keys(errorObj)[0]][0];
+        }
+        return msg;
+    }
+
+    private async presentToast(msg) {
+        const toast = await this.toastCtrl.create({
+            message: msg,
+            duration: 2000,
+            position: 'bottom'
+        });
+        toast.present();
     }
 
     private requestNeedsToBeIntercepted(request: HttpRequest<any>) {
