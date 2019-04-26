@@ -1,9 +1,9 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component} from '@angular/core';
 import {Socket} from 'ng-socket-io';
-import {Observable} from 'rxjs/Observable';
-import {IonContent, LoadingController} from '@ionic/angular';
+import {LoadingController} from '@ionic/angular';
 import {ActivatedRoute} from '@angular/router';
 import {ChatServiceService} from '../../../services/chat-service.service';
+import {Storage} from '@ionic/storage';
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -14,14 +14,11 @@ import {ChatServiceService} from '../../../services/chat-service.service';
 })
 export class ChatRoomComponent {
 
-    @ViewChild(IonContent) content: IonContent;
-
-    idUser = 1; // todo get id from token
-    username = 'Vladimir'; // todo get user name from token
-    sendToUserId;
+    receiver_id;
+    receiver_name: string;
     message: string;
     messages: any[] = [];
-    user: string;
+    user: any;
     chatId;
     loader;
 
@@ -30,24 +27,24 @@ export class ChatRoomComponent {
     constructor(private thisRoute: ActivatedRoute,
                 private chatService: ChatServiceService,
                 private socket: Socket,
-                private loadingController: LoadingController) {
-        this.user = this.thisRoute.snapshot.paramMap.get('user');
-        this.sendToUserId = this.thisRoute.snapshot.paramMap.get('userId');
+                private loadingController: LoadingController,
+                private storage: Storage) {
+
+        this.receiver_id = this.thisRoute.snapshot.paramMap.get('receiver_id');
+        this.receiver_name = this.thisRoute.snapshot.paramMap.get('receiver_name');
         this.chatId = +this.thisRoute.snapshot.paramMap.get('chatId');
 
-        this.chatService.getMessages().subscribe((message: any) => {
-            this.messages.push(JSON.parse(message));
-            // this.content.scrollToBottom(); todo
+        this.storage.get('LOGGED_USER').then((data) => {
+            this.user = data;
+        }).then(() => {
+            this.chatService.getMessages(this.user.id).subscribe((message: any) => {
+                const chatMessage = JSON.parse(message);
+                if ((chatMessage.sender_id) && (this.receiver_id == chatMessage.sender_id)) {
+                    this.messages.push(JSON.parse(message));
+                    // this.content.scrollToBottom(); todo
+                }
+            });
         });
-        // this.getUsers().subscribe((data: any) => {
-        //     const test = JSON.parse(data);
-        //     const user = test.user;
-        //     if (test.event === 'left') {
-        //         this.showToast('User left: ' + user);
-        //     } else {
-        //         this.showToast('User joined: ' + user);
-        //     }
-        // });
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -60,16 +57,16 @@ export class ChatRoomComponent {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     sendMessage() {
-        this.chatService.sendMessage(this.message, this.sendToUserId)
+        this.chatService.sendMessage(this.user.id, this.receiver_id, this.message)
             .subscribe(
                 (response: any) => {
                     if (response.data.success) {
-                        // this.messages.push({
-                        //     user: this.username,
-                        //     sender_id: this.idUser,
-                        //     date_created: new Date(),
-                        //     message: this.message
-                        // });
+                        this.messages.push({
+                            user: this.user.name,
+                            sender_id: this.user.id,
+                            date_created: new Date(),
+                            message: this.message
+                        });
                         this.message = '';
                     }
                 },
@@ -98,6 +95,18 @@ export class ChatRoomComponent {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    updateUnreadMessageStatus() {
+        this.chatService.updateUnreadMessageStatus(this.chatId).subscribe();
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    ionViewWillLeave() {
+        this.updateUnreadMessageStatus();
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     async presentLoading() {
         this.loader = await this.loadingController.create({
             message: 'Please wait...',
@@ -106,37 +115,5 @@ export class ChatRoomComponent {
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    // getMessages() {
-    //     const observable = new Observable(observer => {
-    //         this.socket.on('message', (data) => {
-    //             console.log('message ' + data);
-    //             observer.next(data);
-    //         });
-    //     });
-    //     return observable;
-    // }
-
-    // getUsers() {
-    //     const observable = new Observable(observer => {
-    //         this.socket.on('users-changed', (data) => {
-    //             console.log('users-changed');
-    //             observer.next(data);
-    //         });
-    //     });
-    //     return observable;
-    // }
-
-    // ionViewWillLeave() {
-    //     this.socket.disconnect();
-    // }
-
-    // async showToast(msg) {
-    //     const toast = await this.toastCtrl.create({
-    //         message: msg,
-    //         duration: 2000
-    //     });
-    //     toast.present();
-    // }
 
 }
