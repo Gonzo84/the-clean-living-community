@@ -23,17 +23,47 @@ class UserController extends Controller
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct()
+    {
+
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
      * Return the list of users.
      *
      * @return JsonResponse
      */
-    public function index() : JsonResponse {
-        return $this->successResponse(User::all(), Response::HTTP_OK);
+    public function index() : JsonResponse
+    {
+        return $this->successResponse(User::WithData()->get(), Response::HTTP_OK);
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Create one new user.
+     * @param $request Request
+     * @return JsonResponse
+     * @throws
+     */
+    public function store(Request $request) : JsonResponse
+    {
+        $user = $this->validate($request, [
+            'name' => 'required|max:255',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6|'
+        ]);
+
+        $user['password'] = Hash::make($user['password']);
+
+        $user = User::create($user);
+        $this->createClient($user);
+        return $this->successResponse(['success' => true], Response::HTTP_CREATED);
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
      * User login.
@@ -41,15 +71,16 @@ class UserController extends Controller
      * @return JsonResponse
      * @throws
      */
-    public function login(Request $request) : JsonResponse {
-
-        $this->validate($request, [
+    public function login(Request $request) : JsonResponse
+    {
+        $data = $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required|min:6|'
         ]);
 
-        $user = User::where('email', $request->input('email'))->firstOrFail();
-        if (Hash::check($request->get('password'), $user->password)) {
+        $user = User::where('email', $data['email'])->firstOrFail();
+
+        if (Hash::check($data['password'], $user->password)) {
             $client = OauthClient::where('user_id', $user->id)->first();
             if (!$client) {
                 $client = $this->createClient($user);
@@ -72,43 +103,28 @@ class UserController extends Controller
         }
     }
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     /**
      * User logout.
      * @param $request Request
      * @return JsonResponse
      * @throws
      */
-    public function logout(Request $request) : JsonResponse {
-        $this->validate($request, [
+    public function logout(Request $request) : JsonResponse
+    {
+        $data = $this->validate($request, [
             'user_id' => 'required',
         ]);
 
-        $token = DB::table('oauth_access_tokens')->where('user_id', '=', $request->input('user_id'))->get();
+        $token = DB::table('oauth_access_tokens')->where('user_id', '=', $data['user_id'])->get();
         $req = Request::create('/oauth/personal-access-tokens/' . $token->id, 'DELETE');
         $res = app()->handle($req);
-        $data = json_decode($res->getContent());
 
-        return $this->successResponse($data);
+        return $this->successResponse(json_decode($res->getContent()));
     }
 
-    /**
-     * Create one new user.
-     * @param $request Request
-     * @return JsonResponse
-     * @throws
-     */
-    public function store(Request $request) : JsonResponse {
-        $user = $this->validate($request, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6|'
-        ]);
-
-        $user['password'] = Hash::make($request->get('password'));
-        $user = User::create($user);
-        $this->createClient($user);
-        return $this->successResponse($user, Response::HTTP_CREATED);
-    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
      * Show one new user.
@@ -117,9 +133,14 @@ class UserController extends Controller
      * @return JsonResponse
      * @throws
      */
-    public function show($id) : JsonResponse {
-        return $this->successResponse(User::findOrFail($id));
+    public function show($id) : JsonResponse
+    {
+        $user = User::WithData()->where('id', $id)->first();
+
+        return $this->successResponse($user);
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
      * Set user data.
@@ -128,7 +149,8 @@ class UserController extends Controller
      * @return Response|JsonResponse
      * @throws
      */
-    public function data(Request $request, $id) {
+    public function data(Request $request, $id) : JsonResponse
+    {
         $data = $this->validate($request, [
             'type' => 'in:friend,mentor',
             'age' => 'integer',
@@ -147,6 +169,15 @@ class UserController extends Controller
             'state' => 'string|max:255',
         ]);
 
+        if (isset($data['type'])) {
+
+            $user = User::findOrFail($id);
+            $user->type = $data['type'];
+            $user->save();
+
+            unset($data['type']);
+        }
+
         $user = DB::table('users_data')->where('user_id', $id)->get();
 
         if ($user->first()) {
@@ -161,17 +192,7 @@ class UserController extends Controller
         return $this->successResponse($data);
     }
 
-    /**
-     * Show one new user data.
-     *
-     * @param $id
-     * @return JsonResponse
-     * @throws
-     */
-    public function getdata($id) : JsonResponse {
-        return $this->successResponse(DB::table('users_data')
-            ->where("user_id", $id)->get());
-    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
      * Update user.
@@ -180,18 +201,48 @@ class UserController extends Controller
      * @return Response|JsonResponse
      * @throws
      */
-    public function update(Request $request, $id) {
-        $data = $this->validate($request, [
+    public function update(Request $request, $id)
+    {
+        $userdata = array_filter($this->validate($request, [
             'name' => 'string',
-            'email' => 'email'
-        ]);
+            'email' => 'email|unique:users',
+            'type' => 'string',
+            'status' => 'in:pending,regular,deleted'
+        ]));
 
-        $user = User::findOrFail($id);
-        $user->fill($data);
-        $user->save();
+        $additional = array_filter($this->validate($request, [
+            'age' => 'integer',
+            'married' => 'boolean',
+            'children' => 'boolean',
+            'pet' => 'boolean',
+            'education' => 'string|max:255',
+            'religion' => 'string|max:255',
+            'gender' => 'string|max:255',
+            'sex_orientation' => 'string|max:255',
+            'last_relapse' => 'integer',
+            'smoker' => 'boolean',
+            'support_groups' => 'boolean',
+            'city' => 'string|max:255',
+            'zip_code' => 'integer',
+            'state' => 'string|max:255',
+        ]));
 
-        return $this->successResponse($user);
+        if (isset($userdata) && !empty($userdata)) {
+            $user = User::findOrFail($id);
+            $user->fill($userdata);
+            $user->save();
+        }
+
+        if (isset($additional) && !empty($additional)) {
+            DB::table('users_data')
+                ->where("user_id", $id)
+                ->update($additional);
+        }
+
+        return $this->successResponse(['success' => true]);
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
      * Delete one new user.
@@ -199,11 +250,14 @@ class UserController extends Controller
      * @return JsonResponse
      * @throws
      */
-    public function destroy($id) : JsonResponse {
-        $user = User::findOrFail($id);
-        $user->delete();
-        return $this->successResponse($user);
+    public function destroy($id) : JsonResponse
+    {
+        User::findOrFail($id)->delete();
+
+        return $this->successResponse(['success' => true]);
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
      * Request user password reset.
@@ -212,7 +266,8 @@ class UserController extends Controller
      * @return JsonResponse
      * @throws
      */
-    public function resetPassword(Request $request) {
+    public function resetPassword(Request $request) : JsonResponse
+    {
         $this->validate($request, [
             'email' => 'required|email|exists:users'
         ]);
@@ -227,6 +282,8 @@ class UserController extends Controller
 
         return $this->successResponse($user, Response::HTTP_OK);
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
      * Reset user password.
@@ -254,6 +311,8 @@ class UserController extends Controller
 //        }
 //    }
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     /**
      * Create token client.
      *
@@ -261,7 +320,8 @@ class UserController extends Controller
      * @return OauthClient
      * @throws
      */
-    public function createClient(User $user) {
+    public function createClient(User $user)
+    {
         return OauthClient::create([
             'user_id' => $user->id,
             'name' => $user->name,
@@ -272,4 +332,6 @@ class UserController extends Controller
             'revoked' => 0
         ]);
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

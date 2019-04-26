@@ -52,9 +52,9 @@ class SearchAndUser extends Migration
         });
 
         Schema::create('users_location', function (Blueprint $table) {
-            $table->integer('user_id')->unsigned()->nullable();
-            $table->double('longitude');
-            $table->double('latitude');
+            $table->integer('user_id')->unsigned();
+            $table->string('latitude', 55);
+            $table->string('longitude', 55);
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

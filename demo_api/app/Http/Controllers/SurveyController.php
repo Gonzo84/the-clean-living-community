@@ -16,23 +16,31 @@ class SurveyController extends Controller
 {
     use ApiResponser;
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     /**
      * Create a new survey instance.
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct()
+    {
 
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
      * Return the list of surveys.
      *
      * @return JsonResponse
      */
-    public function index() {
+    public function index() : JsonResponse
+    {
         return $this->successResponse(Survey::all(), Response::HTTP_OK);
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
      * Show one survey.
@@ -40,10 +48,12 @@ class SurveyController extends Controller
      * @return JsonResponse
      * @throws
      */
-    public function show($id) {
-        $survey = Survey::findOrFail($id);
-        return $this->successResponse($survey, Response::HTTP_OK);
+    public function show($id) : JsonResponse
+    {
+        return $this->successResponse(Survey::findOrFail($id), Response::HTTP_OK);
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
      * Show survey categories.
@@ -51,10 +61,13 @@ class SurveyController extends Controller
      * @return JsonResponse
      * @throws
      */
-    public function categories($id) {
+    public function categories($id) : JsonResponse
+    {
         $survey = Survey::findOrFail($id);
         return $this->successResponse($survey->categories, Response::HTTP_OK);
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
      * Show category questions.
@@ -62,10 +75,13 @@ class SurveyController extends Controller
      * @return JsonResponse
      * @throws
      */
-    public function questions($id) {
+    public function questions($id) : JsonResponse
+    {
         $category = Categories::findOrFail($id);
         return $this->successResponse($category->questions, Response::HTTP_OK);
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
      * Store user answers.
@@ -74,27 +90,27 @@ class SurveyController extends Controller
      * @return JsonResponse
      * @throws
      */
-    public function storeQuestions(Request $request, $id) {
-
+    public function storeQuestions(Request $request, $id) : JsonResponse
+    {
         $data = $this->validate($request, [
             'user_id' => 'required|integer',
             'answers' => 'required|array'
         ]);
 
         foreach ($data['answers'] as $id => $user_answer) {
-
             $attributes = [
                 'user_id' => $data['user_id'],
                 'question_id' => $id,
                 'answer' => $user_answer
             ];
 
-            $answer = $this->saveQuestion($attributes);
-
+            $this->saveQuestion($attributes);
         }
 
-        return $this->successResponse($data['answers']);
+        return $this->successResponse(['success' => true]);
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
      * Store user answers.
@@ -103,16 +119,20 @@ class SurveyController extends Controller
      * @return JsonResponse
      * @throws
      */
-    public function storeQuestion(Request $request) {
-
+    public function storeQuestion(Request $request) : JsonResponse
+    {
         $data = $this->validate($request, [
             'user_id' => 'required|integer',
             'question_id' => 'required|integer',
             'answer' => 'required|integer'
         ]);
 
-        return $this->successResponse($this->saveQuestion($data));
+        $this->saveQuestion($data);
+
+        return $this->successResponse(['success' => true]);
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
      * Finish survey.
@@ -120,8 +140,8 @@ class SurveyController extends Controller
      * @return JsonResponse
      * @throws
      */
-    public function finish($id) {
-
+    public function finish($id) : JsonResponse
+    {
         $surveyScore = 0;
         $survey = Survey::find($id)->first();
 
@@ -144,42 +164,30 @@ class SurveyController extends Controller
             }
         }
 
-
         return $this->successResponse(['survey_score' => $surveyScore]);
-
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
      * Finish survey.
      * @param $data
-     * @return $answer Answers
      * @throws
      */
-    public function saveQuestion($data) {
-
-//        $answer = Answers::firstOrNew([
-//            'user_id' => $data['user_id'],
-//            'question_id' => $data['question_id']
-//        ]);
-
-//        dd($answer);
-//
-//        if (isset($answer->first()->answer)) {
-//
-//        }
-
+    public function saveQuestion($data)
+    {
         $answer = Answers::where([
             'user_id' => $data['user_id'],
             'question_id' => $data['question_id']
         ])->first();
 
-        if ($answer->isEmpty()) {
-            $answer = Answers::create($data);
+        if (empty($answer)) {
+            Answers::create($data);
         } else {
             $answer->answer = $data['answer'];
             $answer->save();
         }
-
-         return $answer;
     }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
