@@ -7,7 +7,7 @@
 .form-gathering {
     overflow-y: auto;
     overflow-x: hidden;
-    max-height: 70vh;
+    max-height: 75vh;
 }
 
 .clc-host-gathering-background {
@@ -17,6 +17,7 @@
     .clc-search-title {
         text-transform: uppercase;
         color: white;
+        margin: 5vw;
     }
 
 
@@ -47,22 +48,7 @@
         }
 
 
-        .ion-item-gathering {
-            padding: 0;
-            background: transparent;
-            --background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            margin: 0 0 10px;
-            --padding-bottom: 0;
-            color: white;
-
-            .ion-label-gathering {
-                font-size: 120%;
-            }
-
-            &.street {
-            }
-
+        .input-field-item {
             &.street-no {
                 display: inline-flex;
             }

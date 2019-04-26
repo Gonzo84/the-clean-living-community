@@ -58,3 +58,18 @@ ion-segment {
     font-size: 1.25em !important;
     border: 1px solid transparent;
 }
+
+.input-field-item {
+    padding: 0;
+    background: transparent;
+    --background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    margin: 0 0 10px;
+    --padding-top: 0;
+    --padding-bottom: 0;
+    color: white;
+
+    .input-field-label {
+        font-size: 120%;
+    }
+}
