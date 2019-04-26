@@ -6,6 +6,7 @@ import {StatusBar} from '@ionic-native/status-bar/ngx';
 import {Router} from '@angular/router';
 import {TokenService} from './services/token.service';
 import {AuthService} from './auth/auth.service';
+import {UserService} from './services/user.service';
 
 @Component({
     selector: 'app-root',
@@ -18,7 +19,8 @@ export class AppComponent {
         private statusBar: StatusBar,
         private tokenService: TokenService,
         private authService: AuthService,
-        private router: Router
+        private router: Router,
+        private userService: UserService
     ) {
         this.initializeApp();
     }
@@ -38,7 +40,8 @@ export class AppComponent {
         let route;
         if (token) {
             this.authService.authSubject.next(true);
-            route = '/home/search';
+            const user = await this.userService.getLoggedUser();
+            route = user.age ? 'home/search' : 'complete-profile';
         } else {
             route = '/login';
         }

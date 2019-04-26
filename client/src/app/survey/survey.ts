@@ -43,7 +43,7 @@ export class SurveyPage implements OnInit {
     }
 
     public ionViewDidEnter() {
-        this.slides.lockSwipes(true);
+        // this.slides.lockSwipes(true);
         this.slidesByCategory.lockSwipes(true);
     }
 

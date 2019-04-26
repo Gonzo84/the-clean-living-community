@@ -1,0 +1,26 @@
+ion-item, ion-list, ion-radio {
+  --background: transparent;
+  --color: #fff;
+}
+
+ion-radio-group {
+  width: 100%;
+  background: transparent;
+  color: #fff;
+}
+
+ion-content ion-button {
+  --background: #22e2b9;
+}
+
+a {
+  color: #fff;
+}
+
+ion-content.clc-complete-profile-background {
+  --background: url('../../assets/img/complete-profile/background.jpg') 0 0/ auto 100% no-repeat;
+}
+
+.clc-search-overlay {
+  height: 200% !important;
+}

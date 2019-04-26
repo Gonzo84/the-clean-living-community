@@ -1,35 +1,39 @@
 <ion-content class="clc-login-background" fullscreen="true" padding>
-    <form #form="ngForm" (ngSubmit)="login(form)">
-        <ion-grid>
-            <ion-row color="primary" justify-content-center>
-                <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-                    <div text-center class="clc-logo-header">
-                        <img src="/assets/img/auth/CLC_Long_White_Drkbg.png" alt="">
-                    </div>
-                    <div padding>
-                        <ion-item class="clc-login-mail">
-                            <ion-input name="email" type="email" placeholder="your@email.com" ngModel
-                                       required></ion-input>
-                        </ion-item>
-                        <ion-item class="clc-login-pass">
-                            <ion-input name="password" type="password" placeholder="Password" ngModel
-                                       required></ion-input>
-                        </ion-item>
-                    </div>
-                    <div padding text-center>
-                        <ion-button size="large" type="submit" [disabled]="form.invalid" shape="round">
-                            <fa-icon icon="arrow-right"></fa-icon>
-                        </ion-button>
-                    </div>
-                    <div padding text-center>
-                        <a routerLink='/register' class="clc-sign-up">
-                            SIGN UP</a>
-                    </div>
-                    <div padding text-center class="clc-forgot-password">
-                        FORGOT PASSWORD
-                    </div>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
-    </form>
+    <div class="clc-search-overlay">
+        <form #form="ngForm" (ngSubmit)="login(form)">
+            <ion-grid>
+                <ion-row color="primary" justify-content-center>
+                    <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+                        <div text-center class="clc-logo-header">
+                            <img src="/assets/img/auth/CLC_Long_White_Drkbg.png" alt="">
+                        </div>
+                        <div padding>
+                            <ion-item class="input-field-item">
+                                <ion-label class="input-field-label" position="floating">your@email.com</ion-label>
+                                <ion-input name="email" type="email" ngModel
+                                           required></ion-input>
+                            </ion-item>
+                            <ion-item class="input-field-item">
+                                <ion-label class="input-field-label" position="floating">Password</ion-label>
+                                <ion-input name="password" type="password" ngModel
+                                           required></ion-input>
+                            </ion-item>
+                        </div>
+                        <div padding text-center>
+                            <ion-button size="large" type="submit" [disabled]="form.invalid" shape="round">
+                                <fa-icon icon="arrow-right"></fa-icon>
+                            </ion-button>
+                        </div>
+                        <div padding text-center>
+                            <a routerLink='/register' class="clc-sign-up">
+                                SIGN UP</a>
+                        </div>
+                        <div padding text-center class="clc-forgot-password" (click)="onForgotPassword()">
+                            FORGOT PASSWORD
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </form>
+    </div>
 </ion-content>

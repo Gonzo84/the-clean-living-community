@@ -1,32 +1,27 @@
 @import "../../../theme/variables";
 
-ion-content.clc-register-background {
-  --background: url('../../../assets/img/auth/background.jpg') 0 0/100% 100% no-repeat;
-}
-
-.clc-logo-header {
-  width: 100%;
-  margin-bottom: 25vh;
-
-  img {
-    width: 100%;
-    height: auto;
-  }
-}
-
 ion-item {
   --background: transparent;
   --color: #fff;
-  border-bottom: 1px solid $clc-primary-color;
+}
+
+ion-content ion-button {
+  --background: #22e2b9;
 }
 
 a {
   color: #fff;
 }
 
-ion-content ion-button {
-  --background: #22e2b9;
+ion-content.clc-register-background {
+  --background: url('../../../assets/img/auth/background.jpg') 0 0/ auto 100% no-repeat;
 }
-.clc-login-button{
 
+.clc-logo-header {
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 }

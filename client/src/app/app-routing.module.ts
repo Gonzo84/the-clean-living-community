@@ -15,6 +15,11 @@ const routes: Routes = [
         path: 'survey',
         canActivate: [AuthGuard],
         loadChildren: './survey/survey.module#SurveyPageModule'
+    },
+    {
+        path: 'complete-profile',
+        canActivate: [AuthGuard],
+        loadChildren: './complete-profile/complete-profile.module#CompleteProfilePageModule'
     }
 ];
 

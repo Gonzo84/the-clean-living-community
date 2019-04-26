@@ -12,3 +12,8 @@ ion-content ion-slides {
     --height: 100% !important;
     height: 100% !important;
 }
+
+
+ion-content {
+    --background: url('../../assets/img/survey/background.jpg') 0 0/ auto 100% no-repeat;
+}

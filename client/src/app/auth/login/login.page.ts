@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from '../auth.service';
+import {ModalController} from "@ionic/angular";
+import {RequestNewPasswordPage} from "./request-new-password/request-new-password.page";
 
 @Component({
     selector: 'app-login',
@@ -10,7 +12,8 @@ import {AuthService} from '../auth.service';
 export class LoginPage implements OnInit {
 
     constructor(private  authService: AuthService,
-                private  router: Router) {
+                private  router: Router,
+                private modalCtrl: ModalController) {
     }
 
     ngOnInit() {
@@ -24,8 +27,19 @@ export class LoginPage implements OnInit {
             );
     }
 
+    private async onForgotPassword() {
+
+        const modal: HTMLIonModalElement =
+            await this.modalCtrl.create({
+                component: RequestNewPasswordPage
+            });
+
+        await modal.present();
+    }
+
     private onLoginSuccess(data) {
-        this.router.navigateByUrl('home/search');
+        const route = data.data.age ? 'home/search' : 'complete-profile';
+        this.router.navigateByUrl(route);
     }
 
     private async onLoginFailure(error) {
