@@ -1,12 +1,15 @@
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {Socket} from 'ng-socket-io';
 import {HttpClient} from '@angular/common/http';
+
 
 @Injectable({
     providedIn: 'root'
 })
 export class ChatServiceService {
+
+    private unreadMessage = new Subject<any>();
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -17,9 +20,9 @@ export class ChatServiceService {
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
 
-    getMessages() {
+    getMessages(userId) {
         const observable = new Observable(observer => {
-            this.socket.on('1', (data) => {
+            this.socket.on(userId, (data) => {
                 observer.next(data);
             });
         });
@@ -28,14 +31,20 @@ export class ChatServiceService {
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
 
-    sendMessage(message: string, sendToUserId: number) {
-        return this.httpClient.post('http://192.168.10.10/chat/send', {message: message, sendToUserId: sendToUserId});
+    socketDisconnect() {
+        this.socket.disconnect();
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
 
-    getConversationsList() {
-        return this.httpClient.get('http://192.168.10.10/chat/listing');
+    sendMessage(sender_id: number, receiver_id: number, message: string) {
+        return this.httpClient.post('http://192.168.10.10/chat/send', {sender_id: sender_id, receiver_id: receiver_id, message: message, });
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
+    getConversationsList(sender_id: number) {
+        return this.httpClient.post('http://192.168.10.10/chat/listing', {sender_id: sender_id});
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -45,4 +54,26 @@ export class ChatServiceService {
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
+
+    setUnreadMessageStatus(condition: boolean) {
+        this.unreadMessage.next(condition);
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
+    getUnreadMessageStatus(): Observable<any> {
+        return this.unreadMessage.asObservable();
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
+    checkForUnreadMessages(user_id) {
+        return this.httpClient.post('http://192.168.10.10/chat/status', {user_id: user_id});
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
+    updateUnreadMessageStatus(chatId) {
+        return this.httpClient.post('http://192.168.10.10/chat/status/update', {chatId: chatId});
+    }
 }

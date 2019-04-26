@@ -6,6 +6,7 @@ use App\Answers;
 use App\Questions;
 use App\Survey;
 use App\Traits\ApiResponser;
+use App\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 use App\Categories;
@@ -136,35 +137,97 @@ class SurveyController extends Controller
 
     /**
      * Finish survey.
-     * @param $id Survey
+     * @param $request Request
      * @return JsonResponse
      * @throws
      */
-    public function finish($id) : JsonResponse
+    public function finish(Request $request) : JsonResponse
+    {
+        $data = $this->validate($request, [
+            'survey' => 'required|integer',
+            'user' => 'required|integer'
+        ]);
+
+        $user = User::findOrFail($data['user']);
+
+        $score = $this->unanswered($data, true);
+
+        if ($score instanceof JsonResponse) {
+            return $score;
+        }
+
+        $user->survey_score = $score;
+        $user->save();
+
+        return $this->successResponse(['survey_score' => $user->survey_score]);
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Get all unanswered questions.
+     * @param $request Request
+     * @return JsonResponse
+     * @throws
+     */
+    public function all(Request $request) : JsonResponse
+    {
+        $data = $this->validate($request, [
+            'survey' => 'required|integer',
+            'user' => 'required|integer'
+        ]);
+
+        $question = $this->unanswered($data);
+
+        return $this->successResponse(['survey_score' => $question]);
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Get unanswered questions.
+     * @param $data
+     * @param $returnSum boolean
+     * @return
+     * @throws
+     */
+    public function unanswered($data, $returnSum = false)
     {
         $surveyScore = 0;
-        $survey = Survey::find($id)->first();
+        $allQuestions = array();
+
+        $survey = Survey::find($data['user'])->first();
 
         foreach ($survey->categories as $category) {
+            $category_questions = $category->questions;
+            $user_answers = Answers::all()->keyBy('question_id')->where('user_id', $data['user']);
 
-            $category_questions = array_column($category->questions->toArray(), 'id');
+            foreach ($category_questions as $question) {
 
-            foreach ($category->questions as $question) {
-
-                $answers = $question->answers->toArray();
-
-                $category_answers = array_column($answers, 'id');
-
-                if (count(array_diff($category_questions, $category_answers)) > 0)
-                {
-                    return $this->errorResponse('All survey questions not answered.', Response::HTTP_FORBIDDEN);
+                if ($returnSum) {
+                    if (isset($user_answers[$question->id]['answer']) && $user_answers[$question->id]['answer'] != '') {
+                        $surveyScore += $user_answers[$question->id]['answer'];
+                    } else {
+                        return $this->errorResponse('All survey questions not answered.', Response::HTTP_FORBIDDEN);
+                    }
+                } else {
+                    if (!(isset($user_answers[$question->id]['answer']) && $user_answers[$question->id]['answer'] != '')) {
+                        $allQuestions[] = array(
+                            'id' => $question->id,
+                            'question' => $question->question,
+                            'options' => $question->options,
+                            'type' => $question->type,
+                        );
+                    }
                 }
-
-                $surveyScore += array_sum(array_column($answers, 'answer'));
             }
         }
 
-        return $this->successResponse(['survey_score' => $surveyScore]);
+        if ($returnSum) {
+            return (int)$surveyScore;
+        }
+
+        return $allQuestions;
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

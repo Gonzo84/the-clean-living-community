@@ -39,32 +39,38 @@ class ChatController extends Controller
     public function sendMessage(Request $request)
     {
         $this->validate($request, [
+            'sender_id' => 'required|integer',
+            'receiver_id' => 'required|integer',
             'message' => 'required|max:255',
-            'sendToUserId' => 'required|integer'
         ]);
 
-        $user = User::findOrFail($request->input('sendToUserId'));
+        if ($request->input('receiver_id') === $request->input('sender_id')) {
+            return $this->errorResponse('forbidden', 403);
+        }
+
+        $receiver = User::findOrFail($request->input('receiver_id'));
+        $sender = User::findOrFail($request->input('sender_id'));
 
         $redis = Redis::Connection();
 
         $arrMessage = array(
-            'sender_id' => $this->senderId,
-            'user' => $this->senderName,
+            'sender_id' => $sender->id,
+            'user' => $sender->name,
             'date_created' => time(),
-            'channel' => $user->id,
+            'channel' => $receiver->id,
             'message' => $request->input('message')
         );
 
         if ($redis->publish('chat-message', json_encode($arrMessage))) {
 
-            $this->senderId < $user->id ? $channelName = $this->senderId . '_' . $user->id : $channelName = $user->id . '_' . $this->senderId;
+            $sender->id < $receiver->id ? $channelName = $sender->id . '_' . $receiver->id : $channelName = $receiver->id . '_' . $sender->id;
             $chat = new Chat;
             $chatId = $chat::firstOrCreate(['channel' => $channelName])->id;
 
             $chatMessage = new Message;
             $chatMessage->chat_id = $chatId;
-            $chatMessage->from = $this->senderId;
-            $chatMessage->to = $user->id;
+            $chatMessage->from = $sender->id;
+            $chatMessage->to = $receiver->id;
             $chatMessage->message = $request->input('message');
             $chatMessage->read_status = 0;
             $chatMessage->save();
@@ -80,12 +86,19 @@ class ChatController extends Controller
      * @return JsonResponse
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function getConversationsList()
+    public function getConversationsList(Request $request)
     {
         //todo include eloquent belongsTo/hasMany
         //todo include pagination
-        $allMessages = Message::where('from', $this->senderId)
-                            ->orWhere('to', $this->senderId)
+
+        $this->validate($request, [
+            'sender_id' => 'required|integer',
+        ]);
+
+        $sender = User::findOrFail($request->input('sender_id'));
+
+        $allMessages = Message::where('from', $sender->id)
+                            ->orWhere('to', $sender->id)
                             ->orderBy('chat_id', 'desc')
                             ->groupBy('chat_id')
                             ->get('chat_id');
@@ -95,10 +108,13 @@ class ChatController extends Controller
         if (count($allMessages->toArray()) > 0) {
             foreach ($allMessages->toArray() as $chatId) {
                 $userId = explode("_",$chatRooms[$chatId['chat_id']]['channel']);
+                $unreadMessages = Message::where(['to' => $sender->id, 'read_status' => 0, 'chat_id' => $chatId['chat_id']])->get();
+                $count = $unreadMessages->count();
                 $messageList[] = array(
                     'chatId' => $chatId['chat_id'],
-                    'user' => $userId[0] == $this->senderId ? User::find($userId[1])->name : User::find($userId[0])->name,
-                    'userId' => $userId[0] == $this->senderId ? $userId[1] : $userId[0]
+                    'user' => $userId[0] == $sender->id ? User::find($userId[1])->name : User::find($userId[0])->name,
+                    'userId' => $userId[0] == $sender->id ? $userId[1] : $userId[0],
+                    'unread' => $count > 0 ? true : false
                 );
             }
         }
@@ -119,6 +135,7 @@ class ChatController extends Controller
             'chatId' => 'required'
         ]);
 
+        Message::where('chat_id', '=', $request->input('chatId'))->update(['read_status' => 1]);
         $chatList = array();
         $chatHistory = Message::where('chat_id', $request->input('chatId'))->get()->toArray();
         if (count($chatHistory) > 0) {
@@ -133,6 +150,43 @@ class ChatController extends Controller
         }
 
         return $this->successResponse(array('success' => true, 'chatList' => $chatList));
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Check if exist some unread message
+     * @return JsonResponse
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function checkForUnreadMessages(Request $request)
+    {
+        $this->validate($request, [
+            'user_id' => 'required'
+        ]);
+
+        $unreadMessages = Message::where(['to' => $request->input('user_id'), 'read_status' => 0])->get();
+        $count = $unreadMessages->count();
+
+        return $this->successResponse(array('success' => true, 'status' => $count > 0 ? true : false));
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Update all messages status to read for particular chat room
+     * @return JsonResponse
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function updateUnreadMessageStatus(Request $request)
+    {
+        $this->validate($request, [
+            'chatId' => 'required'
+        ]);
+
+        Message::where('chat_id', '=', $request->input('chatId'))->update(['read_status' => 1]);
+
+        return $this->successResponse(array('success' => true));
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
