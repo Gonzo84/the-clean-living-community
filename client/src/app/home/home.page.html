@@ -5,7 +5,7 @@
             <ion-label>Find Connections</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="messages">
+        <ion-tab-button tab="messages" [ngClass]="{'unread-message':unreadMessageStatus}">
             <ion-icon name="chatbubbles"></ion-icon>
             <ion-label>Messages</ion-label>
         </ion-tab-button>
