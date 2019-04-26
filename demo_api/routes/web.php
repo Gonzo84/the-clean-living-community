@@ -37,7 +37,11 @@ $router->group([
 
     $router->post('/survey/category/{id}', 'SurveyController@storeQuestions');
     $router->post('/survey/categories/question', 'SurveyController@storeQuestion');
-    $router->get('/survey/{id}/finish', 'SurveyController@finish');
+    $router->post('/survey/finish', 'SurveyController@finish');
+
+
+    $router->post('/survey/all', 'SurveyController@all');
+
 
     // search
     $router->get('/location/{id}', 'LocationController@getLocation');
