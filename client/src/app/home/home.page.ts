@@ -1,8 +1,9 @@
-import {Component, OnDestroy} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ChatServiceService} from '../services/chat-service.service';
 import {Storage} from '@ionic/storage';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
+import {UserService} from '../services/user.service';
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -11,7 +12,7 @@ import {Subscription} from 'rxjs';
     templateUrl: 'home.page.html',
     styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnDestroy {
+export class HomePage implements OnDestroy, OnInit {
 
     user: any;
     unreadMessageStatus = false;
@@ -21,8 +22,9 @@ export class HomePage implements OnDestroy {
 
     constructor(private chatService: ChatServiceService,
                 private storage: Storage,
-                private rte: Router,
-                private thisRoute: ActivatedRoute) {
+                private router: Router,
+                private thisRoute: ActivatedRoute,
+                private userService: UserService) {
         this.storage.get('LOGGED_USER').then((data) => {
             this.user = data;
         }).then(() => {
@@ -43,6 +45,13 @@ export class HomePage implements OnDestroy {
             this.unreadMessageStatus = status;
         });
 
+    }
+
+    public async ngOnInit() {
+        // const loggedUser = await this.userService.getLoggedUser();
+        // if (!loggedUser.survey_score) {
+        //     this.router.navigateByUrl('survey');
+        // }
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

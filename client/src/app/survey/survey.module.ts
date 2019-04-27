@@ -4,7 +4,7 @@ import {IonicModule} from '@ionic/angular';
 import {SurveyPage} from './survey';
 import {RouterModule, Routes} from '@angular/router';
 import {FormsModule} from '@angular/forms';
-import {PersonalDetails} from './personal-details/personal-details'
+import {DebugPipe} from '../pipes/debug';
 
 const routes: Routes = [{
     path: '',
@@ -20,8 +20,8 @@ const routes: Routes = [{
         RouterModule.forChild(routes)
     ],
     declarations: [
-        SurveyPage,
-        PersonalDetails
+        DebugPipe,
+        SurveyPage
     ]
 })
 export class SurveyPageModule {

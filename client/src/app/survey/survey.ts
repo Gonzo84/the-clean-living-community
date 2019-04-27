@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {ApiService} from '../services/api.service';
+import {UserService} from '../services/user.service';
 
 @Component({
     selector: 'page-survey',
@@ -7,70 +8,46 @@ import {ApiService} from '../services/api.service';
     styleUrls: ['./survey.scss'],
 })
 export class SurveyPage implements OnInit {
-
-    public answers: any = [{
-        answer: 'Strongly Disagree',
-        value: -2
-    }, {
-        answer: 'Disagree',
-        value: -1
-    }, {
-        answer: 'Neutral',
-        value: -0
-    }, {
-        answer: 'Agree',
-        value: 1
-    }, {
-        answer: 'Strongly Agree',
-        value: 2
-    }];
-
+    loggedUser;
     @ViewChild('slides') slides: any;
-
-    @ViewChild('slidesByCategory') slidesByCategory: any;
 
     hasAnswered = false;
     questions: any;
-    categories: any[];
 
 
-    constructor(private api: ApiService) {
+    constructor(private api: ApiService,
+                private userSerice: UserService) {
     }
 
-    public ngOnInit() {
-        this.api.getSurveyQuestions()
+    public async ngOnInit() {
+        this.loggedUser = await this.userSerice.getLoggedUser();
+        this.api.getSurveyQuestions(this.loggedUser.id)
             .subscribe(this.loadData.bind(this));
     }
 
     public ionViewDidEnter() {
-        // this.slides.lockSwipes(true);
-        this.slidesByCategory.lockSwipes(true);
+        this.slides.lockSwipes(true);
     }
 
     private loadData(data) {
-        this.categories = data.questions;
+        this.questions = data.data.survey_score;
     }
 
     private finishSurvey() {
 
     }
 
-    private nextSlide(slides) {
-        slides.lockSwipes(false);
-        slides.slideNext();
-        slides.lockSwipes(true);
+    private nextSlide() {
+        this.slides.lockSwipes(false);
+        this.slides.slideNext();
+        this.slides.lockSwipes(true);
     }
 
-    private selectAnswer(value, index) {
+    private selectAnswer(answer) {
         this.hasAnswered = true;
         setTimeout(() => {
             this.hasAnswered = false;
-            const slides = index < 4 ? this.slides : this.slidesByCategory;
-            this.nextSlide(slides);
+            this.nextSlide();
         }, 1000);
-    }
-
-    test() {
-        this.nextSlide(this.slidesByCategory);
     }
 }

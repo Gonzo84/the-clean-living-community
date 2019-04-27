@@ -15,15 +15,19 @@ export class ApiService {
         return this.http.post(`${ENV.SERVER_ADDRESS}/users/${id}/data`, profile);
     }
 
-    public getSurveyQuestions(): Observable<any> {
-        return this.http.get('./assets/survey/survey.json');
+    public getSurveyQuestions(id: number): Observable<any> {
+        const params = {
+            survey: 1,
+            user: id
+        };
+        return this.http.post(`${ENV.SERVER_ADDRESS}/survey/all`, params);
     }
 
     public getUserInfo(id: number): Observable<any> {
         return this.http.get(`${ENV.SERVER_ADDRESS}/users/${id}`);
     }
 
-    public resetPassword(email): Observable<any> {
+    public resetPassword(email: any): Observable<any> {
         return this.http.post(`${ENV.SERVER_ADDRESS}/users/password/reset`, email);
     }
 }

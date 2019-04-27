@@ -9,6 +9,16 @@ import {ApiService} from '../../services/api.service';
     styleUrls: ['./my-profile.component.scss'],
 })
 export class MyProfileComponent {
+    private lastRelapseMap = {
+        1: 'A day ago',
+        3: 'Few days ago',
+        7: 'More than a week',
+        30: 'More than a month',
+        90: 'More than a 3 months',
+        180: 'Half a year ago',
+        365: 'More than a year',
+        1095: 'More than 3 years'
+    };
 
     profile: any = {};
     loggedUser;
@@ -38,6 +48,10 @@ export class MyProfileComponent {
     onChatClick() {
         // this.router.navigateByUrl('chat/id'); uncomment when chat implemented
         console.log('open chat');
+    }
+
+    transformLastRelapse(days) {
+        return this.lastRelapseMap[days];
     }
 
     updateUser(response) {
