@@ -18,7 +18,7 @@ $router->post('/users/login', 'UserController@login');
 $router->post('/users/password/reset', 'UserController@resetPassword');
 
 $router->group([
-    'middleware' => ''
+//    'middleware' => ''
 ], function() use($router) {
     $router->get('/users', 'UserController@index');
     $router->get('/users/{id}', 'UserController@show');
