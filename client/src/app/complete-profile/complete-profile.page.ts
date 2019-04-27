@@ -9,6 +9,7 @@ import {Router} from '@angular/router';
     styleUrls: ['./complete-profile.page.scss'],
 })
 export class CompleteProfilePage {
+    loggedUser;
     married = false;
     children = false;
     pet = false;
@@ -21,14 +22,16 @@ export class CompleteProfilePage {
     }
 
     async submit(form) {
-        const user = await this.userService.getLoggedUser();
-        this.api.completeProfile(form.value, user.id)
+        this.loggedUser = await this.userService.getLoggedUser();
+        this.api.completeProfile(form.value, this.loggedUser.id)
             .subscribe(this.onProfileCompleteSuccess.bind(this),
                 this.onProfileCompleteFailure.bind(this)
             );
     }
 
-    private onProfileCompleteSuccess() {
+    private async onProfileCompleteSuccess(data) {
+        const updatedUser = {...data.data, ...this.loggedUser};
+        await this.userService.setLoggedUser(updatedUser);
         this.router.navigateByUrl('home/search');
     }
 
