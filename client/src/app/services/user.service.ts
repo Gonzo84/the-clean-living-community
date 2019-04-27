@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Storage} from "@ionic/storage";
-import {UserInterface} from "../interfaces/user";
+import {Storage} from '@ionic/storage';
+import {UserInterface} from '../interfaces/user';
 
 @Injectable({
     providedIn: 'root'

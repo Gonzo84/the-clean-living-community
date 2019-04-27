@@ -1,0 +1,30 @@
+<ion-content class="clc-find-connection-background" fullscreen="true" padding>
+    <div class="clc-search-overlay">
+        <ion-back-button defaultHref="/home/search" class="ion-back-button-connection"></ion-back-button>
+
+        <ion-grid class="ion-grid-connection">
+            <ion-row color="primary" justify-content-center>
+                <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+                    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems($event)"
+                                   class="connections-search-field" type="search" placeholder="Find a connection"
+                                   autocomplete></ion-searchbar>
+
+
+                    <ion-list>
+                        <ion-item *ngFor="let user of connections" margin (click)="viewProfile(user.id)">
+                            <div item-start class="ion-avatar-connection">
+                                <span>{{generateAvatar(user.name)}}</span>
+                            </div>
+                            <div class="inner-connection-list-item">{{user.name}}</div>
+                        </ion-item>
+                    </ion-list>
+
+                    <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="page < totalPage" threshold="100px">
+                        <ion-infinite-scroll-content loadingSpinner="bubbles"
+                                                     loadingText="Loading more data..."></ion-infinite-scroll-content>
+                    </ion-infinite-scroll>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

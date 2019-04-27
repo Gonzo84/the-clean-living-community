@@ -31,11 +31,11 @@ export class MyProfileComponent {
     }
 
     async ionViewDidEnter() {
+        this.loggedUser = await this.userService.getLoggedUser();
         const id = this.activatedRoute.snapshot.paramMap.get('id');
         if (id) {
             this.getUserInfo(id);
         } else {
-            this.loggedUser = await this.userService.getLoggedUser();
             this.getUserInfo(this.loggedUser.id);
         }
     }

@@ -27,6 +27,16 @@ export class ApiService {
         return this.http.get(`${ENV.SERVER_ADDRESS}/users/${id}`);
     }
 
+    public filterUsers(type, name, page) {
+        const params = {
+            type,
+            name,
+            page
+        };
+        // @ts-ignore
+        return this.http.get(`${ENV.SERVER_ADDRESS}/users?name=${name}&type=${type}&page=${page}`, params);
+    }
+
     public resetPassword(email: any): Observable<any> {
         return this.http.post(`${ENV.SERVER_ADDRESS}/users/password/reset`, email);
     }

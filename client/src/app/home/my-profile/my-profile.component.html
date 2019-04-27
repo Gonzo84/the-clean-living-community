@@ -11,7 +11,7 @@
                 </ion-col>
                 <ion-col align-self-center size-md="4" size-lg="4" size-xs="4">
                     <ion-icon name="chatboxes" class="profile-message-icon" (click)="onChatClick()"
-                              *ngIf="loggedUser?.id === profile?.id"></ion-icon>
+                              *ngIf="loggedUser?.id !== profile?.id"></ion-icon>
                 </ion-col>
             </ion-row>
 

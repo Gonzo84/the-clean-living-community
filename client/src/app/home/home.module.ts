@@ -15,6 +15,7 @@ import {ChatRoomComponent} from './messages/chat-room/chat-room.component';
 import {FindGatheringComponent} from './gatherings/find-gathering/find-gathering.component';
 import {ViewGatheringComponent} from './gatherings/view-gathering/view-gathering.component';
 import {HostGatheringComponent} from './gatherings/host-gathering/host-gathering.component';
+import {FindConnectionComponent} from './search/find-connection/find-connection.component';
 
 @NgModule({
     imports: [
@@ -27,6 +28,15 @@ import {HostGatheringComponent} from './gatherings/host-gathering/host-gathering
             children: [{
                 path: 'search',
                 component: SearchComponent
+            }, {
+                path: 'find-connection',
+                children: [{
+                    path: '',
+                    component: FindConnectionComponent
+                }, {
+                    path: ':type',
+                    component: FindConnectionComponent
+                }]
             }, {
                 path: 'messages',
                 component: MessagesComponent
@@ -67,7 +77,7 @@ import {HostGatheringComponent} from './gatherings/host-gathering/host-gathering
         MessagesComponent,
         MyProfileComponent,
         SearchComponent,
-        SearchComponent,
+        FindConnectionComponent,
         ChatRoomComponent
     ]
 })
