@@ -23,7 +23,7 @@ export class MyProfileComponent implements OnInit {
     }
 
     updateUser(response) {
-        this.profile = response.data;
+        this.profile = Object.assign(response.data, this.profile);
     }
 
     // noinspection JSUnusedGlobalSymbols
@@ -39,6 +39,18 @@ export class MyProfileComponent implements OnInit {
     }
 
     getUserInfo(id) {
+        const accessToken = this.tokenService.getAccessToken();
+        this.http.get(`${ENV.SERVER_ADDRESS}/users/${id}`, {
+            headers: {
+                Authorisation: `Bearer ${accessToken}`
+            }
+        }).subscribe(this.getUserData.bind(this, id));
+    }
+
+    getUserData(id, response) {
+
+        this.profile = response.data;
+
         const accessToken = this.tokenService.getAccessToken();
         this.http.get(`${ENV.SERVER_ADDRESS}/users/${id}/data`, {
             headers: {
