@@ -1,68 +1,47 @@
-/* tslint:disable:max-line-length */
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {HttpClient} from '@angular/common/http';
-import {TokenService} from '../../services/token.service';
 import {UserService} from '../../services/user.service';
-import ENV from '../../../ENV';
+import {ApiService} from '../../services/api.service';
 
 @Component({
     selector: 'app-my-profile',
     templateUrl: './my-profile.component.html',
     styleUrls: ['./my-profile.component.scss'],
 })
-export class MyProfileComponent implements OnInit {
+export class MyProfileComponent {
 
     profile: any = {};
 
     constructor(
-        private tokenService: TokenService,
         private activatedRoute: ActivatedRoute,
-        private http: HttpClient,
-        private userService: UserService) {
+        private userService: UserService,
+        private api: ApiService,
+        private router: Router) {
     }
 
-    updateUser(response) {
-        this.profile = Object.assign(response.data, this.profile);
-    }
-
-    // noinspection JSUnusedGlobalSymbols
     ionViewDidEnter() {
         const id = this.activatedRoute.snapshot.paramMap.get('id');
-        if (id !== '') {
+        if (id) {
             this.getUserInfo(id);
         } else {
-            this.userService.getLoggedUser().then((userInfo: any) => {
-                this.getUserInfo(userInfo.id);
-            });
+            this.userService.getLoggedUser()
+                .then((userInfo: any) => {
+                    this.getUserInfo(userInfo.id);
+                });
         }
     }
 
     getUserInfo(id) {
-        const accessToken = this.tokenService.getAccessToken();
-        this.http.get(`${ENV.SERVER_ADDRESS}/users/${id}`, {
-            headers: {
-                Authorisation: `Bearer ${accessToken}`
-            }
-        }).subscribe(this.getUserData.bind(this, id));
-    }
-
-    getUserData(id, response) {
-
-        this.profile = response.data;
-
-        const accessToken = this.tokenService.getAccessToken();
-        this.http.get(`${ENV.SERVER_ADDRESS}/users/${id}/data`, {
-            headers: {
-                Authorisation: `Bearer ${accessToken}`
-            }
-        }).subscribe(this.updateUser.bind(this));
-    }
-
-    ngOnInit() {
+        this.api.getUserInfo(id)
+            .subscribe(this.updateUser.bind(this));
     }
 
     onChatClick() {
+        // this.router.navigateByUrl('chat/id'); uncomment when chat implemented
         console.log('open chat');
+    }
+
+    updateUser(response) {
+        this.profile = response.data;
     }
 }
