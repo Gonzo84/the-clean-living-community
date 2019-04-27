@@ -10,8 +10,8 @@
     max-height: 93vh;
 }
 
-.clc-search-background {
-    --background: url('../../../assets/img/search/search-background.jpg') 0 0/ auto 100% no-repeat;
+.clc-profile-details-background {
+    --background: url('../../../assets/img/profile-details/details_backgroung.jpg') 0 0/ auto 100% no-repeat;
 
     .clc-search-title {
         font-size: 200%;
@@ -43,7 +43,8 @@
         font-size: 100%;
 
         .profile-label-value {
-            font-size: 100%;
+            margin-top: 5px;
+            font-size: 120%;
             color: $clc-primary-color;
         }
     }

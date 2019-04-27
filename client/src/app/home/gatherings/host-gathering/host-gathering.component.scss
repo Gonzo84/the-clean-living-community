@@ -1,77 +1,82 @@
 @import "../../../../theme/variables";
 
 .scroll-content {
-    overflow: hidden;
+  overflow: hidden;
+}
+
+ion-item, ion-list, ion-radio {
+  --background: transparent;
+  --color: #fff;
 }
 
 .form-gathering {
-    overflow-y: auto;
-    overflow-x: hidden;
-    max-height: 75vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 75vh;
 }
 
 .clc-host-gathering-background {
-    --background: url('../../../../assets/img/search/view-gathering-background.jpg') 50% 100%/150% 120% no-repeat;
+  --background: url('../../../../assets/img/gatherings/view-gathering-background.jpg') 50% 100%/150% 120% no-repeat;
 
 
-    .clc-search-title {
-        text-transform: uppercase;
-        color: white;
-        margin: 5vw;
-    }
+  .clc-search-title {
+    text-transform: uppercase;
+    color: white;
+    margin: 5vw;
+  }
 
 
-    .ion-back-button-gathering {
-        background: transparent;
-        padding: 10px 0 0;
-        color: white;
-        position: absolute;
-        z-index: 1;
-    }
-
-    .form-gathering {
-
-        background: transparent;
-        border: none;
-
-        .ion-grid-gathering {
-            padding: 0;
-
-            .ion-col-gathering {
-                padding: 0;
-            }
-
-            .ion-col-gathering:first-child {
-                padding-right: 10px;
-                width: calc(100% - 10px);
-            }
-        }
-
-
-        .input-field-item {
-            &.street-no {
-                display: inline-flex;
-            }
-        }
-
-        .ion-button-gathering {
-            text-transform: uppercase;
-            background: transparent;
-            --background: #22e2b9;
-            color: white;
-            width: 100%;
-            --padding-top: 20px;
-            --padding-bottom: 20px;
-            font-size: 120%;
-        }
-    }
-}
-
-
-.ion-back-button-gathering {
+  .ion-back-button-gathering {
     background: transparent;
     padding: 10px 0 0;
     color: white;
     position: absolute;
     z-index: 1;
+  }
+
+  .form-gathering {
+
+    background: transparent;
+    border: none;
+
+    .ion-grid-gathering {
+      padding: 0;
+
+      .ion-col-gathering {
+        padding: 0;
+      }
+
+      .ion-col-gathering:first-child {
+        padding-right: 10px;
+        width: calc(100% - 10px);
+      }
+    }
+
+
+    .input-field-item {
+      &.street-no {
+        display: inline-flex;
+      }
+    }
+
+    .ion-button-gathering {
+      text-transform: uppercase;
+      background: transparent;
+      --background: #22e2b9;
+      color: white;
+      width: 100%;
+      --padding-top: 20px;
+      --padding-bottom: 20px;
+      font-size: 120%;
+    }
+  }
+}
+
+
+.ion-back-button-gathering {
+  background: transparent;
+  padding: 10px 0 0;
+  color: white;
+  position: absolute;
+  z-index: 1;
 }
