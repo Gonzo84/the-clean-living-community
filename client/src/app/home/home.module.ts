@@ -34,8 +34,14 @@ import {HostGatheringComponent} from './gatherings/host-gathering/host-gathering
                 path: 'chat',
                 component: ChatRoomComponent
             }, {
-                path: 'my-profile/:id',
-                component: MyProfileComponent
+                path: 'my-profile',
+                children: [{
+                    path: '',
+                    component: MyProfileComponent
+                }, {
+                    path: ':id',
+                    component: MyProfileComponent
+                }]
             }, {
                 path: 'gatherings',
                 component: GatheringsComponent

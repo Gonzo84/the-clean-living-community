@@ -11,6 +11,7 @@ import {ApiService} from '../../services/api.service';
 export class MyProfileComponent {
 
     profile: any = {};
+    loggedUser;
 
     constructor(
         private activatedRoute: ActivatedRoute,
@@ -19,15 +20,13 @@ export class MyProfileComponent {
         private router: Router) {
     }
 
-    ionViewDidEnter() {
+    async ionViewDidEnter() {
         const id = this.activatedRoute.snapshot.paramMap.get('id');
         if (id) {
             this.getUserInfo(id);
         } else {
-            this.userService.getLoggedUser()
-                .then((userInfo: any) => {
-                    this.getUserInfo(userInfo.id);
-                });
+            this.loggedUser = await this.userService.getLoggedUser();
+            this.getUserInfo(this.loggedUser.id);
         }
     }
 
