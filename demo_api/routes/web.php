@@ -53,6 +53,7 @@ $router->group([
     $router->post('/chat/history', 'ChatController@getConversationHistory');
     $router->post('/chat/status', 'ChatController@checkForUnreadMessages');
     $router->post('/chat/status/update', 'ChatController@updateUnreadMessageStatus');
+    $router->post('/chat/room', 'ChatController@getChatRoomId');
 
     //gathering
     $router->post('/gathering', 'GatheringController@createGathering');

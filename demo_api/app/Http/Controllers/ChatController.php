@@ -194,4 +194,28 @@ class ChatController extends Controller
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Get chat room id or create new one
+     * @return JsonResponse
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function getChatRoomId(Request $request)
+    {
+        $this->validate($request, [
+            'sender_id' => 'required|integer',
+            'receiver_id' => 'required|integer',
+        ]);
+
+        $receiver = User::findOrFail($request->input('receiver_id'));
+        $sender = User::findOrFail($request->input('sender_id'));
+
+        $sender->id < $receiver->id ? $channelName = $sender->id . '_' . $receiver->id : $channelName = $receiver->id . '_' . $sender->id;
+        $chat = new Chat;
+        $chatId = $chat::firstOrCreate(['channel' => $channelName])->id;
+
+        return $this->successResponse(array('success' => true, 'chatId' => $chatId));
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
