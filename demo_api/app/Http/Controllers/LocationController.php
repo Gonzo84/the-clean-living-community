@@ -77,15 +77,17 @@ class LocationController extends Controller
     {
         $data = $this->validate($request, [
             'user_id' => 'required|integer',
-            'type' => 'required'
+            'type' => 'required',
+            'name' => 'string'
         ]);
 
         $user = User::find($data['user_id'])->first();
 
         $map = User::ofType($data['type'])
+            ->WithName($data['name'])
             ->Active()
             ->MapSearch($user)
-            ->get();
+            ->paginate(8);
 
         return $this->successResponse($map, Response::HTTP_CREATED);
     }

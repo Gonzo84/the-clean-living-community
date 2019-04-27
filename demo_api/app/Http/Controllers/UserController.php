@@ -35,9 +35,13 @@ class UserController extends Controller
      *
      * @return JsonResponse
      */
-    public function index() : JsonResponse
+    public function index(Request $request) : JsonResponse
     {
-        return $this->successResponse(User::WithData()->get(), Response::HTTP_OK);
+        $name = $request->input('name');
+
+        return $this->successResponse(User::WithData()
+            ->where('name', 'like', '%' . $name . '%')
+            ->paginate(20), Response::HTTP_OK);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -79,7 +83,7 @@ class UserController extends Controller
             'password' => 'required|min:6|'
         ]);
 
-        $user = User::where('email', $data['email'])->firstOrFail();
+        $user = User::withData()->where('email', $data['email'])->firstOrFail();
 
         if (Hash::check($data['password'], $user->password)) {
             $client = OauthClient::where('user_id', $user->id)->first();

@@ -64,9 +64,17 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
                                ) + sin( radians(?) ) *
                                sin( radians( latitude ) ) )
                              ) AS distance', [$user->survey_score, $user->latitude, $user->longitude, $user->latitude])
-            ->havingRaw("distance > ?", [1])
+//            ->havingRaw("distance > ?", [1])
+                ->where('id' , '!=', $user->id)
             ->groupBy('id')
             ->orderBy('distance');
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public function scopeWithName($query, $name)
+    {
+        return $query->where('name', 'like', '%' . $name . '%');
     }
 
 }

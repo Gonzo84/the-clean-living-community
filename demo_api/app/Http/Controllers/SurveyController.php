@@ -212,11 +212,12 @@ class SurveyController extends Controller
                     }
                 } else {
                     if (!(isset($user_answers[$question->id]['answer']) && $user_answers[$question->id]['answer'] != '')) {
+
+
                         $allQuestions[] = array(
                             'id' => $question->id,
                             'question' => $question->question,
-                            'options' => $question->options,
-                            'type' => $question->type,
+                            'options' => json_decode($question->options)
                         );
                     }
                 }

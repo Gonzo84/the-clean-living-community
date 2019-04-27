@@ -23,19 +23,19 @@ class SurveySeeder extends Seeder
         }
 
         $positiveAnswers = json_encode([
-            '2' => 'Strongly Disagree',
-            '1' => 'Disagree',
-            '0' => 'Neutral',
-            '-1' => 'Agree',
-            '-2' => 'Strongly Agree',
+            ['value' => '2', 'name' => 'Strongly Disagree'],
+            ['value' => '1', 'name' => 'Disagree'],
+            ['value' => '0', 'name' => 'Neutral'],
+            ['value' => '-1', 'name' => 'Agree'],
+            ['value' => '-2', 'name' => 'Strongly Agree']
         ]);
 
         $negativeAnswers = json_encode([
-            '-2' => 'Strongly Disagree',
-            '-1' => 'Disagree',
-            '0' => 'Neutral',
-            '1' => 'Agree',
-            '2' => 'Strongly Agree',
+            ['value' => '-2', 'name'  => 'Strongly Disagree'],
+            ['value' => '-1', 'name'  => 'Disagree'],
+            ['value' => '0', 'name'  => 'Neutral'],
+            ['value' => '1', 'name'  => 'Agree'],
+            ['value' => '2', 'name'  => 'Strongly Agree']
         ]);
 
         DB::table('surveys')->insert([
