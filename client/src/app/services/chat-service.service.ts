@@ -77,4 +77,10 @@ export class ChatServiceService {
     updateUnreadMessageStatus(chatId) {
         return this.httpClient.post(ENV.SERVER_ADDRESS + '/chat/status/update', {chatId: chatId});
     }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
+    getChatRoomId(sender_id, receiver_id) {
+        return this.httpClient.post(ENV.SERVER_ADDRESS + '/chat/room', {sender_id: sender_id, receiver_id: receiver_id});
+    }
 }
