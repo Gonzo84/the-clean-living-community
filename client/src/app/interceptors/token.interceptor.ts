@@ -24,7 +24,7 @@ export class TokenInterceptor implements HttpInterceptor {
                 private toastCtrl: ToastController) {
     }
 
-    private authorizationObservableMergeMap(request: HttpRequest<any>, next: HttpHandler, headers: HttpHeaders, authBearer: string): Observable<HttpEvent<any>> {
+    private authorizationObservableMergeMap(request: HttpRequest<any>, next: HttpHandler, authBearer: string): Observable<HttpEvent<any>> {
         request = request.clone({
             setHeaders: {
                 Authorization: `Bearer ${authBearer}`
@@ -92,7 +92,7 @@ export class TokenInterceptor implements HttpInterceptor {
     }
 
     private requestNeedsToBeIntercepted(request: HttpRequest<any>) {
-        const needsIntercepting = (request.method !== 'POST' && !request.url.includes('/users')) && !request.url.includes('users/login');
+        const needsIntercepting = !(request.url.includes('users/login') || request.url.includes('users/register') || request.url.endsWith('.html') || request.url.endsWith('.json'));
         return needsIntercepting;
     }
 

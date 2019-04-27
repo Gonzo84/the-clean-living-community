@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ApiService} from "../services/api.service";
-import {UserService} from "../services/user.service";
+import {Component} from '@angular/core';
+import {ApiService} from '../services/api.service';
+import {UserService} from '../services/user.service';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-complete-profile',
@@ -15,7 +16,8 @@ export class CompleteProfilePage {
     support_groups = false;
 
     constructor(private api: ApiService,
-                private userService: UserService) {
+                private userService: UserService,
+                private router: Router) {
     }
 
     async submit(form) {
@@ -27,9 +29,11 @@ export class CompleteProfilePage {
     }
 
     private onProfileCompleteSuccess() {
+        this.router.navigateByUrl('home/search');
     }
 
     private onProfileCompleteFailure() {
+        console.log('onProfileCompleteFailure');
     }
 
 }

@@ -48,6 +48,6 @@ export class AuthService {
     }
 
     register(user: UserInterface): Observable<AuthResponseInterface> {
-        return this.httpClient.post<AuthResponseInterface>(`${ENV.SERVER_ADDRESS}/users`, user);
+        return this.httpClient.post<AuthResponseInterface>(`${ENV.SERVER_ADDRESS}/users/register`, user);
     }
 }
