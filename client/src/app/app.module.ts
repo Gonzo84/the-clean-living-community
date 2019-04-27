@@ -20,8 +20,9 @@ import {SocketIoModule, SocketIoConfig} from 'ng-socket-io';
 import {ApiService} from './services/api.service';
 import {UserService} from './services/user.service';
 import {SurveyPageModule} from './survey/survey.module';
+import ENV from '../ENV';
 
-const config: SocketIoConfig = {url: 'http://192.168.10.10:3000', options: {}};
+const config: SocketIoConfig = {url: ENV.SERVER_ADDRESS + ':3000', options: {}};
 
 @NgModule({
     declarations: [AppComponent],

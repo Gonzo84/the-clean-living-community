@@ -1,11 +1,23 @@
+@import "../../../theme/variables";
+
 ion-content.clc-search-background {
     --background: url('../../../assets/img/search/search-background.jpg') 0 0/ auto 100% no-repeat;
 }
 
 ion-list {
-    padding: 8px 16px 8px 0;
+    padding: 0 !important;
+}
 
-    .unread-chat-room {
-        font-weight: 700;
-    }
+.message-list {
+    color: #ffffff !important;
+    margin-bottom: 10px;
+    background-color: #22e2b9;
+    text-align: center;
+    padding: 10px 7px;
+    border-radius: 25px;
+}
+
+.unread-chat-room {
+    background-color: #ffffff;
+    color: $clc-unread-message !important;
 }

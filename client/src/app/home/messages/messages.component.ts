@@ -13,10 +13,11 @@ import {Storage} from '@ionic/storage';
 })
 export class MessagesComponent implements OnInit {
 
-    messageList: any[] = [];
+    messageList = [];
     responseReady = false;
     loader;
     user: any;
+    activeChatId;
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -24,6 +25,29 @@ export class MessagesComponent implements OnInit {
                 private router: Router,
                 private loadingController: LoadingController,
                 private storage: Storage) {
+        this.storage.get('LOGGED_USER').then((data) => {
+            this.user = data;
+        }).then(() => {
+            this.chatService.getMessages(this.user.id).subscribe((message: any) => {
+                let lastChatId = 0;
+                let update = true;
+                if (this.messageList.length > 0) {
+                    const chatId = JSON.parse(message).chatId;
+                    const chatIndex = this.messageList.findIndex(x => x.chatId == chatId);
+                    if (chatIndex >= 0) {
+                        if (this.activeChatId != chatId) {
+                            this.messageList[chatIndex].unread = true;
+                        }
+                        update = false;
+                    } else {
+                        lastChatId = this.messageList[0].chatId;
+                    }
+                }
+                if (update) {
+                    this.getConversationsList(lastChatId);
+                }
+            });
+        });
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -32,12 +56,13 @@ export class MessagesComponent implements OnInit {
         this.presentLoading();
         this.storage.get('LOGGED_USER').then((data) => {
             this.user = data;
-        }).then(() => this.getConversationsList());
+        }).then(() => this.getConversationsList(0));
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ionViewWillEnter() {
+        this.activeChatId = false;
         setTimeout(() => {
             this.checkForUnreadMessages();
         }, 1000);
@@ -45,12 +70,12 @@ export class MessagesComponent implements OnInit {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    getConversationsList() {
-        this.chatService.getConversationsList(this.user.id)
+    getConversationsList(lastChatId) {
+        this.chatService.getConversationsList(this.user.id, lastChatId)
             .subscribe(
                 (response: any) => {
                     if (response.data.success) {
-                        this.messageList = response.data.messageList;
+                        this.messageList.length > 0 ? this.messageList = response.data.messageList.concat(this.messageList) : this.messageList = response.data.messageList;
                         this.responseReady = true;
                         this.loader.dismiss();
                     }
@@ -65,6 +90,7 @@ export class MessagesComponent implements OnInit {
 
     enterChatRoom(message, index) {
         this.messageList[index].unread = false;
+        this.activeChatId = message.chatId; // todo activeChatId in chatService and check in all checkForUnreadMessages()
         this.router.navigate(['/home/chat', { chatId: message.chatId, receiver_name: message.user, receiver_id: message.userId }]);
     }
 

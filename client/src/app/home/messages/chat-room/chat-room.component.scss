@@ -2,6 +2,10 @@
     color: #afafaf;
 }
 
+.main-chat {
+    padding: 0 4px;
+}
+
 .message {
     padding: 10px !important;
     transition: all 250ms ease-in-out !important;
@@ -10,8 +14,8 @@
 }
 
 .my_message {
-    background: greenyellow !important;
-    color: #000 !important;
+    background: #5d638d !important;
+    color: #ffffff !important;
 }
 
 .other_message {

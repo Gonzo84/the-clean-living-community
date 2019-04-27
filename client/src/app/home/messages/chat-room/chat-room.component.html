@@ -1,14 +1,13 @@
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="primary">
         <ion-title>
             {{ receiver_name }}
         </ion-title>
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <ion-grid>
-        <ion-row *ngFor="let message of messages">
+<ion-content #content>
+        <ion-row *ngFor="let message of messages" class="main-chat">
 
             <ion-col size="9" *ngIf="message.sender_id !== this.user.id" class="message" [ngClass]="{'my_message': message.sender_id === this.user.id, 'other_message': message.from !== this.user.id}">
                 <span class="user_name">{{ message.user }}:</span><br>
@@ -23,8 +22,6 @@
             </ion-col>
 
         </ion-row>
-    </ion-grid>
-
 </ion-content>
 
 <ion-footer>
