@@ -10,7 +10,8 @@
                     </div>
                 </ion-col>
                 <ion-col align-self-center size-md="4" size-lg="4" size-xs="4">
-                    <ion-icon name="chatboxes" class="profile-message-icon" (click)="onChatClick()"></ion-icon>
+                    <ion-icon name="chatboxes" class="profile-message-icon" (click)="onChatClick()"
+                              *ngIf="loggedUser?.id === profile?.id"></ion-icon>
                 </ion-col>
             </ion-row>
 
@@ -46,14 +47,14 @@
                 <ion-col align-self-center size-md="4" size-lg="4" size-xs="4" class="profile-column-border-right">
                     <ion-label class="profile-label" position="floating">
                         Children
-                        <div class="profile-label-value">{{profile.children}}</div>
+                        <div class="profile-label-value">{{profile.children ? 'Yes' : 'No'}}</div>
                     </ion-label>
                 </ion-col>
 
                 <ion-col align-self-center size-md="4" size-lg="4" size-xs="4">
                     <ion-label class="profile-label" position="floating">
                         Pet
-                        <div class="profile-label-value">{{profile.pet}}</div>
+                        <div class="profile-label-value">{{profile.pet ? 'Yes' : 'No'}}</div>
                     </ion-label>
                 </ion-col>
             </ion-row>
@@ -107,7 +108,7 @@
                 <ion-col align-self-center size-md="8" size-lg="8" size-xs="8">
                     <ion-label class="profile-label" position="floating">
                         Last Relapse
-                        <div class="profile-label-value">{{profile.last_relapse | date: 'MMM dd yyyy'}}</div>
+                        <div class="profile-label-value">{{transformLastRelapse(profile.last_relapse)}}</div>
                     </ion-label>
                 </ion-col>
             </ion-row>
@@ -117,22 +118,24 @@
                     <ion-label class="profile-personal" position="floating">Address</ion-label>
                 </ion-col>
             </ion-row>
-            <ion-row color="primary" justify-content-center class="">
-                <ion-col align-self-center size-md="4" size-lg="4" size-xs="4" class="profile-column-border-right">
+            <ion-row color="primary" justify-content-center class="profile-row-border-bottom">
+                <ion-col align-self-center size-md="6" size-lg="6" size-xs="6" class="profile-column-border-right">
                     <ion-label class="profile-label" position="floating">
                         State
                         <div class="profile-label-value">{{profile.state}}</div>
                     </ion-label>
                 </ion-col>
 
-                <ion-col align-self-center size-md="4" size-lg="4" size-xs="4" class="profile-column-border-right">
+                <ion-col align-self-center size-md="6" size-lg="6" size-xs="6">
                     <ion-label class="profile-label" position="floating">
                         City
                         <div class="profile-label-value">{{profile.city}}</div>
                     </ion-label>
                 </ion-col>
+            </ion-row>
 
-                <ion-col align-self-center size-md="4" size-lg="4" size-xs="4">
+            <ion-row color="primary" justify-content-center class="" padding-bottom margin-bottom>
+                <ion-col align-self-center size-md="6" size-lg="8" size-xs="12">
                     <ion-label class="profile-label" position="floating">
                         Zip Code
                         <div class="profile-label-value">{{profile.zip_code}}</div>

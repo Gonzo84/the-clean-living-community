@@ -1,30 +1,29 @@
 <ion-content padding>
     <div class="clc-search-overlay">
-        <ion-slides #slidesByCategory>
-            <ion-slide>
-                <ion-content>
-                    <app-personal-details-slide></app-personal-details-slide>
-                </ion-content>
-            </ion-slide>
-            <ion-slide *ngFor="let category of categories;">
-                <ion-slides #slides>
-                    <ion-slide *ngFor="let question of category.questions; let i = index;">
+        <ion-slides #slides>
+            <ion-slide *ngFor="let question of questions; let i = index;">
+                <ion-grid>
+                    <ion-row color="primary" justify-content-center>
+                        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+                            <div padding>
+                                <ion-item class="input-field-item">
+                                    <h3>{{question.question}}</h3>
+                                </ion-item>
+                                <ion-list no-lines radio-group>
 
-                        <h3>{{question}}</h3>
+<!--                                    <ion-item-->
+<!--                                            *ngFor="let key of objectKeys(parseToObject(question.options))">-->
 
-                        <ion-list no-lines radio-group>
+<!--                                        <ion-label>{{key}}</ion-label>-->
 
-                            <ion-item *ngFor="let answer of answers; let y = index;">
+<!--                                    </ion-item>-->
 
-                                <ion-label>{{y + 1}}. {{answer.answer}}</ion-label>
-                                <ion-radio (click)="selectAnswer(answer.value, i)" [disabled]="hasAnswered"></ion-radio>
+                                </ion-list>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
 
-                            </ion-item>
-
-                        </ion-list>
-
-                    </ion-slide>
-                </ion-slides>
             </ion-slide>
             <ion-slide>
                 <h2>Finito</h2>

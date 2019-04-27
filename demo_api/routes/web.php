@@ -11,7 +11,7 @@
 |
 */
 // user
-$router->post('/users', 'UserController@store');
+$router->post('/users/register', 'UserController@store');
 $router->post('/users/login', 'UserController@login');
 
 //$router->post('/password/reset_request', 'UserController@resetPassword');

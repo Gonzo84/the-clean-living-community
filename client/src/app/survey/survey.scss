@@ -1,19 +1,12 @@
-page-survey {
-    ion-slides {
-        --height: 100% !important;
-        height: 100% !important;
-    }
-}
 ion-slides {
-    --height: 100% !important;
-    height: 100% !important;
-}
-ion-content ion-slides {
-    --height: 100% !important;
-    height: 100% !important;
+  height: 100%;
 }
 
+ion-item, ion-list, ion-radio {
+  --background: transparent;
+  --color: #fff;
+}
 
 ion-content {
-    --background: url('../../assets/img/survey/background.jpg') 0 0/ auto 100% no-repeat;
+  --background: url('../../assets/img/survey/background.jpg') 0 0/ auto 100% no-repeat;
 }

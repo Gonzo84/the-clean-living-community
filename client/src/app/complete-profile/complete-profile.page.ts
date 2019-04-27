@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ApiService} from "../services/api.service";
-import {UserService} from "../services/user.service";
+import {Component} from '@angular/core';
+import {ApiService} from '../services/api.service';
+import {UserService} from '../services/user.service';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-complete-profile',
@@ -8,6 +9,7 @@ import {UserService} from "../services/user.service";
     styleUrls: ['./complete-profile.page.scss'],
 })
 export class CompleteProfilePage {
+    loggedUser;
     married = false;
     children = false;
     pet = false;
@@ -15,21 +17,26 @@ export class CompleteProfilePage {
     support_groups = false;
 
     constructor(private api: ApiService,
-                private userService: UserService) {
+                private userService: UserService,
+                private router: Router) {
     }
 
     async submit(form) {
-        const user = await this.userService.getLoggedUser();
-        this.api.completeProfile(form.value, user.id)
+        this.loggedUser = await this.userService.getLoggedUser();
+        this.api.completeProfile(form.value, this.loggedUser.id)
             .subscribe(this.onProfileCompleteSuccess.bind(this),
                 this.onProfileCompleteFailure.bind(this)
             );
     }
 
-    private onProfileCompleteSuccess() {
+    private async onProfileCompleteSuccess(data) {
+        const updatedUser = {...data.data, ...this.loggedUser};
+        await this.userService.setLoggedUser(updatedUser);
+        this.router.navigateByUrl('home/search');
     }
 
     private onProfileCompleteFailure() {
+        console.log('onProfileCompleteFailure');
     }
 
 }

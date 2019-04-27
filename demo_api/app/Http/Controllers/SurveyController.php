@@ -196,7 +196,7 @@ class SurveyController extends Controller
         $surveyScore = 0;
         $allQuestions = array();
 
-        $survey = Survey::find($data['user'])->first();
+        $survey = Survey::find($data['survey'])->first();
 
         foreach ($survey->categories as $category) {
             $category_questions = $category->questions;

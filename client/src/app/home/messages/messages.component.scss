@@ -1,7 +1,7 @@
 @import "../../../theme/variables";
 
 ion-content.clc-search-background {
-    --background: url('../../../assets/img/search/search-background.jpg') 0 0/100% 100% no-repeat;
+    --background: url('../../../assets/img/search/search-background.jpg') 0 0/ auto 100% no-repeat;
 }
 
 ion-list {
