@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {Socket} from 'ng-socket-io';
 import {LoadingController} from '@ionic/angular';
 import {ActivatedRoute} from '@angular/router';
@@ -22,6 +22,8 @@ export class ChatRoomComponent {
     chatId;
     loader;
 
+    @ViewChild('content') private content: any;
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     constructor(private thisRoute: ActivatedRoute,
@@ -41,7 +43,11 @@ export class ChatRoomComponent {
                 const chatMessage = JSON.parse(message);
                 if ((chatMessage.sender_id) && (this.receiver_id == chatMessage.sender_id)) {
                     this.messages.push(JSON.parse(message));
-                    // this.content.scrollToBottom(); todo
+                    setTimeout(() => {
+                        this.content.scrollToBottom();
+                    }, 500);
+                } else {
+                    this.checkForUnreadMessages();
                 }
             });
         });
@@ -84,7 +90,11 @@ export class ChatRoomComponent {
                 (response: any) => {
                     if (response.data.success) {
                         this.messages = response.data.chatList;
+                        this.checkForUnreadMessages();
                         this.loader.dismiss();
+                        setTimeout(() => {
+                            this.content.scrollToBottom();
+                        }, 500);
                     }
                 },
                 err => {
@@ -112,6 +122,22 @@ export class ChatRoomComponent {
             message: 'Please wait...',
         });
         await this.loader.present();
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    checkForUnreadMessages() {
+        if (this.user) {
+            this.chatService.checkForUnreadMessages(this.user.id)
+                .subscribe(
+                    (response: any) => {
+                        if (response.data.success) {
+                            this.chatService.setUnreadMessageStatus(response.data.status);
+                        }
+                    },
+                    err => console.error(err)
+                );
+        }
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

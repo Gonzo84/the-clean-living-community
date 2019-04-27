@@ -53,19 +53,20 @@ class ChatController extends Controller
 
         $redis = Redis::Connection();
 
+        $sender->id < $receiver->id ? $channelName = $sender->id . '_' . $receiver->id : $channelName = $receiver->id . '_' . $sender->id;
+        $chat = new Chat;
+        $chatId = $chat::firstOrCreate(['channel' => $channelName])->id;
+
         $arrMessage = array(
             'sender_id' => $sender->id,
             'user' => $sender->name,
             'date_created' => time(),
             'channel' => $receiver->id,
-            'message' => $request->input('message')
+            'message' => $request->input('message'),
+            'chatId' => $chatId
         );
 
         if ($redis->publish('chat-message', json_encode($arrMessage))) {
-
-            $sender->id < $receiver->id ? $channelName = $sender->id . '_' . $receiver->id : $channelName = $receiver->id . '_' . $sender->id;
-            $chat = new Chat;
-            $chatId = $chat::firstOrCreate(['channel' => $channelName])->id;
 
             $chatMessage = new Message;
             $chatMessage->chat_id = $chatId;
@@ -93,6 +94,7 @@ class ChatController extends Controller
 
         $this->validate($request, [
             'sender_id' => 'required|integer',
+            'lastChatId' => 'required|integer'
         ]);
 
         $sender = User::findOrFail($request->input('sender_id'));
@@ -110,12 +112,14 @@ class ChatController extends Controller
                 $userId = explode("_",$chatRooms[$chatId['chat_id']]['channel']);
                 $unreadMessages = Message::where(['to' => $sender->id, 'read_status' => 0, 'chat_id' => $chatId['chat_id']])->get();
                 $count = $unreadMessages->count();
-                $messageList[] = array(
-                    'chatId' => $chatId['chat_id'],
-                    'user' => $userId[0] == $sender->id ? User::find($userId[1])->name : User::find($userId[0])->name,
-                    'userId' => $userId[0] == $sender->id ? $userId[1] : $userId[0],
-                    'unread' => $count > 0 ? true : false
-                );
+                if ($chatId['chat_id'] > $request->input('lastChatId')) {
+                    $messageList[] = array(
+                        'chatId' => $chatId['chat_id'],
+                        'user' => $userId[0] == $sender->id ? User::find($userId[1])->name : User::find($userId[0])->name,
+                        'userId' => $userId[0] == $sender->id ? $userId[1] : $userId[0],
+                        'unread' => $count > 0 ? true : false
+                    );
+                }
             }
         }
 

@@ -18,7 +18,7 @@ $router->post('/users/login', 'UserController@login');
 $router->post('/users/password/reset', 'UserController@resetPassword');
 
 $router->group([
-    'middleware' => 'auth'
+    'middleware' => ''
 ], function() use($router) {
     $router->get('/users', 'UserController@index');
     $router->get('/users/{id}', 'UserController@show');
@@ -46,20 +46,22 @@ $router->group([
     $router->get('/location/{id}', 'LocationController@getLocation');
     $router->post('/location', 'LocationController@storeLocation');
     $router->post('/location/search', 'LocationController@search');
+
+    //chat
+    $router->post('/chat/send', 'ChatController@sendMessage');
+    $router->post('/chat/listing', 'ChatController@getConversationsList');
+    $router->post('/chat/history', 'ChatController@getConversationHistory');
+    $router->post('/chat/status', 'ChatController@checkForUnreadMessages');
+    $router->post('/chat/status/update', 'ChatController@updateUnreadMessageStatus');
+
+    //gathering
+    $router->post('/gathering', 'GatheringController@createGathering');
+    $router->post('/gathering/all', 'GatheringController@getGatherings');
+    $router->post('/gathering/join', 'GatheringController@joinGathering');
+    $router->get('/gathering/{id}', 'GatheringController@getOneGathering');
+    $router->post('/gathering/leave', 'GatheringController@leaveGathering');
 });
 
-//chat
-$router->post('/chat/send', 'ChatController@sendMessage');
-$router->post('/chat/listing', 'ChatController@getConversationsList');
-$router->post('/chat/history', 'ChatController@getConversationHistory');
-$router->post('/chat/status', 'ChatController@checkForUnreadMessages');
-$router->post('/chat/status/update', 'ChatController@updateUnreadMessageStatus');
 
-//gathering
-$router->post('/gathering', 'GatheringController@createGathering');
-$router->post('/gathering/all', 'GatheringController@getGatherings');
-$router->post('/gathering/join', 'GatheringController@joinGathering');
-$router->get('/gathering/{id}', 'GatheringController@getOneGathering');
-$router->post('/gathering/leave', 'GatheringController@leaveGathering');
 
 

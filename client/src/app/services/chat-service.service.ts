@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
 import {Socket} from 'ng-socket-io';
 import {HttpClient} from '@angular/common/http';
+import ENV from '../../ENV';
 
 
 @Injectable({
@@ -38,19 +39,19 @@ export class ChatServiceService {
     ///////////////////////////////////////////////////////////////////////////////////////////////
 
     sendMessage(sender_id: number, receiver_id: number, message: string) {
-        return this.httpClient.post('http://192.168.10.10/chat/send', {sender_id: sender_id, receiver_id: receiver_id, message: message, });
+        return this.httpClient.post(ENV.SERVER_ADDRESS + '/chat/send', {sender_id: sender_id, receiver_id: receiver_id, message: message, });
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
 
-    getConversationsList(sender_id: number) {
-        return this.httpClient.post('http://192.168.10.10/chat/listing', {sender_id: sender_id});
+    getConversationsList(sender_id: number, lastChatId: number) {
+        return this.httpClient.post(ENV.SERVER_ADDRESS + '/chat/listing', {sender_id: sender_id, lastChatId: lastChatId});
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
 
     getConversationHistory(chatId: number) {
-        return this.httpClient.post('http://192.168.10.10/chat/history', {chatId: chatId});
+        return this.httpClient.post(ENV.SERVER_ADDRESS + '/chat/history', {chatId: chatId});
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -68,12 +69,12 @@ export class ChatServiceService {
     ///////////////////////////////////////////////////////////////////////////////////////////////
 
     checkForUnreadMessages(user_id) {
-        return this.httpClient.post('http://192.168.10.10/chat/status', {user_id: user_id});
+        return this.httpClient.post(ENV.SERVER_ADDRESS + '/chat/status', {user_id: user_id});
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
 
     updateUnreadMessageStatus(chatId) {
-        return this.httpClient.post('http://192.168.10.10/chat/status/update', {chatId: chatId});
+        return this.httpClient.post(ENV.SERVER_ADDRESS + '/chat/status/update', {chatId: chatId});
     }
 }

@@ -6,11 +6,15 @@
                     <div text-center padding class="clc-search-title">
                         MESSAGES
                     </div>
-                    <ion-list *ngIf="responseReady">
-                        <ion-item *ngFor="let message of messageList; let i = index">
-                            <ion-label (click)="enterChatRoom(message, i)" [ngClass]="{'unread-chat-room':message.unread}">{{  message.user }}</ion-label>
-                        </ion-item>
-                    </ion-list>
+
+                    <div *ngFor="let message of messageList; let i = index" class="message-list" [ngClass]="{'unread-chat-room':message.unread}">
+                        <div (click)="enterChatRoom(message, i)">{{  message.user }}</div>
+                    </div>
+<!--                    <ion-list *ngIf="responseReady">-->
+<!--                        <ion-item *ngFor="let message of messageList; let i = index" class="message-list">-->
+<!--                            <ion-label (click)="enterChatRoom(message, i)" [ngClass]="{'unread-chat-room':message.unread}">{{  message.user }}</ion-label>-->
+<!--                        </ion-item>-->
+<!--                    </ion-list>-->
 
                 </ion-col>
             </ion-row>

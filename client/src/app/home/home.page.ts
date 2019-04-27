@@ -28,21 +28,27 @@ export class HomePage implements OnDestroy {
         }).then(() => {
             this.chatService.getMessages(this.user.id).subscribe((message: any) => {
                 this.chatService.setUnreadMessageStatus(true);
-                // console.log(message);
-                // console.log('root - ' + this.rte.url); // todo not up badge on /home/messages
-                // console.log('sender_id - ' + this.thisRoute.snapshot.paramMap.get('receiver_id'));
-                // const chatMessage = JSON.parse(message);
-                // if ((chatMessage.sender_id) && (this.receiver_id == chatMessage.sender_id)) {
-                //     this.messages.push(JSON.parse(message));
-                //     // this.content.scrollToBottom(); todo
-                // }
             });
+
+            this.checkForUnreadMessages();
         });
 
         this.subscription = this.chatService.getUnreadMessageStatus().subscribe(status => {
             this.unreadMessageStatus = status;
         });
 
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    checkForUnreadMessages() {
+        this.chatService.checkForUnreadMessages(this.user.id).subscribe(
+            (response: any) => {
+                if (response.data.success) {
+                    this.chatService.setUnreadMessageStatus(response.data.status);
+                }
+            }
+        );
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
