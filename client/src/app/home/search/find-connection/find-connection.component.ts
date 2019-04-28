@@ -65,7 +65,7 @@ export class FindConnectionComponent implements OnInit {
     ngOnInit() {
     }
 
-    setFilteredItems() {
+    setFilteredItems(event) {
         if (this.timeId) {
             clearTimeout(this.timeId);
         }

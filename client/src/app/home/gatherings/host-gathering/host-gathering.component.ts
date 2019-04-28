@@ -10,7 +10,7 @@ import ENV from '../../../../ENV';
     styleUrls: ['./host-gathering.component.scss'],
 })
 export class HostGatheringComponent implements OnInit {
-    private gathering: FormGroup;
+    public gathering: FormGroup;
 
     constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) {
         this.gathering = this.formBuilder.group({

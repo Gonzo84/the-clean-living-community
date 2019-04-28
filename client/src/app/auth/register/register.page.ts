@@ -30,7 +30,7 @@ export class RegisterPage {
         toast.present();
     }
 
-    private register(form) {
+    public register(form) {
         const type = this.toggleStatus ? 'mentor' : 'friend';
         form.value.type = type;
         this.authService.register(form.value).subscribe(this.onRegisterSuccess.bind(this));
