@@ -25,15 +25,6 @@ export class HomePage implements OnDestroy, OnInit {
                 private router: Router,
                 private thisRoute: ActivatedRoute,
                 private userService: UserService) {
-        this.storage.get('LOGGED_USER').then((data) => {
-            this.user = data;
-        }).then(() => {
-            this.chatService.getMessages(this.user.id).subscribe((message: any) => {
-                this.chatService.setUnreadMessageStatus(true);
-            });
-
-            this.checkForUnreadMessages();
-        });
 
         this.subscription = this.chatService.getUnreadMessageStatus().subscribe(status => {
             this.unreadMessageStatus = status;
@@ -42,10 +33,14 @@ export class HomePage implements OnDestroy, OnInit {
     }
 
     public async ngOnInit() {
-        // const loggedUser = await this.userService.getLoggedUser();
-        // if (!loggedUser.survey_score) {
-        //     this.router.navigateByUrl('survey');
-        // }
+        this.user = await this.storage.get('LOGGED_USER');
+        this.chatService.getMessages(this.user.id).subscribe((message: any) => {
+            this.chatService.setUnreadMessageStatus(true);
+        });
+        this.checkForUnreadMessages();
+        if (!this.user.survey_score) {
+            this.router.navigateByUrl('survey');
+        }
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

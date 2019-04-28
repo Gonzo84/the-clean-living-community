@@ -2,9 +2,10 @@ ion-slides {
   height: 100%;
 }
 
-ion-item, ion-list, ion-radio {
-  --background: transparent;
+ion-item, ion-list, ion-radio, .list-md {
+  --background: transparent !important;
   --color: #fff;
+  background: transparent !important;
 }
 
 ion-content {

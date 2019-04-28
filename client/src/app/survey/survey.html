@@ -11,12 +11,13 @@
                                 </ion-item>
                                 <ion-list no-lines radio-group>
 
-<!--                                    <ion-item-->
-<!--                                            *ngFor="let key of objectKeys(parseToObject(question.options))">-->
+                                    <ion-item *ngFor="let answer of question.options; let y = index;">
 
-<!--                                        <ion-label>{{key}}</ion-label>-->
+                                        <ion-label>{{y + 1}}. {{answer.name}}</ion-label>
+                                        <ion-radio (click)="selectAnswer(question, answer.value)"
+                                                   [disabled]="hasAnswered"></ion-radio>
 
-<!--                                    </ion-item>-->
+                                    </ion-item>
 
                                 </ion-list>
                             </div>
@@ -26,8 +27,17 @@
 
             </ion-slide>
             <ion-slide>
-                <h2>Finito</h2>
-                <button (click)="finishSurvey()" ion-button full color="primary">Finish</button>
+                <div padding>
+                    <ion-item>
+                        <ion-button
+                                size="large"
+                                type="text"
+                                expand="block"
+                                shape="round"
+                                (click)="finishSurvey()">Start your <br> Clean Living Journey
+                        </ion-button>
+                    </ion-item>
+                </div>
             </ion-slide>
         </ion-slides>
     </div>

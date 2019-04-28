@@ -3,6 +3,13 @@
 
 /** Ionic CSS Variables **/
 
+//@font-face {
+//  font-family: 'Helvetica Neue Regular';
+//  font-style: normal;
+//  font-weight: normal;
+//  src: url('../assets/fonts/helveticaneue.ttf');
+//}
+
 :root {
   /** primary **/
   --ion-color-primary: #22e2b9;
@@ -75,6 +82,8 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  --ion-font-family: 'Helvetica Neue Regular' , serif !important;;
 }
 
 $clc-primary-color: #22e2b9 !default;
