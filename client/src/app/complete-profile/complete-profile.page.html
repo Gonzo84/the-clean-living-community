@@ -1,102 +1,100 @@
 <ion-content class="clc-complete-profile-background" fullscreen="true" padding>
-    <div class="clc-search-overlay">
-        <form #form="ngForm" (ngSubmit)="submit(form)">
-            <ion-grid>
-                <ion-row color="primary" justify-content-center>
-                    <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-                        <div padding>
-                            <ion-item class="input-field-item">
-                                <ion-label class="input-field-label" position="floating">Age</ion-label>
-                                <ion-input name="age" type="number" ngModel
-                                           required></ion-input>
-                            </ion-item>
-                            <ion-item class="input-field-item">
-                                <ion-label>Married</ion-label>
-                                <ion-toggle [(ngModel)]="married" color="primary" name="married"></ion-toggle>
-                            </ion-item>
-                            <ion-item class="input-field-item">
-                                <ion-label>Children</ion-label>
-                                <ion-toggle [(ngModel)]="children" color="primary" name="children"></ion-toggle>
-                            </ion-item>
-                            <ion-item class="input-field-item">
-                                <ion-label>Pet</ion-label>
-                                <ion-toggle [(ngModel)]="pet" color="primary" name="pet"></ion-toggle>
-                            </ion-item>
-                            <ion-item class="input-field-item">
-                                <ion-label class="input-field-label" position="floating">Education</ion-label>
-                                <ion-input name="education" type="text" ngModel></ion-input>
-                            </ion-item>
-                            <ion-item class="input-field-item">
-                                <ion-label class="input-field-label" position="floating">Religion</ion-label>
-                                <ion-input name="religion" type="text" ngModel></ion-input>
-                            </ion-item>
-                            <ion-item class="input-field-item">
-                                <ion-label class="input-field-label" position="stacked">Gender</ion-label>
-                                <ion-radio-group ngModel="male" name="gender">
-                                    <ion-item>
-                                        <ion-label>Male</ion-label>
-                                        <ion-radio value="male"></ion-radio>
-                                    </ion-item>
+    <form #form="ngForm" (ngSubmit)="submit(form)">
+        <ion-grid>
+            <ion-row color="primary" justify-content-center>
+                <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+                    <div padding>
+                        <ion-item class="input-field-item">
+                            <ion-label class="input-field-label" position="floating">Age</ion-label>
+                            <ion-input name="age" type="number" ngModel
+                                       required></ion-input>
+                        </ion-item>
+                        <ion-item class="input-field-item">
+                            <ion-label>Married</ion-label>
+                            <ion-toggle [(ngModel)]="married" color="primary" name="married"></ion-toggle>
+                        </ion-item>
+                        <ion-item class="input-field-item">
+                            <ion-label>Children</ion-label>
+                            <ion-toggle [(ngModel)]="children" color="primary" name="children"></ion-toggle>
+                        </ion-item>
+                        <ion-item class="input-field-item">
+                            <ion-label>Pet</ion-label>
+                            <ion-toggle [(ngModel)]="pet" color="primary" name="pet"></ion-toggle>
+                        </ion-item>
+                        <ion-item class="input-field-item">
+                            <ion-label class="input-field-label" position="floating">Education</ion-label>
+                            <ion-input name="education" type="text" ngModel></ion-input>
+                        </ion-item>
+                        <ion-item class="input-field-item">
+                            <ion-label class="input-field-label" position="floating">Religion</ion-label>
+                            <ion-input name="religion" type="text" ngModel></ion-input>
+                        </ion-item>
+                        <ion-item class="input-field-item">
+                            <ion-label class="input-field-label" position="stacked">Gender</ion-label>
+                            <ion-radio-group ngModel="male" name="gender">
+                                <ion-item>
+                                    <ion-label>Male</ion-label>
+                                    <ion-radio value="male"></ion-radio>
+                                </ion-item>
 
-                                    <ion-item>
-                                        <ion-label>Female</ion-label>
-                                        <ion-radio value="female"></ion-radio>
-                                    </ion-item>
+                                <ion-item>
+                                    <ion-label>Female</ion-label>
+                                    <ion-radio value="female"></ion-radio>
+                                </ion-item>
 
-                                    <ion-item>
-                                        <ion-label>Rather not specify</ion-label>
-                                        <ion-radio value="other"></ion-radio>
-                                    </ion-item>
+                                <ion-item>
+                                    <ion-label>Rather not specify</ion-label>
+                                    <ion-radio value="other"></ion-radio>
+                                </ion-item>
 
-                                </ion-radio-group>
-                            </ion-item>
-                            <ion-item class="input-field-item">
-                                <ion-label class="input-field-label" position="floating">Sexual orientation</ion-label>
-                                <ion-input name="sex_orientation" type="text" ngModel></ion-input>
-                            </ion-item>
-                            <ion-item>
-                                <ion-label class="input-field-label" position="stacked">Time since last relapse
-                                </ion-label>
-                                <ion-select placeholder="Select One" ngModel name="last_relapse" required>
-                                    <ion-select-option value="1">A day ago</ion-select-option>
-                                    <ion-select-option value="3">Few days ago</ion-select-option>
-                                    <ion-select-option value="7">More than a week</ion-select-option>
-                                    <ion-select-option value="30">More than a month</ion-select-option>
-                                    <ion-select-option value="90">More than a 3 months</ion-select-option>
-                                    <ion-select-option value="180">Half a year ago</ion-select-option>
-                                    <ion-select-option value="365">More than a year</ion-select-option>
-                                    <ion-select-option value="1095">More than 3 years</ion-select-option>
-                                </ion-select>
-                            </ion-item>
-                            <ion-item class="input-field-item">
-                                <ion-label>Smoker</ion-label>
-                                <ion-toggle [(ngModel)]="smoker" color="primary" name="smoker"></ion-toggle>
-                            </ion-item>
-                            <ion-item class="input-field-item">
-                                <ion-label>Attend support groups</ion-label>
-                                <ion-toggle [(ngModel)]="support_groups" color="primary"
-                                            name="support_groups" required></ion-toggle>
-                            </ion-item>
-                            <ion-item class="input-field-item">
-                                <ion-label class="input-field-label" position="floating">City</ion-label>
-                                <ion-input name="city" type="text" ngModel required></ion-input>
-                            </ion-item>
-                            <ion-item class="input-field-item">
-                                <ion-label class="input-field-label" position="floating">Zip</ion-label>
-                                <ion-input name="zip_code" type="text" ngModel required></ion-input>
-                            </ion-item>
-                            <ion-item class="input-field-item">
-                                <ion-label class="input-field-label" position="floating">State</ion-label>
-                                <ion-input name="state" type="text" ngModel required></ion-input>
-                            </ion-item>
-                        </div>
-                        <div padding>
-                            <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block">Save
-                            </ion-button>
-                        </div>
-                    </ion-col>
-                </ion-row>
-            </ion-grid>
-        </form>
-    </div>
+                            </ion-radio-group>
+                        </ion-item>
+                        <ion-item class="input-field-item">
+                            <ion-label class="input-field-label" position="floating">Sexual orientation</ion-label>
+                            <ion-input name="sex_orientation" type="text" ngModel></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label class="input-field-label" position="stacked">Time since last relapse
+                            </ion-label>
+                            <ion-select placeholder="Select One" ngModel name="last_relapse" required>
+                                <ion-select-option value="1">A day ago</ion-select-option>
+                                <ion-select-option value="3">Few days ago</ion-select-option>
+                                <ion-select-option value="7">More than a week</ion-select-option>
+                                <ion-select-option value="30">More than a month</ion-select-option>
+                                <ion-select-option value="90">More than a 3 months</ion-select-option>
+                                <ion-select-option value="180">Half a year ago</ion-select-option>
+                                <ion-select-option value="365">More than a year</ion-select-option>
+                                <ion-select-option value="1095">More than 3 years</ion-select-option>
+                            </ion-select>
+                        </ion-item>
+                        <ion-item class="input-field-item">
+                            <ion-label>Smoker</ion-label>
+                            <ion-toggle [(ngModel)]="smoker" color="primary" name="smoker"></ion-toggle>
+                        </ion-item>
+                        <ion-item class="input-field-item">
+                            <ion-label>Attend support groups</ion-label>
+                            <ion-toggle [(ngModel)]="support_groups" color="primary"
+                                        name="support_groups" required></ion-toggle>
+                        </ion-item>
+                        <ion-item class="input-field-item">
+                            <ion-label class="input-field-label" position="floating">City</ion-label>
+                            <ion-input name="city" type="text" ngModel required></ion-input>
+                        </ion-item>
+                        <ion-item class="input-field-item">
+                            <ion-label class="input-field-label" position="floating">Zip</ion-label>
+                            <ion-input name="zip_code" type="text" ngModel required></ion-input>
+                        </ion-item>
+                        <ion-item class="input-field-item">
+                            <ion-label class="input-field-label" position="floating">State</ion-label>
+                            <ion-input name="state" type="text" ngModel required></ion-input>
+                        </ion-item>
+                    </div>
+                    <div padding>
+                        <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block">Save
+                        </ion-button>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </form>
 </ion-content>

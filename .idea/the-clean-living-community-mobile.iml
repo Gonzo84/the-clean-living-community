@@ -3,6 +3,8 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/demo_api/app" isTestSource="false" packagePrefix="App\" />
+      <excludeFolder url="file://$MODULE_DIR$/client/platforms" />
+      <excludeFolder url="file://$MODULE_DIR$/client/www" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/classpreloader/classpreloader" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/demo_api/vendor/defuse/php-encryption" />
