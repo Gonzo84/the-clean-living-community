@@ -27,7 +27,7 @@ export class LoginPage implements OnInit {
             );
     }
 
-    private async onForgotPassword() {
+    public async onForgotPassword() {
 
         const modal: HTMLIonModalElement =
             await this.modalCtrl.create({

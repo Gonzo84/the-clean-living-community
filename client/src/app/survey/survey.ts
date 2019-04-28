@@ -35,7 +35,7 @@ export class SurveyPage implements OnInit {
         this.questions = data.data.survey_score;
     }
 
-    private finishSurvey() {
+    public finishSurvey() {
         this.api.finishSurvey(this.loggedUser.id)
             .subscribe(
                 this.onFinishSurveySuccess.bind(this),
