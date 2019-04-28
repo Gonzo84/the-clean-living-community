@@ -76,10 +76,8 @@ export class SurveyPage implements OnInit {
     }
 
     private onSubmitQuestionSuccess(data) {
-        setTimeout(() => {
-            this.hasAnswered = false;
-            this.nextSlide();
-        }, 500);
+        this.hasAnswered = false;
+        this.nextSlide();
     }
 
     private onSubmitQuestionFailure() {
