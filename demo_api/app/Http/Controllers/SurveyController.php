@@ -200,10 +200,9 @@ class SurveyController extends Controller
 
         foreach ($survey->categories as $category) {
             $category_questions = $category->questions;
-            $user_answers = Answers::all()->keyBy('question_id')->where('user_id', $data['user']);
+            $user_answers = Answers::where('user_id', $data['user'])->get()->keyBy('question_id');
 
             foreach ($category_questions as $question) {
-
                 if ($returnSum) {
                     if (isset($user_answers[$question->id]['answer']) && $user_answers[$question->id]['answer'] != '') {
                         $surveyScore += $user_answers[$question->id]['answer'];
@@ -212,8 +211,6 @@ class SurveyController extends Controller
                     }
                 } else {
                     if (!(isset($user_answers[$question->id]['answer']) && $user_answers[$question->id]['answer'] != '')) {
-
-
                         $allQuestions[] = array(
                             'id' => $question->id,
                             'question' => $question->question,
