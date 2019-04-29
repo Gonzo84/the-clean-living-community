@@ -23,7 +23,7 @@ export class RegisterPage {
     private async onRegisterSuccess(res) {
         const toast = await this.toastCtrl.create({
             message: 'You have successfully registered!',
-            duration: 3000,
+            duration: 1000,
             position: 'bottom'
         });
         toast.onDidDismiss().then(this.navigateToLogin.bind(this));

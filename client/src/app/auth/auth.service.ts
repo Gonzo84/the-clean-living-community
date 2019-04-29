@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {tap} from 'rxjs/operators';
 import {Observable, BehaviorSubject} from 'rxjs';
 import {Storage} from '@ionic/storage';
 import {UserInterface} from '../interfaces/user';
@@ -29,16 +28,8 @@ export class AuthService {
         return this.authSubject.value;
     }
 
-    login(user: UserInterface): Observable<AuthResponseInterface> {
-        return this.httpClient.post(`${ENV.SERVER_ADDRESS}/users/login`, user).pipe(
-            tap(async (res: AuthResponseInterface) => {
-                if (res.data) {
-                    this.authSubject.next(true);
-                    await this.tokenService.setAccessToken(res.data.token.access_token);
-                    await this.userService.setLoggedUser(res.data);
-                }
-            })
-        );
+    login(user: UserInterface): Observable<any> {
+        return this.httpClient.post(`${ENV.SERVER_ADDRESS}/users/login`, user);
     }
 
     async logout() {

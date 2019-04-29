@@ -16,11 +16,23 @@ export class UserService {
         return this.storage.get('LOGGED_USER');
     }
 
+    public getSurveyQuestions() {
+        return this.storage.get('SURVEY_QUESTIONS');
+    }
+
     public removeLoggedUser() {
         return this.storage.remove('LOGGED_USER');
     }
 
+    public removeSurveyQuestions() {
+        return this.storage.remove('SURVEY_QUESTIONS');
+    }
+
     public setLoggedUser(user: UserInterface) {
         return this.storage.set('LOGGED_USER', user);
+    }
+
+    public setSueveyQuestions(questions) {
+        this.storage.set('SURVEY_QUESTIONS', questions);
     }
 }

@@ -1,8 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from '../auth.service';
-import {ModalController} from "@ionic/angular";
-import {RequestNewPasswordPage} from "./request-new-password/request-new-password.page";
+import {ModalController} from '@ionic/angular';
+import {RequestNewPasswordPage} from './request-new-password/request-new-password.page';
+import {TokenService} from '../../services/token.service';
+import {UserService} from '../../services/user.service';
 
 @Component({
     selector: 'app-login',
@@ -13,7 +15,9 @@ export class LoginPage implements OnInit {
 
     constructor(private  authService: AuthService,
                 private  router: Router,
-                private modalCtrl: ModalController) {
+                private modalCtrl: ModalController,
+                private tokenService: TokenService,
+                private userService: UserService) {
     }
 
     ngOnInit() {
@@ -37,7 +41,10 @@ export class LoginPage implements OnInit {
         await modal.present();
     }
 
-    private onLoginSuccess(data) {
+    private async onLoginSuccess(data) {
+        await this.tokenService.setAccessToken(data.data.token.access_token);
+        await this.userService.setLoggedUser(data.data);
+        this.authService.authSubject.next(true);
         const route = data.data.age ? 'home/search' : 'complete-profile';
         this.router.navigateByUrl(route);
     }

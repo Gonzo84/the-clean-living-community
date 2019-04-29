@@ -13,7 +13,8 @@ export class SurveyPage implements OnInit {
     @ViewChild('slides') slides: any;
 
     hasAnswered = false;
-    questions: any;
+    questions: any[] = [];
+    unansweredQuestions: any[] = [];
 
 
     constructor(private api: ApiService,
@@ -23,16 +24,17 @@ export class SurveyPage implements OnInit {
 
     public async ngOnInit() {
         this.loggedUser = await this.userSerice.getLoggedUser();
-        this.api.getSurveyQuestions(this.loggedUser.id)
-            .subscribe(this.loadData.bind(this));
+        this.userSerice.getSurveyQuestions().then(this.onGetQuestionsSuccess.bind(this));
     }
 
     public ionViewDidEnter() {
         this.slides.lockSwipes(true);
     }
 
-    private loadData(data) {
-        this.questions = data.data.survey_score;
+    private loadData() {
+        if (this.unansweredQuestions.length) {
+            this.questions = this.questions.concat(this.unansweredQuestions.shift());
+        }
     }
 
     public finishSurvey() {
@@ -57,6 +59,11 @@ export class SurveyPage implements OnInit {
                 this.onSubmitQuestionFailure.bind(this));
     }
 
+    private onGetQuestionsSuccess(questions) {
+        this.unansweredQuestions = questions;
+        this.loadData();
+    }
+
     private async onGetUserInfoSuccess(user) {
         await this.userSerice.setLoggedUser(user.data);
         this.router.navigateByUrl('home/search');
@@ -75,9 +82,14 @@ export class SurveyPage implements OnInit {
         console.log('onFinishSurveyFailure');
     }
 
-    private onSubmitQuestionSuccess(data) {
+    private async onSubmitQuestionSuccess(data) {
+        this.loadData();
         this.hasAnswered = false;
-        this.nextSlide();
+        await this.userSerice.setSueveyQuestions(this.unansweredQuestions);
+        this.questions.shift();
+        if (this.unansweredQuestions.length) {
+            this.nextSlide();
+        }
     }
 
     private onSubmitQuestionFailure() {
