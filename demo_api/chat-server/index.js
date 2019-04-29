@@ -8,7 +8,7 @@ let client = redis.createClient("redis://127.0.0.1:6379");
 let io = require('socket.io')(http);
 app.use('/', express.static('www'));
 
-http.listen(3000, '192.168.10.10', function(){
+http.listen(3000, '165.227.53.211', function(){
     console.log('listening on *:3000');
 });
 
