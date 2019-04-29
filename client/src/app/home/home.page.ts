@@ -4,6 +4,7 @@ import {Storage} from '@ionic/storage';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {UserService} from '../services/user.service';
+import {ApiService} from '../services/api.service';
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -24,7 +25,8 @@ export class HomePage implements OnDestroy, OnInit {
                 private storage: Storage,
                 private router: Router,
                 private thisRoute: ActivatedRoute,
-                private userService: UserService) {
+                private userService: UserService,
+                private api: ApiService) {
 
         this.subscription = this.chatService.getUnreadMessageStatus().subscribe(status => {
             this.unreadMessageStatus = status;
@@ -33,14 +35,7 @@ export class HomePage implements OnDestroy, OnInit {
     }
 
     public async ngOnInit() {
-        this.user = await this.storage.get('LOGGED_USER');
-        this.chatService.getMessages(this.user.id).subscribe((message: any) => {
-            this.chatService.setUnreadMessageStatus(true);
-        });
-        this.checkForUnreadMessages();
-        if (!this.user.survey_score) {
-            this.router.navigateByUrl('survey');
-        }
+        this.storage.get('LOGGED_USER').then(this.loadData.bind(this));
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -55,6 +50,21 @@ export class HomePage implements OnDestroy, OnInit {
         );
     }
 
+    private loadData(user) {
+        this.user = user;
+        this.chatService.getMessages(this.user.id).subscribe((message: any) => {
+            if (this.chatService.getActiveChatId() != JSON.parse(message).chatId) {
+                this.chatService.setUnreadMessageStatus(true);
+            }
+        });
+        this.checkForUnreadMessages();
+
+        this.api.getUnansweredQuestions(this.user.id)
+            .subscribe(
+                this.storeQuestions.bind(this),
+            );
+    }
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ngOnDestroy() {
@@ -63,4 +73,11 @@ export class HomePage implements OnDestroy, OnInit {
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    private async storeQuestions(questions) {
+        this.userService.setSueveyQuestions(questions.data.survey_score);
+        if (!this.user.survey_score) {
+            this.router.navigateByUrl('survey');
+        }
+    }
 }

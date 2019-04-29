@@ -15,7 +15,7 @@ export class ApiService {
         return this.http.post(`${ENV.SERVER_ADDRESS}/users/${id}/data`, profile);
     }
 
-    public getSurveyQuestions(id: number): Observable<any> {
+    public getUnansweredQuestions(id: number): Observable<any> {
         const params = {
             survey: 1,
             user: id

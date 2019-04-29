@@ -11,6 +11,7 @@ import ENV from '../../ENV';
 export class ChatServiceService {
 
     private unreadMessage = new Subject<any>();
+    activeChatId;
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -74,8 +75,8 @@ export class ChatServiceService {
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
 
-    updateUnreadMessageStatus(chatId) {
-        return this.httpClient.post(ENV.SERVER_ADDRESS + '/chat/status/update', {chatId: chatId});
+    updateUnreadMessageStatus(chatId, user_id) {
+        return this.httpClient.post(ENV.SERVER_ADDRESS + '/chat/status/update', {chatId: chatId, user_id: user_id});
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -83,4 +84,18 @@ export class ChatServiceService {
     getChatRoomId(sender_id, receiver_id) {
         return this.httpClient.post(ENV.SERVER_ADDRESS + '/chat/room', {sender_id: sender_id, receiver_id: receiver_id});
     }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
+    setActiveChatId(activeChatId) {
+        this.activeChatId = activeChatId;
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
+    getActiveChatId() {
+        return this.activeChatId;
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
 }

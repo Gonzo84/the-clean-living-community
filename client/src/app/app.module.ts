@@ -22,7 +22,7 @@ import {UserService} from './services/user.service';
 import {SurveyPageModule} from './survey/survey.module';
 import ENV from '../ENV';
 
-const config: SocketIoConfig = {url: ENV.SOCKET_ADDRESS + ':3000', options: {}};
+const config: SocketIoConfig = {url: ENV.SOCKET_ADDRESS, options: {}};
 
 @NgModule({
     declarations: [AppComponent],

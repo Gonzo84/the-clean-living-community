@@ -1,5 +1,6 @@
 <ion-content padding>
-        <ion-slides #slides>
+    <ion-slides #slides>
+        <ng-container *ngIf="questions.length">
             <ion-slide *ngFor="let question of questions; let i = index;">
                 <ion-grid>
                     <ion-row color="primary" justify-content-center>
@@ -9,34 +10,30 @@
                                     <h3>{{question.question}}</h3>
                                 </ion-item>
                                 <ion-list no-lines radio-group>
-
                                     <ion-item *ngFor="let answer of question.options; let y = index;">
-
                                         <ion-label>{{y + 1}}. {{answer.name}}</ion-label>
                                         <ion-radio (click)="selectAnswer(question, answer.value)"
                                                    [disabled]="hasAnswered"></ion-radio>
-
                                     </ion-item>
-
                                 </ion-list>
                             </div>
                         </ion-col>
                     </ion-row>
                 </ion-grid>
-
             </ion-slide>
-            <ion-slide>
-                <div padding>
-                    <ion-item>
-                        <ion-button
-                                size="large"
-                                type="text"
-                                expand="block"
-                                shape="round"
-                                (click)="finishSurvey()">Start your <br> Clean Living Journey
-                        </ion-button>
-                    </ion-item>
-                </div>
-            </ion-slide>
-        </ion-slides>
+        </ng-container>
+        <ion-slide *ngIf="!unansweredQuestions.length">
+            <div padding>
+                <ion-item>
+                    <ion-button
+                            size="large"
+                            type="text"
+                            expand="block"
+                            shape="round"
+                            (click)="finishSurvey()">Start your <br> Clean Living Journey
+                    </ion-button>
+                </ion-item>
+            </div>
+        </ion-slide>
+    </ion-slides>
 </ion-content>

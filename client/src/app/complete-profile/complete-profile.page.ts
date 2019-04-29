@@ -30,7 +30,7 @@ export class CompleteProfilePage {
     }
 
     private async onProfileCompleteSuccess(data) {
-        const updatedUser = {...data.data, ...this.loggedUser};
+        const updatedUser = {...this.loggedUser, ...data.data};
         await this.userService.setLoggedUser(updatedUser);
         this.router.navigateByUrl('home/search');
     }

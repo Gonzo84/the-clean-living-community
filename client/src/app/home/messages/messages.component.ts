@@ -17,7 +17,6 @@ export class MessagesComponent implements OnInit {
     responseReady = false;
     loader;
     user: any;
-    activeChatId;
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -35,7 +34,7 @@ export class MessagesComponent implements OnInit {
                     const chatId = JSON.parse(message).chatId;
                     const chatIndex = this.messageList.findIndex(x => x.chatId == chatId);
                     if (chatIndex >= 0) {
-                        if (this.activeChatId != chatId) {
+                        if (this.chatService.getActiveChatId() != chatId) {
                             this.messageList[chatIndex].unread = true;
                         }
                         update = false;
@@ -62,7 +61,7 @@ export class MessagesComponent implements OnInit {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     ionViewWillEnter() {
-        this.activeChatId = false;
+        this.chatService.setActiveChatId(false);
         setTimeout(() => {
             this.checkForUnreadMessages();
         }, 1000);
@@ -90,7 +89,7 @@ export class MessagesComponent implements OnInit {
 
     enterChatRoom(message, index) {
         this.messageList[index].unread = false;
-        this.activeChatId = message.chatId; // todo activeChatId in chatService and check in all checkForUnreadMessages()
+        this.chatService.setActiveChatId(message.chatId)
         this.router.navigate(['/home/chat', { chatId: message.chatId, receiver_name: message.user, receiver_id: message.userId }]);
     }
 

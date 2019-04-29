@@ -178,19 +178,23 @@ class ChatController extends Controller
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * Update all messages status to read for particular chat room
+     * Update all messages status to read for particular chat room and number of unread messages
      * @return JsonResponse
      * @throws \Illuminate\Validation\ValidationException
      */
     public function updateUnreadMessageStatus(Request $request)
     {
         $this->validate($request, [
-            'chatId' => 'required'
+            'chatId' => 'required',
+            'user_id' => 'required'
         ]);
 
         Message::where('chat_id', '=', $request->input('chatId'))->update(['read_status' => 1]);
 
-        return $this->successResponse(array('success' => true));
+        $unreadMessages = Message::where(['to' => $request->input('user_id'), 'read_status' => 0])->get();
+        $count = $unreadMessages->count();
+
+        return $this->successResponse(array('success' => true, 'status' => $count > 0 ? true : false));
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -44,7 +44,7 @@ export class ChatRoomComponent {
                 if ((chatMessage.sender_id) && (this.receiver_id == chatMessage.sender_id)) {
                     this.messages.push(JSON.parse(message));
                     setTimeout(() => {
-                        this.content.scrollToBottom();
+                        this.content.scrollToBottom(300);
                     }, 500);
                 } else {
                     this.checkForUnreadMessages();
@@ -74,6 +74,9 @@ export class ChatRoomComponent {
                             message: this.message
                         });
                         this.message = '';
+                        setTimeout(() => {
+                            this.content.scrollToBottom(300);
+                        }, 500);
                     }
                 },
                 err => {
@@ -106,7 +109,13 @@ export class ChatRoomComponent {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     updateUnreadMessageStatus() {
-        this.chatService.updateUnreadMessageStatus(this.chatId).subscribe();
+        this.chatService.updateUnreadMessageStatus(this.chatId, this.user.id).subscribe(
+            (response: any) => {
+                if (response.data.success) {
+                    this.chatService.setUnreadMessageStatus(response.data.status);
+                }
+            }
+        );
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
