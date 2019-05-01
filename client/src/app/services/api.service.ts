@@ -27,14 +27,15 @@ export class ApiService {
         return this.http.get(`${ENV.SERVER_ADDRESS}/users/${id}`);
     }
 
-    public filterUsers(type, name, page) {
+    public filterUsers(id, type, name, page) {
         const params = {
+            user_id: id,
             type,
             name,
             page
         };
         // @ts-ignore
-        return this.http.get(`${ENV.SERVER_ADDRESS}/users?name=${name}&type=${type}&page=${page}`, params);
+        return this.http.post(`${ENV.SERVER_ADDRESS}/location/search`, params);
     }
 
     public finishSurvey(userId) {

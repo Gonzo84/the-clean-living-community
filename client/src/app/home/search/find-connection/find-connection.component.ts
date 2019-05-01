@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {ApiService} from '../../../services/api.service';
 import {IonInfiniteScroll} from '@ionic/angular';
 import {Router} from '@angular/router';
+import {UserService} from '../../../services/user.service';
 
 @Component({
     selector: 'app-find-connection',
@@ -13,6 +14,7 @@ export class FindConnectionComponent implements OnInit {
 
     @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
+    loggedUser: any;
     type: any = 'friend';
     searchTerm: any = '';
     connections: any = [];
@@ -28,17 +30,23 @@ export class FindConnectionComponent implements OnInit {
     constructor(
         private activatedRoute: ActivatedRoute,
         private api: ApiService,
+        private user: UserService,
         private router: Router) {
 
         this.type = this.activatedRoute.snapshot.paramMap.get('type');
-        this.getUsers(this.type, '', 1);
+        this.user.getLoggedUser().then(function (loggedUser) {
+            this.loggedUser = loggedUser;
+            this.getUsers(loggedUser.id, this.type, '', 1);
+        }.bind(this));
     }
 
-    getUsers(type, name, page) {
-        this.api.filterUsers(type, name, page)
-            .subscribe(this.setListData.bind(this),
-                error => this.errorMessage = <any>error
-            );
+    getUsers(id, type, name, page) {
+        if (id) {
+            this.api.filterUsers(id, type, name, page)
+                .subscribe(this.setListData.bind(this),
+                    error => this.errorMessage = <any>error
+                );
+        }
     }
 
     setListData(res) {
@@ -46,7 +54,7 @@ export class FindConnectionComponent implements OnInit {
         this.perPage = this.data.per_page;
         this.totalData = this.data.total;
         this.totalPage = this.data.last_page;
-
+        
         if (this.page > 1) {
             this.connections = this.connections.concat(this.data.data);
         } else {
@@ -57,7 +65,7 @@ export class FindConnectionComponent implements OnInit {
     doInfinite(event) {
         this.page++;
         setTimeout(function () {
-            this.getUsers(this.type, this.searchTerm, this.page);
+            this.getUsers(this.loggedUser.id, this.type, this.searchTerm, this.page);
             event.target.complete();
         }.bind(this), 200);
     }
@@ -72,7 +80,7 @@ export class FindConnectionComponent implements OnInit {
 
         this.timeId = setTimeout(function () {
             this.page = 1;
-            this.getUsers(this.type, this.searchTerm, 1);
+            this.getUsers(this.loggedUser.id, this.type, this.searchTerm, 1);
         }.bind(this), 400);
     }
 

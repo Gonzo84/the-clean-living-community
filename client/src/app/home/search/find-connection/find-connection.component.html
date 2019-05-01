@@ -14,7 +14,7 @@
                         <div item-start class="ion-avatar-connection">
                             <span>{{generateAvatar(user.name)}}</span>
                         </div>
-                        <div class="inner-connection-list-item">{{user.name}} , 4 miles, 65% match</div>
+                        <div class="inner-connection-list-item">{{user.name}} , {{user.distance ? user.distance : 0}} mile(s), {{user.survey_match ? user.survey_match : 0}}% match</div>
                     </ion-item>
                 </ion-list>
 
