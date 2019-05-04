@@ -66,8 +66,11 @@ export class SurveyPage implements OnInit {
 
     private async onGetUserInfoSuccess(user) {
         await this.userSerice.setLoggedUser(user.data);
-        this.router.navigateByUrl('home/search');
+        this.navigateToHome();
+    }
 
+    private navigateToHome() {
+        this.router.navigateByUrl('home/search');
     }
 
     private async onGetUserInfoFailure() {
