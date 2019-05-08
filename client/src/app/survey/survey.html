@@ -13,6 +13,7 @@
                                     <ion-item *ngFor="let answer of question.options; let y = index;">
                                         <ion-label>{{y + 1}}. {{answer.name}}</ion-label>
                                         <ion-radio (click)="selectAnswer(question, answer.value)"
+                                                   mode="md"
                                                    [disabled]="hasAnswered"></ion-radio>
                                     </ion-item>
                                 </ion-list>
