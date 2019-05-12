@@ -1,12 +1,13 @@
 @import "../../../../theme/variables";
 
 .clc-find-gathering-background {
-    --background: url('../../../../assets/img/gatherings/view-gathering-background.jpg') 58% 100%/230% 100% no-repeat;
+    --background: url('../../../../assets/img/gatherings/view-gathering-background.jpg') 50% 50% / auto 100% no-repeat;
 
 
     .clc-search-title {
         text-transform: uppercase;
-        color: white;
+        color: $clc-primary-color;
+        font-weight: bold;
     }
 
     .clc-search-description {
@@ -15,11 +16,14 @@
         border-radius: 5px;
         padding: 20px 10px;
         margin-bottom: 5px;
+        color: #fff;
     }
 
     .clc-search-created {
-        font-size: 100%;
+        font-size: 90%;
+        text-align: left !important;
         padding-top: 0;
+        color: #fff;
     }
 
     .clc-search-time {
@@ -36,12 +40,14 @@
             vertical-align: text-bottom;
             font-size: 200%;
             padding-left: 10px;
+            font-weight: bold;
         }
 
 
         .ion-gathering-date-short {
             font-size: 100%;
             display: block;
+            color: #fff;
         }
     }
 

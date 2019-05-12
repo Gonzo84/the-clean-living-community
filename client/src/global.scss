@@ -72,3 +72,9 @@ ion-segment {
         font-size: 120%;
     }
 }
+
+ion-back-button {
+    .button-text {
+        visibility: hidden;
+    }
+}
