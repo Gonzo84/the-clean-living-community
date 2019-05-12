@@ -17,11 +17,12 @@ $button-md-round-padding: 15px;
 
     .ion-grid-gatherings {
         .ion-row-gatherings:first-child {
-            padding-bottom: 35%;
+            padding-bottom: 10%;
+            height: 40%;
         }
 
         .ion-row-gatherings:nth-child(2) {
-
+            height: 60%;
             .ion-button-gatherings {
                 &:first-child {
                     margin-bottom: 25%;
