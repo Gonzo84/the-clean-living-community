@@ -46,6 +46,17 @@ export class ApiService {
         return this.http.post(`${ENV.SERVER_ADDRESS}/survey/finish`, params);
     }
 
+    public location(userId, longitude, latitude) {
+        console.log(longitude);
+        const params = {
+            user_id: userId,
+            longitude: longitude,
+            latitude: latitude
+        };
+
+        return this.http.post(`${ENV.SERVER_ADDRESS}/location`, params);
+    }
+
     public resetPassword(email: any): Observable<any> {
         return this.http.post(`${ENV.SERVER_ADDRESS}/users/password/reset`, email);
     }

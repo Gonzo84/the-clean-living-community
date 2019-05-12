@@ -7,6 +7,7 @@ import {Router} from '@angular/router';
 import {TokenService} from './services/token.service';
 import {AuthService} from './auth/auth.service';
 import {UserService} from './services/user.service';
+import {GeolocationService} from './services/geolocation.service';
 
 @Component({
     selector: 'app-root',
@@ -20,7 +21,8 @@ export class AppComponent {
         private tokenService: TokenService,
         private authService: AuthService,
         private router: Router,
-        private userService: UserService
+        private userService: UserService,
+        private geolocationService: GeolocationService
     ) {
         this.initializeApp();
     }
@@ -39,6 +41,7 @@ export class AppComponent {
         const token = await this.tokenService.getAccessToken();
         let route;
         if (token) {
+            this.geolocationService.watchLocation();
             this.authService.authSubject.next(true);
             const user = await this.userService.getLoggedUser();
             route = user.age ? 'home/search' : 'complete-profile';

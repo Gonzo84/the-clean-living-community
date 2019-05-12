@@ -21,6 +21,8 @@ import {ApiService} from './services/api.service';
 import {UserService} from './services/user.service';
 import {SurveyPageModule} from './survey/survey.module';
 import ENV from '../ENV';
+import {Geolocation} from '@ionic-native/geolocation/ngx';
+import {GeolocationService} from './services/geolocation.service';
 
 const config: SocketIoConfig = {url: ENV.SOCKET_ADDRESS, options: {}};
 
@@ -41,6 +43,8 @@ const config: SocketIoConfig = {url: ENV.SOCKET_ADDRESS, options: {}};
         StatusBar,
         SplashScreen,
         UserService,
+        Geolocation,
+        GeolocationService,
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
         {
             provide: HTTP_INTERCEPTORS,
