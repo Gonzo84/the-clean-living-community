@@ -30,7 +30,7 @@ export class GeolocationService {
 
     private getLoggedUser(user): void {
         this.loggedUser = user;
-        this.interval = setInterval(this.sendLocation.bind(this), 20 * this.second);
+        this.interval = setInterval(this.sendLocation.bind(this), 20 * this.minute);
     }
 
     private getOptions(): GeolocationOptions {
