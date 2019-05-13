@@ -1,5 +1,7 @@
 {
   "name": "the-clean-living-community",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
