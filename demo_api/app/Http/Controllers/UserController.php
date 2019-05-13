@@ -32,7 +32,7 @@ class UserController extends Controller
 
     /**
      * Return the list of users.
-     *
+     * @param $request Request
      * @return JsonResponse
      */
     public function index(Request $request) : JsonResponse
