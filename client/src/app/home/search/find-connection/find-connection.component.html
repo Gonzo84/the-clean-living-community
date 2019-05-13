@@ -8,13 +8,25 @@
                                class="connections-search-field" type="search" placeholder="Find a connection"
                                autocomplete></ion-searchbar>
 
-
                 <ion-list>
                     <ion-item *ngFor="let user of connections" margin (click)="viewProfile(user.id)">
                         <div item-start class="ion-avatar-connection">
                             <span>{{generateAvatar(user.name)}}</span>
                         </div>
-                        <div class="inner-connection-list-item">{{user.name}} , {{user.distance ? user.distance : 0}} mile(s), {{user.survey_match ? user.survey_match : 0}}% match</div>
+                        <div class="inner-connection-list-item">
+                            {{user.name}}
+                            <span *ngIf="user.distance !== null; else elsetag">
+                                {{user.distance | number:'2.2-2'}} mile(s),
+                            </span><ng-template #elsetag>
+                                0 mile(s),
+                            </ng-template>
+
+                            <span *ngIf="user.survey_match !== null; else elsetag">
+                                {{user.survey_match | number:'2.2-2'}}% match
+                            </span><ng-template #elsetag>
+                                0% match
+                            </ng-template>
+                        </div>
                     </ion-item>
                 </ion-list>
 
