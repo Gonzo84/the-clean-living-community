@@ -63,33 +63,6 @@
                     <ion-label class="profile-personal" position="floating">Personal</ion-label>
                 </ion-col>
             </ion-row>
-            <ion-row color="primary" justify-content-center class="profile-row-border-bottom">
-                <ion-col align-self-center size-md="4" size-lg="4" size-xs="4" class="profile-column-border-right">
-                    <ion-label class="profile-label" position="floating">
-                        Religion
-                        <div class="profile-label-value">{{profile.religion}}</div>
-                    </ion-label>
-                </ion-col>
-
-                <ion-col align-self-center size-md="8" size-lg="8" size-xs="8">
-                </ion-col>
-            </ion-row>
-
-            <ion-row color="primary" justify-content-center class="profile-row-margin-bottom">
-                <ion-col align-self-center size-md="4" size-lg="4" size-xs="4" class="profile-column-border-right">
-                    <ion-label class="profile-label" position="floating">
-                        Gender
-                        <div class="profile-label-value">{{profile.gender}}</div>
-                    </ion-label>
-                </ion-col>
-
-                <ion-col align-self-center size-md="8" size-lg="8" size-xs="8">
-                    <ion-label class="profile-label" position="floating">
-                        Sex Orientation
-                        <div class="profile-label-value">{{profile.sex_orientation}}</div>
-                    </ion-label>
-                </ion-col>
-            </ion-row>
 
             <ion-row color="primary" justify-content-center>
                 <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
@@ -97,26 +70,14 @@
                 </ion-col>
             </ion-row>
             <ion-row color="primary" justify-content-cente class="profile-row-border-bottom profile-row-margin-bottom">
-                <ion-col align-self-center size-md="4" size-lg="4" size-xs="4" class="profile-column-border-right">
+                <ion-col align-self-center size-md="4" size-lg="4" size-xs="4">
                     <ion-label class="profile-label" position="floating">
                         Smoker
                         <div class="profile-label-value">{{profile.smoker ? 'Yes' : 'No'}}</div>
                     </ion-label>
                 </ion-col>
-
-                <ion-col align-self-center size-md="8" size-lg="8" size-xs="8">
-                    <ion-label class="profile-label" position="floating">
-                        Last Relapse
-                        <div class="profile-label-value">{{transformLastRelapse(profile.last_relapse)}}</div>
-                    </ion-label>
-                </ion-col>
             </ion-row>
 
-            <ion-row color="primary" justify-content-center>
-                <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-                    <ion-label class="profile-personal" position="floating">Address</ion-label>
-                </ion-col>
-            </ion-row>
             <ion-row color="primary" justify-content-center class="profile-row-border-bottom">
                 <ion-col align-self-center size-md="6" size-lg="6" size-xs="6" class="profile-column-border-right">
                     <ion-label class="profile-label" position="floating">
